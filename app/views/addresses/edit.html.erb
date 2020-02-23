@@ -1,1 +1,19 @@
-<p>配送先編集</p>
+
+<h2>配送先編集</h2>
+<%= form_for( @address, url: address_path ) do | f | %>
+<table>
+  <tr>
+    <th>郵便番号</th>
+    <td><%= f.text_field :postal_code %></td>
+  </tr>
+  <tr>
+    <th>住所</th>
+      <td><%= f.text_field :address %></td>
+  </tr>
+  <tr>
+    <th>宛名</th>
+    <td><%= f.text_field :consignee %></td>
+  </tr>
+</table>
+<%= f.submit '編集する' %>
+<% end %>

@@ -1,1 +1,57 @@
-<p>ショッピングカート画面</p>
+<h2>ショッピングカート</h2>
+<!-- カートアイテム１項目の削除-->
+<%= link_to 'カートを空にする', cart_items_destroy_all_path, method: :delete, 'data-confirm' => "カートを空にしますか？" %>
+
+<table>
+  <tr>
+    <th>商品目</th>
+    <th>単価（税込）</th>
+    <th>数量</th>
+    <th>小計</th>
+    <th></th>
+  </tr>
+  <% sn = 0 %>
+  <% @cart_items.each do |cart_item| %>
+  <tr>
+    <td>
+      <!--商品イメージ-->
+      <%= attachment_image_tag cart_item.item, :image, format: 'jpeg', fallback: "no_image.jpg" %>
+      <!--商品名-->
+      <%= cart_item.item.name %>
+    </td>
+    <td>
+      <!-- 単価（税込）-->
+      <!--subtotal( 税抜き価格, 個数 ) => 小計（税込）を計算-->
+      <%= subtotal( cart_item.item.listed_price, 1 ) %>
+    </td>
+    <td>
+      <!-- 数量-->
+      <% form_for( cart_item, url: cart_item_path( cart_item ) ) do | c | %>
+      <% c.text_field :amount %>
+      <% c.submit '変更' %>
+      <% end %>
+    </td>
+    <td>
+      <!-- 小計-->
+      <!--subtotal( 税抜き価格, 個数 ) => 小計（税込）を計算-->
+      <%= subtotal( cart_item.item.listed_price, cart_item.amount ) %>
+      <% sn += subtotal( cart_item.item.listed_price, cart_item.amount ) %>
+    </td>
+    <td>
+      <!-- カートアイテム１項目の削除-->
+      <%= link_to '削除する', cart_item_path( cart_item ), method: :delete, 'data-confirm' => "#{cart_item.item.name}をカートから削除しますか？" %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+<%= link_to '買い物を続ける', root_path %>
+
+<table>
+  <tr>
+    <td>合計金額</td>
+    <td><%= number_separation( sn ) %></td>
+  </tr>
+</table>
+
+<%= link_to '情報入力に進む', new_order_path %>
