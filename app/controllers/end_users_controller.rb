@@ -1,0 +1,2 @@
+class EndUsersController < ApplicationController
+end
