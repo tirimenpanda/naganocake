@@ -1,1 +1,39 @@
-<p>配送先編集</p>
+<p>＃＃配送先編集画面</p>
+<div class="container">
+	<div class="row">
+		<div class="page_title">
+			<!-- end_users.scssにh3<strong>記述してみる -->
+			<h3>配送先編集</h3>
+		</div>
+			<table class="table">
+				<thead></thead>
+				<tbody>
+					<%#= form_for current_end_users.consignee %>
+					<tr>
+						<th width="15%">郵便番号</th>
+						<th>
+							<!-- <label for="postal_code"></label> -->
+							   <%#= f.text_field :postal_code %>
+						</th>
+					</tr>
+					<tr>
+						<th width="15%">住所</th>
+						<th>
+							<!-- <label for="ship_to"></label> -->
+								<%#= f.text_field :ship_to %>
+						</th>
+					</tr>
+					<tr>
+						<th width="15%">宛名</th>
+						<th>
+							<!-- <label for="consignee"></label> -->
+								<%#= f.text_field :consignee %>
+						</th>
+					</tr>
+				</tbody>
+			</table>
+			<div class="btn-wrapper">
+				<a class="btn btn-primary" href="/addresses/:id">編集する</a>
+			</div>
+	</div>
+</div>

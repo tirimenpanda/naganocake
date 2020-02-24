@@ -1,1 +1,31 @@
 <p>商品詳細画面</p>
+<div class="container">
+	<!-- サイドバー　部分テンプレートで入れる -->
+	<div class="row">
+		<div class=col-xs-4>
+			<%#= attachment_image_tag items.image, :profile_image, size:"100x100", format: 'jpeg',fallback: %>
+                <%# end %>
+        </div>
+        <div class="col-xs-4">
+        	<dt><h3><strong><%#= form_for items.name %></strong></h3></dt>
+        	<br>
+        	<dt><p><%#= form_for items.introduction %></p></dt>
+            <br>
+            <dt>
+            	<h4><strong><%#= form_for items.price %></strong></h4><span>(税込)</span>
+            </dt>
+
+        		<div class="serect-amount">
+        			<!-- 個数選択のプルダウン作成 -->
+        		</div>
+
+        		<div class="cart-btn">
+        			<a class="btn btn-primary" href="/cart_items">カートに入れる</a>
+        		</div>
+        </div>
+    </div>
+</div>
+
+
+
+

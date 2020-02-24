@@ -35,12 +35,10 @@ a:visited {
     margin: 0 auto;
     padding-left: 15px;
     padding-right: 15px;
-    text-align: center;
 }
 
 .row {
   margin: 0 auto;
-  text-align: center;
 }
 
 header {
@@ -73,7 +71,7 @@ span {
     font-size: 30px;
 }
 
-.navbar-right>li {
+.navbar-rightli {
   	position: relative;
 }
 
@@ -104,3 +102,4 @@ th,td {
   border: solid 1px #ccc;
   padding: 5px;
 }
+
