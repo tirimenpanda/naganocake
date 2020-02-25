@@ -1,5 +1,5 @@
 <h2>退会画面</h2>
-<%= link_to '退会しない', root_path%>
+<%= link_to '退会しない', end_users_path %>
 <%= form_for( current_end_user, url: end_users_path ) do | f | %>
 <%= f.hidden_field :is_deleted, value:true %>
 <%= f.submit '退会する' %>

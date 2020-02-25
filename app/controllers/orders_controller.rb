@@ -22,9 +22,16 @@ class OrdersController < ApplicationController
     # orderテーブルの全てのカラム情報を取得
     order = Order.new( cart_item_params )
     # ユーザの関連付け
-    order.user_id = current_user.id
+    order.end_user_id = current_end_user.id
+    # 注文履歴の作成
+    order.save
+    current_end_user.cart_items.each do | cart_item |
+      order_detail = OrderDetail.new
+    end
     # 注文テーブルへの情報登録が適しているか判定
-    return
+    # => バリデーション未実装のため、コメントアウト
+    =begin
+    # Orderオブジェクトの保存に成功したか否かの処理
     if order.save then
       # 成功した場合
       # エンドユーザオブジェクトを取得
@@ -47,6 +54,7 @@ class OrdersController < ApplicationController
       # 購入情報入力画面へ遷移
       redirect_to new_order_path
     end
+    =end
   end
 
   # 注文履歴（一覧）画面
@@ -79,6 +87,7 @@ class OrdersController < ApplicationController
     order = Order.new( cart_item_params )
     # 配送先情報などの処理（手抜き）
     @order = regulate_order_format( order )
+    @cart_items = current_end_user.cart_items
   end
 
   def thanks

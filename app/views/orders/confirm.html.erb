@@ -23,7 +23,7 @@
     </td>
     <td>
       <!-- 数量-->
-      <%= c.amount %>
+      <%= cart_item.amount %>
     </td>
     <td>
       <!-- 小計-->
@@ -34,3 +34,28 @@
   </tr>
   <% end %>
 </table>
+
+<%= form_for( @order, url: orders_path ) do | f | %>
+<table>
+  <tr>
+    <td>配送料</td>
+    <td><%= f.text_field :postage, value:800, readonly:true %></td>
+  </tr>
+  <tr>
+    <td>商品合計</td>
+    <td><%= number_separation( sn ) %></td>
+  </tr>
+  <tr>
+    <td><b>請求金額</b></td>
+    <td><%= f.text_field :total_price, value:(800 + sn), readonly:true %></td>
+  </tr>
+</table>
+
+<h2>支払方法</h2>
+<%= @order.payment %>
+
+<h2>お届け先</h2>
+<%= join_address( @order.postal_code, @order.ship_to, @order.consignee ) %>
+
+<%= f.submit '購入を確定する' %>
+<% end %>
