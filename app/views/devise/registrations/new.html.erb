@@ -1,29 +1,68 @@
-<h2>Sign up</h2>
+<div class="container">
+  <div class="row" text-align="center">
+    <h4>新規登録</h4>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      <div class="field">
+        <%= f.label :ユーザーネーム（姓） %><br />
+        <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder: "（例）佐藤" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :ユーザーネーム（カナ姓） %><br />
+        <%= f.text_field :first_name_kana, autocomplete: "first_name_kana", placeholder: "（例）サトウ" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :ユーザーネーム（名） %><br />
+        <%= f.email_field :last_name, autocomplete: "last_name", placeholder: "（例）花子" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :ユーザーネーム（カナ名） %><br />
+        <%= f.email_field :last_name_kana, autocomplete: "last_name_kana", placeholder: "（例）ハナコ" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :郵便番号 %><em>（ハイフンは除く）</em><br />
+        <%= f.email_field :postal_code, autocomplete: "postal_code", placeholder: "your address number" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :住所 %><br />
+        <%= f.email_field :address, autocomplete: "address", placeholder: "your address" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :電話番号 %><em>（ハイフンは除く）</em><br />
+        <%= f.email_field :phone_number, autocomplete: "phone_number", placeholder: "your phone number" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :新規メールアドレス %><br />
+        <%= f.email_field :email, autocomplete: "email", placeholder: "example@email.com" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :新規パスワード %>
+        <% if @minimum_password_length %>
+        <em>(<%= @minimum_password_length %>文字以上)</em>
+        <% end %><br />
+        <%= f.password_field :encrypted_password, autocomplete: "new-password", placeholder: "new password"  %>
+      </div>
+
+      <div class="field">
+        <%= f.label :パスワード再入力 %><br />
+        <%= f.password_field :encrypted_password_confirmation, autocomplete: "new-password", placeholder: "your password"  %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "新規登録", class: "btn btn-primary" %>
+      </div>
+    <% end %>
+
+    <%= render "devise/shared/links" %>
   </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>
