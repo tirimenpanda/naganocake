@@ -6108,3 +6108,1820 @@ Processing by OrdersController#show as HTML
 Completed 200 OK in 85ms (Views: 54.4ms | ActiveRecord: 4.5ms)
 
 
+Started GET "/" for 10.0.2.2 at 2020-02-25 07:12:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  [1m[36mEndUser Load (0.4ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/homes/top.html.erb:29
+  Rendered homes/top.html.erb within layouts/application (16.3ms)
+Completed 200 OK in 4158ms (Views: 4151.4ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/cart_items" for 10.0.2.2 at 2020-02-25 07:12:24 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartItemsController#index as HTML
+  [1m[36mEndUser Load (0.7ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:15
+  Rendering cart_items/index.html.erb within layouts/application
+  [1m[36mCartItem Load (0.6ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/views/cart_items/index.html.erb:14
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  Rendered cart_items/index.html.erb within layouts/application (44.3ms)
+Completed 500 Internal Server Error in 71ms (ActiveRecord: 3.2ms)
+
+
+  
+ActionView::Template::Error (String can't be coerced into Integer):
+    35:       <!-- 小計-->
+    36:       <!--subtotal( 税抜き価格, 個数 ) => 小計（税込）を計算-->
+    37:       <%= subtotal( cart_item.item.listed_price, cart_item.amount ) %>
+    38:       <% sn += subtotal( cart_item.item.listed_price, cart_item.amount, true ) %>
+    39:     </td>
+    40:     <td>
+    41:       <!-- カートアイテム１項目の削除-->
+  
+app/views/cart_items/index.html.erb:38:in `+'
+app/views/cart_items/index.html.erb:38:in `block in _app_views_cart_items_index_html_erb__3011445673480941846_69958332208300'
+app/views/cart_items/index.html.erb:14:in `_app_views_cart_items_index_html_erb__3011445673480941846_69958332208300'
+Started GET "/" for 10.0.2.2 at 2020-02-25 07:13:01 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  [1m[36mEndUser Load (0.2ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/homes/top.html.erb:29
+  Rendered homes/top.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 348ms (Views: 342.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/cart_items" for 10.0.2.2 at 2020-02-25 07:13:03 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartItemsController#index as HTML
+  [1m[36mEndUser Load (0.6ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:15
+  Rendering cart_items/index.html.erb within layouts/application
+  [1m[36mCartItem Load (0.2ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/views/cart_items/index.html.erb:14
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  Rendered cart_items/index.html.erb within layouts/application (39.1ms)
+Completed 200 OK in 95ms (Views: 76.7ms | ActiveRecord: 4.2ms)
+
+
+Started PATCH "/cart_items/24" for 10.0.2.2 at 2020-02-25 07:13:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartItemsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/qxc1rr6I9xfqGOX3fcSTSgIwSfHwRgYV1uLYXCtHn1fAG3Zk8fNK2oxARDIEh18bWK2awbZ7OKJQxMKx9Ga0g==", "cart_item"=>{"amount"=>"8"}, "commit"=>"変更", "id"=>"24"}
+  [1m[36mCartItem Load (0.4ms)[0m  [1m[34mSELECT  "cart_items".* FROM "cart_items" WHERE "cart_items"."id" = ? LIMIT ?[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cart_items_controller.rb:23
+  [1m[36mEndUser Load (0.5ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:23
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:23
+  [1m[36mCartItem Update (1.3ms)[0m  [1m[33mUPDATE "cart_items" SET "amount" = ?, "updated_at" = ? WHERE "cart_items"."id" = ?[0m  [["amount", 8], ["updated_at", "2020-02-25 07:13:26.419832"], ["id", 24]]
+  ↳ app/controllers/cart_items_controller.rb:23
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cart_items_controller.rb:23
+Redirected to http://localhost:3000/cart_items
+Completed 302 Found in 18ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/cart_items" for 10.0.2.2 at 2020-02-25 07:13:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartItemsController#index as HTML
+  [1m[36mEndUser Load (0.3ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:15
+  Rendering cart_items/index.html.erb within layouts/application
+  [1m[36mCartItem Load (0.5ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/views/cart_items/index.html.erb:14
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  Rendered cart_items/index.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 95ms (Views: 86.8ms | ActiveRecord: 3.7ms)
+
+
+Started DELETE "/cart_items/20" for 10.0.2.2 at 2020-02-25 07:13:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartItemsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"VbI6tsPdbbWRV5TrXQ5lOp/mTqJc4aYAysb0i46usgXx536YtuPSHYB7dkjLcpTp3NaeBW7wGAHf/pvzJVS7cw==", "id"=>"20"}
+20
+String
+performed: destroy
+  [1m[36mCartItem Load (0.5ms)[0m  [1m[34mSELECT  "cart_items".* FROM "cart_items" WHERE "cart_items"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:42
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cart_items_controller.rb:44
+  [1m[36mCartItem Destroy (2.0ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = ?[0m  [["id", 20]]
+  ↳ app/controllers/cart_items_controller.rb:44
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cart_items_controller.rb:44
+Redirected to http://localhost:3000/cart_items
+Completed 302 Found in 15ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/cart_items" for 10.0.2.2 at 2020-02-25 07:13:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartItemsController#index as HTML
+  [1m[36mEndUser Load (0.3ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:15
+  Rendering cart_items/index.html.erb within layouts/application
+  [1m[36mCartItem Load (0.5ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/views/cart_items/index.html.erb:14
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.9ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  Rendered cart_items/index.html.erb within layouts/application (19.3ms)
+Completed 200 OK in 94ms (Views: 84.8ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/orders/new" for 10.0.2.2 at 2020-02-25 07:14:06 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#new as HTML
+  [1m[36mEndUser Load (0.5ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:7
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "cart_items" WHERE "cart_items"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/controllers/orders_controller.rb:7
+  Rendering orders/new.html.erb within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "addresses" WHERE "addresses"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/helpers/application_helper.rb:51
+  [1m[36mAddress Load (0.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/helpers/application_helper.rb:58
+  Rendered orders/new.html.erb within layouts/application (87.3ms)
+Completed 200 OK in 150ms (Views: 129.7ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/orders/confirm?utf8=%E2%9C%93&order%5Bpayment%5D=%E9%8A%80%E8%A1%8C%E6%8C%AF%E8%BE%BC&order%5Bpostage%5D=-2&order%5Btotal_price%5D=3&order%5Bpostal_code%5D=&order%5Bship_to%5D=&order%5Bconsignee%5D=&commit=%E7%A2%BA%E8%AA%8D%E7%94%BB%E9%9D%A2%E3%81%B8%E9%80%B2%E3%82%80" for 10.0.2.2 at 2020-02-25 07:14:15 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#show as HTML
+  Parameters: {"utf8"=>"✓", "order"=>{"payment"=>"銀行振込", "postage"=>"-2", "total_price"=>"3", "postal_code"=>"", "ship_to"=>"", "consignee"=>""}, "commit"=>"確認画面へ進む", "id"=>"confirm"}
+  [1m[36mAddress Load (0.4ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/orders_helper.rb:35
+  [1m[36mEndUser Load (0.2ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:77
+  [1m[36mCartItem Load (0.3ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/helpers/orders_helper.rb:6
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/orders_helper.rb:14
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/orders_helper.rb:14
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/orders_helper.rb:14
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/orders_helper.rb:14
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/orders_helper.rb:14
+  Rendering orders/confirm.html.erb within layouts/application
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/confirm.html.erb:16
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/confirm.html.erb:16
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/orders/confirm.html.erb:16
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/orders/confirm.html.erb:16
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/orders/confirm.html.erb:16
+  Rendered orders/confirm.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 123ms (Views: 91.2ms | ActiveRecord: 4.5ms)
+
+
+Started POST "/orders" for 10.0.2.2 at 2020-02-25 07:14:22 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"K2v4N6ea5KL1AF6pKk0JWOZtrvUl21wsm4shkgHzQ4SPPrwZ0qRbCuQsvAq8MfiLpV1+UhfK4i2Os07qqglK8g==", "order"=>{"postal_code"=>"fsgjfh", "ship_to"=>"regbt", "consignee"=>"rnthmy", "payment"=>"銀行振込", "postage"=>"800", "total_price"=>"14374"}, "commit"=>"購入を確定する"}
+  [1m[36mEndUser Load (0.8ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:28
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:30
+  [1m[36mEndUser Load (0.3ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:30
+  [1m[36mOrder Create (1.9ms)[0m  [1m[32mINSERT INTO "orders" ("end_user_id", "postal_code", "ship_to", "consignee", "payment", "postage", "total_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["end_user_id", 1], ["postal_code", "fsgjfh"], ["ship_to", "regbt"], ["consignee", "rnthmy"], ["payment", 1], ["postage", 800], ["total_price", 14374], ["created_at", "2020-02-25 07:14:22.788841"], ["updated_at", "2020-02-25 07:14:22.788841"]]
+  ↳ app/controllers/orders_controller.rb:30
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:30
+  [1m[36mCartItem Load (0.6ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/helpers/orders_helper.rb:6
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/orders_helper.rb:14
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/orders_helper.rb:14
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/orders_helper.rb:14
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/orders_helper.rb:14
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/orders_helper.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mOrderDetail Create (1.4ms)[0m  [1m[32mINSERT INTO "order_details" ("order_id", "item_id", "amount", "purchased_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["order_id", 2], ["item_id", 1], ["amount", 2], ["purchased_price", 1100], ["created_at", "2020-02-25 07:14:22.811173"], ["updated_at", "2020-02-25 07:14:22.811173"]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mOrderDetail Create (1.4ms)[0m  [1m[32mINSERT INTO "order_details" ("order_id", "item_id", "amount", "purchased_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["order_id", 2], ["item_id", 3], ["amount", 13], ["purchased_price", 6864], ["created_at", "2020-02-25 07:14:22.820339"], ["updated_at", "2020-02-25 07:14:22.820339"]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mOrderDetail Create (1.3ms)[0m  [1m[32mINSERT INTO "order_details" ("order_id", "item_id", "amount", "purchased_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["order_id", 2], ["item_id", 4], ["amount", 5], ["purchased_price", 1510], ["created_at", "2020-02-25 07:14:22.830510"], ["updated_at", "2020-02-25 07:14:22.830510"]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mOrderDetail Create (1.6ms)[0m  [1m[32mINSERT INTO "order_details" ("order_id", "item_id", "amount", "purchased_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["order_id", 2], ["item_id", 5], ["amount", 20], ["purchased_price", 2980], ["created_at", "2020-02-25 07:14:22.838740"], ["updated_at", "2020-02-25 07:14:22.838740"]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mOrderDetail Create (1.8ms)[0m  [1m[32mINSERT INTO "order_details" ("order_id", "item_id", "amount", "purchased_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["order_id", 2], ["item_id", 6], ["amount", 8], ["purchased_price", 1120], ["created_at", "2020-02-25 07:14:22.849210"], ["updated_at", "2020-02-25 07:14:22.849210"]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:39
+  [1m[36mCartItem Destroy (3.2ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = ?[0m  [["id", 19]]
+  ↳ app/controllers/orders_controller.rb:39
+  [1m[36mCartItem Destroy (0.1ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = ?[0m  [["id", 21]]
+  ↳ app/controllers/orders_controller.rb:39
+  [1m[36mCartItem Destroy (0.1ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = ?[0m  [["id", 22]]
+  ↳ app/controllers/orders_controller.rb:39
+  [1m[36mCartItem Destroy (0.1ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = ?[0m  [["id", 23]]
+  ↳ app/controllers/orders_controller.rb:39
+  [1m[36mCartItem Destroy (0.1ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = ?[0m  [["id", 24]]
+  ↳ app/controllers/orders_controller.rb:39
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:39
+Redirected to http://localhost:3000/orders/thanks
+Completed 302 Found in 90ms (ActiveRecord: 32.7ms)
+
+
+Started GET "/orders/thanks" for 10.0.2.2 at 2020-02-25 07:14:22 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"thanks"}
+  Rendering orders/thanks.html.erb within layouts/application
+  Rendered orders/thanks.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 53ms (Views: 52.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-02-25 07:14:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  [1m[36mEndUser Load (0.4ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/homes/top.html.erb:29
+  Rendered homes/top.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 46ms (Views: 43.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/orders" for 10.0.2.2 at 2020-02-25 07:14:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#index as HTML
+  [1m[36mEndUser Load (0.7ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:47
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/views/orders/index.html.erb:11
+  [1m[36mOrderDetail Load (0.5ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_id" = ?[0m  [["order_id", 1]]
+  ↳ app/views/orders/index.html.erb:23
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mOrderDetail Load (0.3ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_id" = ?[0m  [["order_id", 2]]
+  ↳ app/views/orders/index.html.erb:23
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  Rendered orders/index.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 74ms (Views: 63.5ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/orders/2" for 10.0.2.2 at 2020-02-25 07:14:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrder Load (1.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:64
+  Rendering orders/show.html.erb within layouts/application
+  [1m[36mOrderDetail Load (0.4ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_id" = ?[0m  [["order_id", 2]]
+  ↳ app/views/orders/show.html.erb:51
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:54
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:54
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:54
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:54
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:54
+  Rendered orders/show.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 64ms (Views: 55.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/orders/2" for 10.0.2.2 at 2020-02-25 07:16:53 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:64
+  Rendering orders/show.html.erb within layouts/application
+  [1m[36mOrderDetail Load (0.4ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_id" = ?[0m  [["order_id", 2]]
+  ↳ app/views/orders/show.html.erb:51
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:54
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:54
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:54
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:54
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:54
+  Rendered orders/show.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 70ms (Views: 64.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/orders" for 10.0.2.2 at 2020-02-25 07:17:11 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#index as HTML
+  [1m[36mEndUser Load (1.7ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:47
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/views/orders/index.html.erb:11
+  [1m[36mOrderDetail Load (0.5ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_id" = ?[0m  [["order_id", 1]]
+  ↳ app/views/orders/index.html.erb:23
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mOrderDetail Load (0.2ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_id" = ?[0m  [["order_id", 2]]
+  ↳ app/views/orders/index.html.erb:23
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  Rendered orders/index.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 74ms (Views: 61.9ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/orders/1" for 10.0.2.2 at 2020-02-25 07:17:13 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:64
+  Rendering orders/show.html.erb within layouts/application
+  [1m[36mOrderDetail Load (0.5ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_id" = ?[0m  [["order_id", 1]]
+  ↳ app/views/orders/show.html.erb:51
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:54
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:54
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:54
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:54
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:54
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:54
+  Rendered orders/show.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 87ms (Views: 80.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-02-25 07:22:36 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  [1m[36mEndUser Load (0.6ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/homes/top.html.erb:29
+  Rendered homes/top.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 50ms (Views: 47.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/end_users" for 10.0.2.2 at 2020-02-25 07:22:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EndUsersController#show as HTML
+  Rendering end_users/show.html.erb within layouts/application
+  [1m[36mEndUser Load (0.3ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/end_users/show.html.erb:12
+  Rendered end_users/show.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 48ms (Views: 44.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/end_users/edit" for 10.0.2.2 at 2020-02-25 07:22:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EndUsersController#edit as HTML
+  Rendering end_users/edit.html.erb within layouts/application
+  [1m[36mEndUser Load (0.4ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/end_users/edit.html.erb:3
+  Rendered end_users/edit.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 68ms (Views: 60.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/end_users/withdraw" for 10.0.2.2 at 2020-02-25 07:22:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EndUsersController#withdraw as HTML
+  Rendering end_users/withdraw.html.erb within layouts/application
+  [1m[36mEndUser Load (0.3ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/end_users/withdraw.html.erb:3
+  Rendered end_users/withdraw.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 42ms (Views: 39.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/end_users" for 10.0.2.2 at 2020-02-25 07:22:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EndUsersController#show as HTML
+  Rendering end_users/show.html.erb within layouts/application
+  [1m[36mEndUser Load (0.3ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/end_users/show.html.erb:12
+  Rendered end_users/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 62ms (Views: 53.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/end_users/edit" for 10.0.2.2 at 2020-02-25 07:22:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EndUsersController#edit as HTML
+  Rendering end_users/edit.html.erb within layouts/application
+  [1m[36mEndUser Load (0.6ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/end_users/edit.html.erb:3
+  Rendered end_users/edit.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 61ms (Views: 54.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-02-25 07:22:46 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  [1m[36mEndUser Load (0.3ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/homes/top.html.erb:29
+  Rendered homes/top.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 51ms (Views: 49.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/addresses" for 10.0.2.2 at 2020-02-25 07:22:48 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AddressesController#index as HTML
+  [1m[36mEndUser Load (0.9ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:6
+  Rendering addresses/index.html.erb within layouts/application
+  [1m[36mAddress Load (0.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/views/addresses/index.html.erb:28
+  Rendered addresses/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 57ms (Views: 47.9ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/addresses" for 10.0.2.2 at 2020-02-25 07:24:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by AddressesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sKDdE6VZR72jI2DXzPWf8hGB18MgeV2dq5RxKdfra4lFhhCwlBOA7knsxiyT4pz1ghUteZHK6CVz0srfiATtzw==", "address"=>{"postal_code"=>"1700013", "ship_to"=>"東京都豊島区南池袋１丁目２８−２", "consignee"=>"ニコニコ本社"}, "commit"=>"登録する"}
+  [1m[36mEndUser Load (0.3ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/addresses_controller.rb:15
+  [1m[36mEndUser Load (0.5ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:15
+  [1m[36mAddress Create (1.7ms)[0m  [1m[32mINSERT INTO "addresses" ("end_user_id", "postal_code", "ship_to", "consignee", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["end_user_id", 1], ["postal_code", "1700013"], ["ship_to", "東京都豊島区南池袋１丁目２８−２"], ["consignee", "ニコニコ本社"], ["created_at", "2020-02-25 07:24:35.429238"], ["updated_at", "2020-02-25 07:24:35.429238"]]
+  ↳ app/controllers/addresses_controller.rb:15
+  [1m[35m (3.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/addresses_controller.rb:15
+Redirected to http://localhost:3000/addresses
+Completed 302 Found in 39ms (ActiveRecord: 8.2ms)
+
+
+Started GET "/addresses" for 10.0.2.2 at 2020-02-25 07:24:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AddressesController#index as HTML
+  [1m[36mEndUser Load (0.5ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:6
+  Rendering addresses/index.html.erb within layouts/application
+  [1m[36mAddress Load (0.5ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/views/addresses/index.html.erb:28
+  Rendered addresses/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 419ms (Views: 406.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/addresses/3/edit" for 10.0.2.2 at 2020-02-25 07:24:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AddressesController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mAddress Load (1.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:22
+  Rendering addresses/edit.html.erb within layouts/application
+  Rendered addresses/edit.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 65ms (Views: 55.4ms | ActiveRecord: 1.1ms)
+
+
+Started PATCH "/addresses/3" for 10.0.2.2 at 2020-02-25 07:24:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AddressesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tJNJH5Guj908PQ8oQ2q6pSXVnfiZYoDhyFJMOvunFP8yENO4btFEdbhx1D8T9kcngpqEP4uxSyvTTnQrYeBdNw==", "address"=>{"postal_code"=>"1700013", "ship_to"=>"東京都豊島区南池袋１丁目２８−２", "consignee"=>"ニコニコ本社"}, "commit"=>"編集する", "id"=>"3"}
+  [1m[36mAddress Load (0.8ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/addresses_controller.rb:29
+  [1m[36mEndUser Load (0.4ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:29
+  [1m[36mAddress Update (1.7ms)[0m  [1m[33mUPDATE "addresses" SET "postal_code" = ?, "ship_to" = ?, "consignee" = ?, "updated_at" = ? WHERE "addresses"."id" = ?[0m  [["postal_code", "1700013"], ["ship_to", "東京都豊島区南池袋１丁目２８−２"], ["consignee", "ニコニコ本社"], ["updated_at", "2020-02-25 07:24:59.559960"], ["id", 3]]
+  ↳ app/controllers/addresses_controller.rb:29
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/addresses_controller.rb:29
+Redirected to http://localhost:3000/addresses
+Completed 302 Found in 13ms (ActiveRecord: 4.4ms)
+
+
+Started GET "/addresses" for 10.0.2.2 at 2020-02-25 07:24:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AddressesController#index as HTML
+  [1m[36mEndUser Load (0.6ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:6
+  Rendering addresses/index.html.erb within layouts/application
+  [1m[36mAddress Load (0.6ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/views/addresses/index.html.erb:28
+  Rendered addresses/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 57ms (Views: 51.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/addresses/4/edit" for 10.0.2.2 at 2020-02-25 07:25:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AddressesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mAddress Load (0.6ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:22
+  Rendering addresses/edit.html.erb within layouts/application
+  Rendered addresses/edit.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 44ms (Views: 37.2ms | ActiveRecord: 0.6ms)
+
+
+Started PATCH "/addresses/4" for 10.0.2.2 at 2020-02-25 07:25:41 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AddressesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Io4pwMd9QTiElT4Gej9OQRYrmKUHi1Ps7a96QjxUItmpyjeYOJgjoYtSrh/UCPi0/jHFq2i0oogmpwH0XxNSMw==", "address"=>{"postal_code"=>"1020072", "ship_to"=>"東京都千代田区飯田橋２丁目７−３ 竹書房ビル", "consignee"=>"竹書房"}, "commit"=>"編集する", "id"=>"4"}
+  [1m[36mAddress Load (1.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:27
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/addresses_controller.rb:29
+  [1m[36mEndUser Load (0.6ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:29
+  [1m[36mAddress Update (1.5ms)[0m  [1m[33mUPDATE "addresses" SET "postal_code" = ?, "ship_to" = ?, "consignee" = ?, "updated_at" = ? WHERE "addresses"."id" = ?[0m  [["postal_code", "1020072"], ["ship_to", "東京都千代田区飯田橋２丁目７−３ 竹書房ビル"], ["consignee", "竹書房"], ["updated_at", "2020-02-25 07:25:42.001328"], ["id", 4]]
+  ↳ app/controllers/addresses_controller.rb:29
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/addresses_controller.rb:29
+Redirected to http://localhost:3000/addresses
+Completed 302 Found in 14ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/addresses" for 10.0.2.2 at 2020-02-25 07:25:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AddressesController#index as HTML
+  [1m[36mEndUser Load (0.5ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:6
+  Rendering addresses/index.html.erb within layouts/application
+  [1m[36mAddress Load (0.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/views/addresses/index.html.erb:28
+  Rendered addresses/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 47ms (Views: 41.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/addresses/5/edit" for 10.0.2.2 at 2020-02-25 07:26:07 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AddressesController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAddress Load (0.8ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:22
+  Rendering addresses/edit.html.erb within layouts/application
+  Rendered addresses/edit.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 65ms (Views: 57.4ms | ActiveRecord: 0.8ms)
+
+
+Started PATCH "/addresses/5" for 10.0.2.2 at 2020-02-25 07:26:24 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AddressesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2S6GybTsDNeTRJ83czDzJaiaSS91Zs5l8LENwMGQH0nkHi4rH+r3XrIw7ADU8Ub5H78gH/2QKlS13j+Gwl1WcQ==", "address"=>{"postal_code"=>"1120004 ", "ship_to"=>"東京都文京区後楽１丁目３−６１", "consignee"=>"toukyoudo-mu "}, "commit"=>"編集する", "id"=>"5"}
+  [1m[36mAddress Load (1.1ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/addresses_controller.rb:29
+  [1m[36mEndUser Load (0.6ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:29
+  [1m[36mAddress Update (1.6ms)[0m  [1m[33mUPDATE "addresses" SET "postal_code" = ?, "ship_to" = ?, "consignee" = ?, "updated_at" = ? WHERE "addresses"."id" = ?[0m  [["postal_code", "1120004 "], ["ship_to", "東京都文京区後楽１丁目３−６１"], ["consignee", "toukyoudo-mu "], ["updated_at", "2020-02-25 07:26:24.812200"], ["id", 5]]
+  ↳ app/controllers/addresses_controller.rb:29
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/addresses_controller.rb:29
+Redirected to http://localhost:3000/addresses
+Completed 302 Found in 14ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/addresses" for 10.0.2.2 at 2020-02-25 07:26:24 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AddressesController#index as HTML
+  [1m[36mEndUser Load (0.4ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:6
+  Rendering addresses/index.html.erb within layouts/application
+  [1m[36mAddress Load (0.5ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/views/addresses/index.html.erb:28
+  Rendered addresses/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 51ms (Views: 44.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/addresses/5/edit" for 10.0.2.2 at 2020-02-25 07:26:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AddressesController#edit as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mAddress Load (0.7ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:22
+  Rendering addresses/edit.html.erb within layouts/application
+  Rendered addresses/edit.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 48ms (Views: 41.9ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/addresses/5" for 10.0.2.2 at 2020-02-25 07:26:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AddressesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"O2x7X952pCdrvl3EkuxhTOMoN6SpLhXPyyeRZ+ZEKTwGXNO9dXBfrkrKLvM1LdSQVA1elCHY8f6OSKMh5YlgBA==", "address"=>{"postal_code"=>"1120004 ", "ship_to"=>"東京都文京区後楽１丁目３−６１", "consignee"=>"東京ドーム"}, "commit"=>"編集する", "id"=>"5"}
+  [1m[36mAddress Load (1.8ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:27
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/addresses_controller.rb:29
+  [1m[36mEndUser Load (0.4ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:29
+  [1m[36mAddress Update (1.1ms)[0m  [1m[33mUPDATE "addresses" SET "consignee" = ?, "updated_at" = ? WHERE "addresses"."id" = ?[0m  [["consignee", "東京ドーム"], ["updated_at", "2020-02-25 07:26:33.645636"], ["id", 5]]
+  ↳ app/controllers/addresses_controller.rb:29
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/addresses_controller.rb:29
+Redirected to http://localhost:3000/addresses
+Completed 302 Found in 16ms (ActiveRecord: 5.2ms)
+
+
+Started GET "/addresses" for 10.0.2.2 at 2020-02-25 07:26:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AddressesController#index as HTML
+  [1m[36mEndUser Load (0.4ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:6
+  Rendering addresses/index.html.erb within layouts/application
+  [1m[36mAddress Load (0.4ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/views/addresses/index.html.erb:28
+  Rendered addresses/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 61ms (Views: 54.5ms | ActiveRecord: 0.7ms)
+
+
+Started DELETE "/addresses/6" for 10.0.2.2 at 2020-02-25 07:26:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AddressesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ODykzGKa5KB1SNnNvfq+SMavouA9P8m4wYLhGU7JToycaeDiF6RbCGRkO24rhk+bhZ9yRw8ud7nUuo5h5TNH+g==", "id"=>"6"}
+  [1m[36mAddress Load (0.6ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:36
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/addresses_controller.rb:38
+  [1m[36mAddress Destroy (1.5ms)[0m  [1m[31mDELETE FROM "addresses" WHERE "addresses"."id" = ?[0m  [["id", 6]]
+  ↳ app/controllers/addresses_controller.rb:38
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/addresses_controller.rb:38
+Redirected to http://localhost:3000/addresses
+Completed 302 Found in 9ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/addresses" for 10.0.2.2 at 2020-02-25 07:26:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AddressesController#index as HTML
+  [1m[36mEndUser Load (0.4ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:6
+  Rendering addresses/index.html.erb within layouts/application
+  [1m[36mAddress Load (0.6ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/views/addresses/index.html.erb:28
+  Rendered addresses/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 56ms (Views: 51.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-02-25 07:26:44 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  [1m[36mEndUser Load (0.3ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/homes/top.html.erb:29
+  Rendered homes/top.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 52ms (Views: 48.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cart_items" for 10.0.2.2 at 2020-02-25 07:26:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartItemsController#index as HTML
+  [1m[36mEndUser Load (0.6ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:15
+  Rendering cart_items/index.html.erb within layouts/application
+  [1m[36mCartItem Load (0.2ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/views/cart_items/index.html.erb:14
+  Rendered cart_items/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 60ms (Views: 50.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/orders" for 10.0.2.2 at 2020-02-25 07:26:48 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#index as HTML
+  [1m[36mEndUser Load (0.8ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:47
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/views/orders/index.html.erb:11
+  [1m[36mOrderDetail Load (0.2ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_id" = ?[0m  [["order_id", 1]]
+  ↳ app/views/orders/index.html.erb:23
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mOrderDetail Load (0.5ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_id" = ?[0m  [["order_id", 2]]
+  ↳ app/views/orders/index.html.erb:23
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Item Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  Rendered orders/index.html.erb within layouts/application (47.5ms)
+Completed 200 OK in 99ms (Views: 79.0ms | ActiveRecord: 6.9ms)
+
+
+Started GET "/addresses" for 10.0.2.2 at 2020-02-25 07:26:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by AddressesController#index as HTML
+  [1m[36mEndUser Load (0.8ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/addresses_controller.rb:6
+  Rendering addresses/index.html.erb within layouts/application
+  [1m[36mAddress Load (0.3ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/views/addresses/index.html.erb:28
+  Rendered addresses/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 52ms (Views: 43.5ms | ActiveRecord: 1.1ms)
+
+
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEndUser Load (0.3ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCartItem Create (1.9ms)[0m  [1m[32mINSERT INTO "cart_items" ("end_user_id", "item_id", "amount", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["end_user_id", 1], ["item_id", 1], ["amount", 3], ["created_at", "2020-02-25 07:27:14.204812"], ["updated_at", "2020-02-25 07:27:14.204812"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEndUser Load (0.6ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCartItem Create (1.0ms)[0m  [1m[32mINSERT INTO "cart_items" ("end_user_id", "item_id", "amount", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["end_user_id", 1], ["item_id", 2], ["amount", 17], ["created_at", "2020-02-25 07:27:14.214836"], ["updated_at", "2020-02-25 07:27:14.214836"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEndUser Load (0.3ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCartItem Create (0.6ms)[0m  [1m[32mINSERT INTO "cart_items" ("end_user_id", "item_id", "amount", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["end_user_id", 1], ["item_id", 3], ["amount", 13], ["created_at", "2020-02-25 07:27:14.220296"], ["updated_at", "2020-02-25 07:27:14.220296"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEndUser Load (0.2ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCartItem Create (0.7ms)[0m  [1m[32mINSERT INTO "cart_items" ("end_user_id", "item_id", "amount", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["end_user_id", 1], ["item_id", 4], ["amount", 5], ["created_at", "2020-02-25 07:27:14.226051"], ["updated_at", "2020-02-25 07:27:14.226051"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEndUser Load (0.4ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCartItem Create (0.9ms)[0m  [1m[32mINSERT INTO "cart_items" ("end_user_id", "item_id", "amount", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["end_user_id", 1], ["item_id", 5], ["amount", 19], ["created_at", "2020-02-25 07:27:14.232833"], ["updated_at", "2020-02-25 07:27:14.232833"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEndUser Load (0.5ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCartItem Create (1.4ms)[0m  [1m[32mINSERT INTO "cart_items" ("end_user_id", "item_id", "amount", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["end_user_id", 1], ["item_id", 6], ["amount", 7], ["created_at", "2020-02-25 07:27:14.240511"], ["updated_at", "2020-02-25 07:27:14.240511"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 10.0.2.2 at 2020-02-25 07:27:27 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  [1m[36mEndUser Load (0.3ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/homes/top.html.erb:29
+  Rendered homes/top.html.erb within layouts/application (14.1ms)
+Completed 200 OK in 362ms (Views: 354.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/cart_items" for 10.0.2.2 at 2020-02-25 07:27:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartItemsController#index as HTML
+  [1m[36mEndUser Load (0.7ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:15
+  Rendering cart_items/index.html.erb within layouts/application
+  [1m[36mCartItem Load (0.7ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/views/cart_items/index.html.erb:14
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  Rendered cart_items/index.html.erb within layouts/application (35.2ms)
+Completed 200 OK in 91ms (Views: 68.5ms | ActiveRecord: 5.8ms)
+
+
+Started PATCH "/cart_items/30" for 10.0.2.2 at 2020-02-25 07:27:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartItemsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Vs6+XFzseiajsKXDOnu0Dbq00mc/DtioJmBT9OELb9oheN6y1Efw88KkClSr+OL5TGcxXFwD5MpMO46xCiRPpg==", "cart_item"=>{"amount"=>"10"}, "commit"=>"変更", "id"=>"30"}
+  [1m[36mCartItem Load (0.5ms)[0m  [1m[34mSELECT  "cart_items".* FROM "cart_items" WHERE "cart_items"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cart_items_controller.rb:23
+  [1m[36mEndUser Load (0.3ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:23
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:23
+  [1m[36mCartItem Update (0.9ms)[0m  [1m[33mUPDATE "cart_items" SET "amount" = ?, "updated_at" = ? WHERE "cart_items"."id" = ?[0m  [["amount", 10], ["updated_at", "2020-02-25 07:27:37.372307"], ["id", 30]]
+  ↳ app/controllers/cart_items_controller.rb:23
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cart_items_controller.rb:23
+Redirected to http://localhost:3000/cart_items
+Completed 302 Found in 14ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/cart_items" for 10.0.2.2 at 2020-02-25 07:27:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartItemsController#index as HTML
+  [1m[36mEndUser Load (0.4ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:15
+  Rendering cart_items/index.html.erb within layouts/application
+  [1m[36mCartItem Load (0.6ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/views/cart_items/index.html.erb:14
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  Rendered cart_items/index.html.erb within layouts/application (24.4ms)
+Completed 200 OK in 109ms (Views: 100.3ms | ActiveRecord: 4.5ms)
+
+
+Started PATCH "/cart_items/31" for 10.0.2.2 at 2020-02-25 07:27:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartItemsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"1iYUeZ5KEDNAJzA7S8t+R6rjV6LKgW3qdNao0ldk9YNyc1BX63Svm1EL0pjdt4+U6dOHBfiQ0+th7seq/J789Q==", "cart_item"=>{"amount"=>"10"}, "commit"=>"変更", "id"=>"31"}
+  [1m[36mCartItem Load (1.0ms)[0m  [1m[34mSELECT  "cart_items".* FROM "cart_items" WHERE "cart_items"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cart_items_controller.rb:23
+  [1m[36mEndUser Load (0.6ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:23
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:23
+  [1m[36mCartItem Update (1.0ms)[0m  [1m[33mUPDATE "cart_items" SET "amount" = ?, "updated_at" = ? WHERE "cart_items"."id" = ?[0m  [["amount", 10], ["updated_at", "2020-02-25 07:27:40.070267"], ["id", 31]]
+  ↳ app/controllers/cart_items_controller.rb:23
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cart_items_controller.rb:23
+Redirected to http://localhost:3000/cart_items
+Completed 302 Found in 14ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/cart_items" for 10.0.2.2 at 2020-02-25 07:27:40 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartItemsController#index as HTML
+  [1m[36mEndUser Load (0.4ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:15
+  Rendering cart_items/index.html.erb within layouts/application
+  [1m[36mCartItem Load (0.4ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/views/cart_items/index.html.erb:14
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  Rendered cart_items/index.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 89ms (Views: 81.1ms | ActiveRecord: 2.9ms)
+
+
+Started PATCH "/cart_items/32" for 10.0.2.2 at 2020-02-25 07:27:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartItemsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cHWgYCAJHAFZKKXYGHhiVoioNCHdnIhOY0sE+SwvOwLUIOROVTejqUgER3uOBJOFy5jkhu+NNk92c2uBh9UydA==", "cart_item"=>{"amount"=>"5"}, "commit"=>"変更", "id"=>"32"}
+  [1m[36mCartItem Load (0.9ms)[0m  [1m[34mSELECT  "cart_items".* FROM "cart_items" WHERE "cart_items"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cart_items_controller.rb:23
+  [1m[36mEndUser Load (0.4ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:23
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:23
+  [1m[36mCartItem Update (1.1ms)[0m  [1m[33mUPDATE "cart_items" SET "amount" = ?, "updated_at" = ? WHERE "cart_items"."id" = ?[0m  [["amount", 5], ["updated_at", "2020-02-25 07:27:42.671651"], ["id", 32]]
+  ↳ app/controllers/cart_items_controller.rb:23
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cart_items_controller.rb:23
+Redirected to http://localhost:3000/cart_items
+Completed 302 Found in 14ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/cart_items" for 10.0.2.2 at 2020-02-25 07:27:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartItemsController#index as HTML
+  [1m[36mEndUser Load (0.4ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:15
+  Rendering cart_items/index.html.erb within layouts/application
+  [1m[36mCartItem Load (0.7ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/views/cart_items/index.html.erb:14
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  Rendered cart_items/index.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 94ms (Views: 84.8ms | ActiveRecord: 3.5ms)
+
+
+Started PATCH "/cart_items/34" for 10.0.2.2 at 2020-02-25 07:27:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartItemsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"lUJ4K7bYf9T94Y4mC7UVj/rM24qYe+BHS16O3MZDQcIxFzwFw+bAfOzNbIWdyeRcufwLLapqXkZeZuGkbblItA==", "cart_item"=>{"amount"=>"1"}, "commit"=>"変更", "id"=>"34"}
+  [1m[36mCartItem Load (0.7ms)[0m  [1m[34mSELECT  "cart_items".* FROM "cart_items" WHERE "cart_items"."id" = ? LIMIT ?[0m  [["id", 34], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cart_items_controller.rb:23
+  [1m[36mEndUser Load (0.3ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:23
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:23
+  [1m[36mCartItem Update (1.8ms)[0m  [1m[33mUPDATE "cart_items" SET "amount" = ?, "updated_at" = ? WHERE "cart_items"."id" = ?[0m  [["amount", 1], ["updated_at", "2020-02-25 07:27:45.160643"], ["id", 34]]
+  ↳ app/controllers/cart_items_controller.rb:23
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cart_items_controller.rb:23
+Redirected to http://localhost:3000/cart_items
+Completed 302 Found in 22ms (ActiveRecord: 5.1ms)
+
+
+Started GET "/cart_items" for 10.0.2.2 at 2020-02-25 07:27:45 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartItemsController#index as HTML
+  [1m[36mEndUser Load (0.8ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:15
+  Rendering cart_items/index.html.erb within layouts/application
+  [1m[36mCartItem Load (0.6ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/views/cart_items/index.html.erb:14
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (1.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  Rendered cart_items/index.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 106ms (Views: 92.5ms | ActiveRecord: 4.5ms)
+
+
+Started PATCH "/cart_items/35" for 10.0.2.2 at 2020-02-25 07:27:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartItemsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tH+J5JIfuBAMMmUH1gXMD3CtjvxIVqzhS0vVUf62qE4QKs3K5yEHuB0eh6RAeT3cM51eW3pHEuBec7opVUyhOA==", "cart_item"=>{"amount"=>"10"}, "commit"=>"変更", "id"=>"35"}
+  [1m[36mCartItem Load (0.4ms)[0m  [1m[34mSELECT  "cart_items".* FROM "cart_items" WHERE "cart_items"."id" = ? LIMIT ?[0m  [["id", 35], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:21
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/cart_items_controller.rb:23
+  [1m[36mEndUser Load (0.4ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:23
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:23
+  [1m[36mCartItem Update (1.0ms)[0m  [1m[33mUPDATE "cart_items" SET "amount" = ?, "updated_at" = ? WHERE "cart_items"."id" = ?[0m  [["amount", 10], ["updated_at", "2020-02-25 07:27:47.662178"], ["id", 35]]
+  ↳ app/controllers/cart_items_controller.rb:23
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/cart_items_controller.rb:23
+Redirected to http://localhost:3000/cart_items
+Completed 302 Found in 16ms (ActiveRecord: 4.1ms)
+
+
+Started GET "/cart_items" for 10.0.2.2 at 2020-02-25 07:27:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartItemsController#index as HTML
+  [1m[36mEndUser Load (0.4ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:15
+  Rendering cart_items/index.html.erb within layouts/application
+  [1m[36mCartItem Load (0.3ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/views/cart_items/index.html.erb:14
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/cart_items/index.html.erb:20
+  Rendered cart_items/index.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 127ms (Views: 115.5ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/orders/new" for 10.0.2.2 at 2020-02-25 07:28:04 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#new as HTML
+  [1m[36mEndUser Load (0.4ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:7
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "cart_items" WHERE "cart_items"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/controllers/orders_controller.rb:7
+  Rendering orders/new.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "addresses" WHERE "addresses"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/helpers/application_helper.rb:51
+  [1m[36mAddress Load (0.4ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/helpers/application_helper.rb:58
+  Rendered orders/new.html.erb within layouts/application (59.4ms)
+Completed 200 OK in 114ms (Views: 95.0ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/orders/confirm?utf8=%E2%9C%93&order%5Bpayment%5D=%E3%82%AF%E3%83%AC%E3%82%B8%E3%83%83%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89&order%5Btotal_price%5D=5&order%5Bpostage%5D=-3&order%5Bpostal_code%5D=9763675&order%5Bship_to%5D=%E7%A6%8F%E5%B2%A1%E7%9C%8C%E7%A6%8F%E5%B2%A1%E5%B8%82%E4%B8%AD%E5%A4%AE%E5%8C%BA%E5%9C%B0%E8%A1%8C%E6%B5%9C2%E4%B8%81%E7%9B%AE2%E7%95%AA2%E5%8F%B7&order%5Bconsignee%5D=%E7%A6%8F%E5%B2%A1%E3%83%89%E3%83%BC%E3%83%A0&commit=%E7%A2%BA%E8%AA%8D%E7%94%BB%E9%9D%A2%E3%81%B8%E9%80%B2%E3%82%80" for 10.0.2.2 at 2020-02-25 07:29:34 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#show as HTML
+  Parameters: {"utf8"=>"✓", "order"=>{"payment"=>"クレジットカード", "total_price"=>"5", "postage"=>"-3", "postal_code"=>"9763675", "ship_to"=>"福岡県福岡市中央区地行浜2丁目2番2号", "consignee"=>"福岡ドーム"}, "commit"=>"確認画面へ進む", "id"=>"confirm"}
+  [1m[36mEndUser Load (0.5ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:77
+  [1m[36mCartItem Load (0.4ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/helpers/orders_helper.rb:6
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/orders_helper.rb:14
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/orders_helper.rb:14
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/orders_helper.rb:14
+  [1m[36mItem Load (0.8ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/orders_helper.rb:14
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/orders_helper.rb:14
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/orders_helper.rb:14
+  Rendering orders/confirm.html.erb within layouts/application
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/confirm.html.erb:16
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/confirm.html.erb:16
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/confirm.html.erb:16
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/orders/confirm.html.erb:16
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/orders/confirm.html.erb:16
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/orders/confirm.html.erb:16
+  Rendered orders/confirm.html.erb within layouts/application (9.4ms)
+Completed 200 OK in 94ms (Views: 55.2ms | ActiveRecord: 5.1ms)
+
+
+Started POST "/orders" for 10.0.2.2 at 2020-02-25 07:30:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"puK+ps2HRp/ccLjhHd6lE1qmieKanoPJJN3BT/WV5b4Ct/qIuLn5N81cWkKLolTAGZZZRaiPPcgx5a43Xm/syA==", "order"=>{"postal_code"=>"9763675", "ship_to"=>"福岡県福岡市中央区地行浜2丁目2番2号", "consignee"=>"福岡ドーム", "payment"=>"クレジットカード", "postage"=>"800", "total_price"=>"18159"}, "commit"=>"購入を確定する"}
+  [1m[36mEndUser Load (1.0ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:28
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:30
+  [1m[36mEndUser Load (0.4ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:30
+  [1m[36mOrder Create (1.2ms)[0m  [1m[32mINSERT INTO "orders" ("end_user_id", "postal_code", "ship_to", "consignee", "payment", "postage", "total_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["end_user_id", 1], ["postal_code", "9763675"], ["ship_to", "福岡県福岡市中央区地行浜2丁目2番2号"], ["consignee", "福岡ドーム"], ["payment", 0], ["postage", 800], ["total_price", 18159], ["created_at", "2020-02-25 07:30:25.515491"], ["updated_at", "2020-02-25 07:30:25.515491"]]
+  ↳ app/controllers/orders_controller.rb:30
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:30
+  [1m[36mCartItem Load (0.3ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/helpers/orders_helper.rb:6
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/orders_helper.rb:14
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/orders_helper.rb:14
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/orders_helper.rb:14
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/orders_helper.rb:14
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/orders_helper.rb:14
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/orders_helper.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mOrderDetail Create (0.8ms)[0m  [1m[32mINSERT INTO "order_details" ("order_id", "item_id", "amount", "purchased_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["order_id", 3], ["item_id", 1], ["amount", 10], ["purchased_price", 5500], ["created_at", "2020-02-25 07:30:25.541475"], ["updated_at", "2020-02-25 07:30:25.541475"]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mOrderDetail Create (0.8ms)[0m  [1m[32mINSERT INTO "order_details" ("order_id", "item_id", "amount", "purchased_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["order_id", 3], ["item_id", 2], ["amount", 10], ["purchased_price", 6160], ["created_at", "2020-02-25 07:30:25.548837"], ["updated_at", "2020-02-25 07:30:25.548837"]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mOrderDetail Create (0.7ms)[0m  [1m[32mINSERT INTO "order_details" ("order_id", "item_id", "amount", "purchased_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["order_id", 3], ["item_id", 3], ["amount", 5], ["purchased_price", 2640], ["created_at", "2020-02-25 07:30:25.558712"], ["updated_at", "2020-02-25 07:30:25.558712"]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mOrderDetail Create (1.7ms)[0m  [1m[32mINSERT INTO "order_details" ("order_id", "item_id", "amount", "purchased_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["order_id", 3], ["item_id", 4], ["amount", 5], ["purchased_price", 1510], ["created_at", "2020-02-25 07:30:25.577407"], ["updated_at", "2020-02-25 07:30:25.577407"]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[35m (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mOrder Load (0.9ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mOrderDetail Create (1.9ms)[0m  [1m[32mINSERT INTO "order_details" ("order_id", "item_id", "amount", "purchased_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["order_id", 3], ["item_id", 5], ["amount", 1], ["purchased_price", 149], ["created_at", "2020-02-25 07:30:25.591120"], ["updated_at", "2020-02-25 07:30:25.591120"]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mOrderDetail Create (1.3ms)[0m  [1m[32mINSERT INTO "order_details" ("order_id", "item_id", "amount", "purchased_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["order_id", 3], ["item_id", 6], ["amount", 10], ["purchased_price", 1400], ["created_at", "2020-02-25 07:30:25.603354"], ["updated_at", "2020-02-25 07:30:25.603354"]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:39
+  [1m[36mCartItem Destroy (1.0ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = ?[0m  [["id", 30]]
+  ↳ app/controllers/orders_controller.rb:39
+  [1m[36mCartItem Destroy (0.1ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = ?[0m  [["id", 31]]
+  ↳ app/controllers/orders_controller.rb:39
+  [1m[36mCartItem Destroy (0.1ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = ?[0m  [["id", 32]]
+  ↳ app/controllers/orders_controller.rb:39
+  [1m[36mCartItem Destroy (0.0ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = ?[0m  [["id", 33]]
+  ↳ app/controllers/orders_controller.rb:39
+  [1m[36mCartItem Destroy (0.0ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = ?[0m  [["id", 34]]
+  ↳ app/controllers/orders_controller.rb:39
+  [1m[36mCartItem Destroy (0.0ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = ?[0m  [["id", 35]]
+  ↳ app/controllers/orders_controller.rb:39
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:39
+Redirected to http://localhost:3000/orders/thanks
+Completed 302 Found in 116ms (ActiveRecord: 32.0ms)
+
+
+Started GET "/orders/thanks" for 10.0.2.2 at 2020-02-25 07:30:25 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"thanks"}
+  Rendering orders/thanks.html.erb within layouts/application
+  Rendered orders/thanks.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 46ms (Views: 45.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-02-25 07:30:27 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  [1m[36mEndUser Load (0.5ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/homes/top.html.erb:29
+  Rendered homes/top.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 47ms (Views: 44.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/orders" for 10.0.2.2 at 2020-02-25 07:30:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#index as HTML
+  [1m[36mEndUser Load (1.2ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:47
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.9ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/views/orders/index.html.erb:11
+  [1m[36mOrderDetail Load (0.3ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_id" = ?[0m  [["order_id", 1]]
+  ↳ app/views/orders/index.html.erb:23
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mOrderDetail Load (0.2ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_id" = ?[0m  [["order_id", 2]]
+  ↳ app/views/orders/index.html.erb:23
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mOrderDetail Load (0.2ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_id" = ?[0m  [["order_id", 3]]
+  ↳ app/views/orders/index.html.erb:23
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  Rendered orders/index.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 76ms (Views: 62.6ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/orders/3" for 10.0.2.2 at 2020-02-25 07:30:35 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mOrder Load (1.0ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:64
+  Rendering orders/show.html.erb within layouts/application
+  [1m[36mOrderDetail Load (1.3ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_id" = ?[0m  [["order_id", 3]]
+  ↳ app/views/orders/show.html.erb:51
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:54
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:54
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:54
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:54
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:54
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:54
+  Rendered orders/show.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 88ms (Views: 77.6ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-02-25 07:40:27 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  [1m[36mEndUser Load (0.4ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/homes/top.html.erb:29
+  Rendered homes/top.html.erb within layouts/application (15.0ms)
+Completed 200 OK in 332ms (Views: 324.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/end_users" for 10.0.2.2 at 2020-02-25 07:40:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EndUsersController#show as HTML
+  Rendering end_users/show.html.erb within layouts/application
+  [1m[36mEndUser Load (0.3ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/end_users/show.html.erb:12
+  Rendered end_users/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 57ms (Views: 52.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/end_users/edit" for 10.0.2.2 at 2020-02-25 07:40:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by EndUsersController#edit as HTML
+  Rendering end_users/edit.html.erb within layouts/application
+  [1m[36mEndUser Load (0.3ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/end_users/edit.html.erb:3
+  Rendered end_users/edit.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 64ms (Views: 56.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-02-25 07:40:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  [1m[36mEndUser Load (0.3ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/homes/top.html.erb:29
+  Rendered homes/top.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 72ms (Views: 69.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cart_items" for 10.0.2.2 at 2020-02-25 07:40:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartItemsController#index as HTML
+  [1m[36mEndUser Load (1.2ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:16
+  [1m[36mCartItem Load (0.2ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/controllers/cart_items_controller.rb:18
+  Rendering cart_items/index.html.erb within layouts/application
+  Rendered cart_items/index.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 71ms (Views: 51.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-02-25 07:41:03 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  [1m[36mEndUser Load (0.2ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/homes/top.html.erb:29
+  Rendered homes/top.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 52ms (Views: 50.9ms | ActiveRecord: 0.2ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEndUser Load (0.3ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mCartItem Create (2.7ms)[0m  [1m[32mINSERT INTO "cart_items" ("end_user_id", "item_id", "amount", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["end_user_id", 1], ["item_id", 1], ["amount", 2], ["created_at", "2020-02-25 07:42:11.573489"], ["updated_at", "2020-02-25 07:42:11.573489"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEndUser Load (0.3ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mCartItem Create (0.9ms)[0m  [1m[32mINSERT INTO "cart_items" ("end_user_id", "item_id", "amount", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["end_user_id", 1], ["item_id", 2], ["amount", 3], ["created_at", "2020-02-25 07:42:11.584126"], ["updated_at", "2020-02-25 07:42:11.584126"]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEndUser Load (0.4ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCartItem Create (1.2ms)[0m  [1m[32mINSERT INTO "cart_items" ("end_user_id", "item_id", "amount", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["end_user_id", 1], ["item_id", 3], ["amount", 5], ["created_at", "2020-02-25 07:42:11.593984"], ["updated_at", "2020-02-25 07:42:11.593984"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEndUser Load (0.4ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCartItem Create (1.2ms)[0m  [1m[32mINSERT INTO "cart_items" ("end_user_id", "item_id", "amount", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["end_user_id", 1], ["item_id", 4], ["amount", 7], ["created_at", "2020-02-25 07:42:11.602414"], ["updated_at", "2020-02-25 07:42:11.602414"]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEndUser Load (0.3ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCartItem Create (2.1ms)[0m  [1m[32mINSERT INTO "cart_items" ("end_user_id", "item_id", "amount", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["end_user_id", 1], ["item_id", 5], ["amount", 11], ["created_at", "2020-02-25 07:42:11.611372"], ["updated_at", "2020-02-25 07:42:11.611372"]]
+  [1m[35m (4.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mEndUser Load (1.7ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mCartItem Create (2.3ms)[0m  [1m[32mINSERT INTO "cart_items" ("end_user_id", "item_id", "amount", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["end_user_id", 1], ["item_id", 6], ["amount", 13], ["created_at", "2020-02-25 07:42:12.895047"], ["updated_at", "2020-02-25 07:42:12.895047"]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 10.0.2.2 at 2020-02-25 07:42:20 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  [1m[36mEndUser Load (0.2ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/homes/top.html.erb:29
+  Rendered homes/top.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 327ms (Views: 321.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/cart_items" for 10.0.2.2 at 2020-02-25 07:42:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartItemsController#index as HTML
+  [1m[36mEndUser Load (0.8ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:16
+  [1m[36mCartItem Load (0.7ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/controllers/cart_items_controller.rb:18
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:18
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:18
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:18
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:18
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:18
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:18
+  Rendering cart_items/index.html.erb within layouts/application
+  Rendered cart_items/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 90ms (Views: 41.9ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/orders/new" for 10.0.2.2 at 2020-02-25 07:42:51 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#new as HTML
+  [1m[36mEndUser Load (0.4ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:7
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "cart_items" WHERE "cart_items"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/controllers/orders_controller.rb:7
+  Rendering orders/new.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "addresses" WHERE "addresses"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/helpers/application_helper.rb:51
+  [1m[36mAddress Load (0.5ms)[0m  [1m[34mSELECT "addresses".* FROM "addresses" WHERE "addresses"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/helpers/application_helper.rb:58
+  Rendered orders/new.html.erb within layouts/application (77.9ms)
+Completed 200 OK in 144ms (Views: 123.5ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/orders/confirm?utf8=%E2%9C%93&order%5Bpayment%5D=%E3%82%AF%E3%83%AC%E3%82%B8%E3%83%83%E3%83%88%E3%82%AB%E3%83%BC%E3%83%89&order%5Bpostage%5D=-2&order%5Btotal_price%5D=9&order%5Bpostal_code%5D=&order%5Bship_to%5D=&order%5Bconsignee%5D=&commit=%E7%A2%BA%E8%AA%8D%E7%94%BB%E9%9D%A2%E3%81%B8%E9%80%B2%E3%82%80" for 10.0.2.2 at 2020-02-25 07:42:57 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#show as HTML
+  Parameters: {"utf8"=>"✓", "order"=>{"payment"=>"クレジットカード", "postage"=>"-2", "total_price"=>"9", "postal_code"=>"", "ship_to"=>"", "consignee"=>""}, "commit"=>"確認画面へ進む", "id"=>"confirm"}
+  [1m[36mAddress Load (0.6ms)[0m  [1m[34mSELECT  "addresses".* FROM "addresses" WHERE "addresses"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/helpers/orders_helper.rb:35
+  [1m[36mEndUser Load (0.6ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:77
+  [1m[36mCartItem Load (0.3ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/helpers/orders_helper.rb:6
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/orders_helper.rb:14
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/orders_helper.rb:14
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/orders_helper.rb:14
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/orders_helper.rb:14
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/orders_helper.rb:14
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/orders_helper.rb:14
+  Rendering orders/confirm.html.erb within layouts/application
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/confirm.html.erb:16
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/confirm.html.erb:16
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/confirm.html.erb:16
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/orders/confirm.html.erb:16
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/orders/confirm.html.erb:16
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/orders/confirm.html.erb:16
+  Rendered orders/confirm.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 116ms (Views: 85.3ms | ActiveRecord: 5.1ms)
+
+
+Started POST "/orders" for 10.0.2.2 at 2020-02-25 07:43:28 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DJ7DmuA+THsA8HLuj5TUGGUFN7gORUG/0FXGftStrzeoy4e0lQDz0xHckE0Z6CXLJjXnHzxU/77FbakGf1emQQ==", "order"=>{"postal_code"=>"1700013", "ship_to"=>"東京都豊島区南池袋１丁目２８−２", "consignee"=>"ニコニコ本社", "payment"=>"クレジットカード", "postage"=>"800", "total_price"=>"11961"}, "commit"=>"購入を確定する"}
+  [1m[36mEndUser Load (0.8ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:28
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:30
+  [1m[36mEndUser Load (0.4ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:30
+  [1m[36mOrder Create (2.5ms)[0m  [1m[32mINSERT INTO "orders" ("end_user_id", "postal_code", "ship_to", "consignee", "payment", "postage", "total_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["end_user_id", 1], ["postal_code", "1700013"], ["ship_to", "東京都豊島区南池袋１丁目２８−２"], ["consignee", "ニコニコ本社"], ["payment", 0], ["postage", 800], ["total_price", 11961], ["created_at", "2020-02-25 07:43:28.920639"], ["updated_at", "2020-02-25 07:43:28.920639"]]
+  ↳ app/controllers/orders_controller.rb:30
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:30
+  [1m[36mCartItem Load (0.3ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/helpers/orders_helper.rb:6
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/helpers/orders_helper.rb:14
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/helpers/orders_helper.rb:14
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/orders_helper.rb:14
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/orders_helper.rb:14
+  [1m[36mItem Load (0.5ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/helpers/orders_helper.rb:14
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/orders_helper.rb:14
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mOrderDetail Create (1.3ms)[0m  [1m[32mINSERT INTO "order_details" ("order_id", "item_id", "amount", "purchased_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["order_id", 4], ["item_id", 1], ["amount", 2], ["purchased_price", 1100], ["created_at", "2020-02-25 07:43:28.944016"], ["updated_at", "2020-02-25 07:43:28.944016"]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[35m (5.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mOrderDetail Create (1.1ms)[0m  [1m[32mINSERT INTO "order_details" ("order_id", "item_id", "amount", "purchased_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["order_id", 4], ["item_id", 2], ["amount", 3], ["purchased_price", 1848], ["created_at", "2020-02-25 07:43:28.958187"], ["updated_at", "2020-02-25 07:43:28.958187"]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mOrderDetail Create (2.1ms)[0m  [1m[32mINSERT INTO "order_details" ("order_id", "item_id", "amount", "purchased_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["order_id", 4], ["item_id", 3], ["amount", 5], ["purchased_price", 2640], ["created_at", "2020-02-25 07:43:28.970213"], ["updated_at", "2020-02-25 07:43:28.970213"]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mOrder Load (0.6ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mItem Load (0.7ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mOrderDetail Create (2.2ms)[0m  [1m[32mINSERT INTO "order_details" ("order_id", "item_id", "amount", "purchased_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["order_id", 4], ["item_id", 4], ["amount", 7], ["purchased_price", 2114], ["created_at", "2020-02-25 07:43:28.984923"], ["updated_at", "2020-02-25 07:43:28.984923"]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mOrderDetail Create (2.1ms)[0m  [1m[32mINSERT INTO "order_details" ("order_id", "item_id", "amount", "purchased_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["order_id", 4], ["item_id", 5], ["amount", 11], ["purchased_price", 1639], ["created_at", "2020-02-25 07:43:28.996688"], ["updated_at", "2020-02-25 07:43:28.996688"]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[35m (2.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[36mOrderDetail Create (1.0ms)[0m  [1m[32mINSERT INTO "order_details" ("order_id", "item_id", "amount", "purchased_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["order_id", 4], ["item_id", 6], ["amount", 13], ["purchased_price", 1820], ["created_at", "2020-02-25 07:43:29.008284"], ["updated_at", "2020-02-25 07:43:29.008284"]]
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:36
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/orders_controller.rb:39
+  [1m[36mCartItem Destroy (1.8ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = ?[0m  [["id", 36]]
+  ↳ app/controllers/orders_controller.rb:39
+  [1m[36mCartItem Destroy (0.1ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = ?[0m  [["id", 37]]
+  ↳ app/controllers/orders_controller.rb:39
+  [1m[36mCartItem Destroy (0.1ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = ?[0m  [["id", 38]]
+  ↳ app/controllers/orders_controller.rb:39
+  [1m[36mCartItem Destroy (0.1ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = ?[0m  [["id", 39]]
+  ↳ app/controllers/orders_controller.rb:39
+  [1m[36mCartItem Destroy (0.1ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = ?[0m  [["id", 40]]
+  ↳ app/controllers/orders_controller.rb:39
+  [1m[36mCartItem Destroy (0.1ms)[0m  [1m[31mDELETE FROM "cart_items" WHERE "cart_items"."id" = ?[0m  [["id", 41]]
+  ↳ app/controllers/orders_controller.rb:39
+  [1m[35m (3.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/orders_controller.rb:39
+Redirected to http://localhost:3000/orders/thanks
+Completed 302 Found in 117ms (ActiveRecord: 44.9ms)
+
+
+Started GET "/orders/thanks" for 10.0.2.2 at 2020-02-25 07:43:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"thanks"}
+  Rendering orders/thanks.html.erb within layouts/application
+  Rendered orders/thanks.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 87ms (Views: 86.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-02-25 07:43:30 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  [1m[36mEndUser Load (0.8ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/homes/top.html.erb:29
+  Rendered homes/top.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 49ms (Views: 46.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/cart_items" for 10.0.2.2 at 2020-02-25 07:43:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartItemsController#index as HTML
+  [1m[36mEndUser Load (0.8ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:16
+  [1m[36mCartItem Load (0.7ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/controllers/cart_items_controller.rb:18
+  Rendering cart_items/index.html.erb within layouts/application
+  Rendered cart_items/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 55ms (Views: 44.3ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-02-25 07:43:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  [1m[36mEndUser Load (0.4ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/homes/top.html.erb:29
+  Rendered homes/top.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 43ms (Views: 40.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/orders" for 10.0.2.2 at 2020-02-25 07:43:34 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#index as HTML
+  [1m[36mEndUser Load (0.6ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:47
+  Rendering orders/index.html.erb within layouts/application
+  [1m[36mOrder Load (0.4ms)[0m  [1m[34mSELECT "orders".* FROM "orders" WHERE "orders"."end_user_id" = ?[0m  [["end_user_id", 1]]
+  ↳ app/views/orders/index.html.erb:11
+  [1m[36mOrderDetail Load (0.4ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_id" = ?[0m  [["order_id", 1]]
+  ↳ app/views/orders/index.html.erb:23
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mOrderDetail Load (0.6ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_id" = ?[0m  [["order_id", 2]]
+  ↳ app/views/orders/index.html.erb:23
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mOrderDetail Load (0.2ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_id" = ?[0m  [["order_id", 3]]
+  ↳ app/views/orders/index.html.erb:23
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mOrderDetail Load (0.3ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_id" = ?[0m  [["order_id", 4]]
+  ↳ app/views/orders/index.html.erb:23
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  [1m[36mCACHE Item Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/orders/index.html.erb:24
+  Rendered orders/index.html.erb within layouts/application (33.4ms)
+Completed 200 OK in 88ms (Views: 76.2ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/orders/4" for 10.0.2.2 at 2020-02-25 07:43:48 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by OrdersController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mOrder Load (0.7ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/orders_controller.rb:64
+  Rendering orders/show.html.erb within layouts/application
+  [1m[36mOrderDetail Load (0.4ms)[0m  [1m[34mSELECT "order_details".* FROM "order_details" WHERE "order_details"."order_id" = ?[0m  [["order_id", 4]]
+  ↳ app/views/orders/show.html.erb:51
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:54
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:54
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:54
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:54
+  [1m[36mItem Load (0.3ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:54
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/orders/show.html.erb:54
+  Rendered orders/show.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 64ms (Views: 53.7ms | ActiveRecord: 2.2ms)
+
+

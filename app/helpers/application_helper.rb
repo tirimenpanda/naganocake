@@ -1,7 +1,7 @@
 module ApplicationHelper
   # 小計の計算
   # ( 税抜価格, 個数, true => 小計をIntegerで返す )
-  def subtotal( price=0, amount=0, formatting=false )
+  def subtotal( price=0, amount=0, formatting=true )
     # 引数に不適切な値が渡された場合の回避処理
     # まず、１個の税込価格算出（端数切り捨て）
     sn = price * 110 / 100
@@ -9,11 +9,11 @@ module ApplicationHelper
     sn *= amount
     # リターンの書式を決める
     if formatting then
-      # Integerで返す
-      sn
-    else
       # ３桁区切りで値を返す
       number_separation ( sn )
+    else
+      # Integerで返す
+      sn
     end
   end
 

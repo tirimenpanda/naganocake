@@ -17,8 +17,7 @@
     </td>
     <td>
       <!-- 単価（税込）-->
-      <!--subtotal( 税抜価格, 個数 ) => 小計（税込）を計算-->
-      <%= subtotal( order_detail.item.listed_price, 1 ) %>
+      <%= number_separation( order_detail.purchased_price / order_detail.amount ) %>
     </td>
     <td>
       <!-- 数量-->

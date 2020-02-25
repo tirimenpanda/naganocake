@@ -10,12 +10,11 @@
     <th>小計</th>
     <th></th>
   </tr>
-  <% sn = 0 %>
   <% @cart_items.each do |cart_item| %>
   <tr>
     <td>
       <!--商品イメージ-->
-      <!--%= attachment_image_tag cart_item.item, :image, format: 'jpeg', fallback: "no_image.jpg" %-->
+      ここに商品イメージ表示させる（by ふじさん）<br>
       <!--商品名-->
       <%= cart_item.item.name %>
     </td>
@@ -35,7 +34,6 @@
       <!-- 小計-->
       <!--subtotal( 税抜き価格, 個数 ) => 小計（税込）を計算-->
       <%= subtotal( cart_item.item.listed_price, cart_item.amount ) %>
-      <% sn += subtotal( cart_item.item.listed_price, cart_item.amount, true ) %>
     </td>
     <td>
       <!-- カートアイテム１項目の削除-->
@@ -50,7 +48,7 @@
 <table>
   <tr>
     <td>合計金額</td>
-    <td><%= number_separation( sn ) %></td>
+    <td><%= number_separation( @total_price ) %></td>
   </tr>
 </table>
 

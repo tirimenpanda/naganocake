@@ -1,4 +1,5 @@
 class CartItemsController < ApplicationController
+  include ApplicationHelper
   def create
     # カートに入れるアイテムの情報取得
     cart_item = CartItem.new( cart_item_params )
@@ -13,6 +14,8 @@ class CartItemsController < ApplicationController
   def index
     # ログインユーザの全カートアイテム情報を取得
     @cart_items = current_end_user.cart_items
+    # 先に商品合計額を算出
+    @total_price = @cart_items.map{ | cart_item | subtotal( cart_item.item.listed_price, cart_item.amount, false ) }.sum
   end
 
 

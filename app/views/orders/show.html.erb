@@ -53,11 +53,11 @@
     <!--商品-->
     <td><%= order_detail.item.name %></td>
     <!--単価（税込）-->
-    <td><%= number_separation( order_detail.purchased_price ) %></td>
+    <td><%= number_separation( order_detail.purchased_price / order_detail.amount ) %></td>
     <!--個数-->
     <td><%= order_detail.amount %></td>
     <!--小計-->
-    <td><%= subtotal( order_detail.purchased_price,  order_detail.amount ) %></td>
+    <td><%= number_separation( order_detail.purchased_price ) %></td>
   </tr>
   <% end %>
 </table>
