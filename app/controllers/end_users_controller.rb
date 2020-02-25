@@ -1,4 +1,5 @@
 class EndUsersController < ApplicationController
+before_action :authenticate_end_user!
 
   def edit
     # なし
@@ -13,7 +14,9 @@ class EndUsersController < ApplicationController
     if end_user.is_deleted then
       logger.debug 'ログアウト処理実行'
       # ログアウト処理
-       sign_out  end_user
+      sign_out end_user
+      redirect_to root_path
+      return
     end
     # ログインユーザ詳細画面へ遷移
     redirect_to end_users_path

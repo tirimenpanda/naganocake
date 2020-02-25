@@ -1,80 +1,72 @@
+<p>Top画面</p>
 
-<div class="container">
+<h1>デバッグページとして使用</h1>
+<div class="continer">
   <div class="row">
-      <div class="col-xs-3" style="background-color: #FFD166;">
-          <h2>ジャンル</h2>
-          <h2>ジャンル</h2>
-          <h2>ジャンル</h2>
-          <h2>ジャンル</h2>
-          <h2>ジャンル</h2>
-          <h2>ジャンル</h2>
-          <h2>ジャンル</h2>
-          <h2>ジャンル</h2>
-      </div>
-    <div class="col-xs-9">
-      <p><strong>商品一覧</strong>(全x件)</p><br />
-        <ul>
-        <div class="col-md-3">
-              <li class="item">
-                <img src="/assets/no_image.jpg" alt="">
-                <dt>商品名<%#= item.name %></dt>
-                <dt>¥0,000<%#= item.price %></dt>
-              </li>
-          </div>
-        <div class="col-md-3">
-              <li class="item">
-                <img src="/assets/no_image.jpg" alt="">
-                <dt>商品名<%#= item.name %></dt>
-                <dt>¥0,000<%#= item.price %></dt>
-              </li>
-          </div>
-        <div class="col-md-3">
-              <li class="item">
-                <img src="/assets/no_image.jpg" alt="">
-                <dt>商品名<%#= item.name %></dt>
-                <dt>¥0,000<%#= item.price %></dt>
-              </li>
-          </div>
-        <div class="col-md-3">
-              <li class="item">
-                <img src="/assets/no_image.jpg" alt="">
-                <dt>商品名<%#= item.name %></dt>
-                <dt>¥0,000<%#= item.price %></dt>
-              </li>
-          </div>
-        <div class="col-md-3">
-              <li class="item">
-                <img src="/assets/no_image.jpg" alt="">
-                <dt>商品名<%#= item.name %></dt>
-                <dt>¥0,000<%#= item.price %></dt>
-              </li>
-          </div>
-        <div class="col-md-3">
-              <li class="item">
-                <img src="/assets/no_image.jpg" alt="">
-                <dt>商品名<%#= item.name %></dt>
-                <dt>¥0,000<%#= item.price %></dt>
-              </li>
-          </div>
-        <div class="col-md-3">
-              <li class="item">
-                <img src="/assets/no_image.jpg" alt="">
-                <dt>商品名<%#= item.name %></dt>
-                <dt>¥0,000<%#= item.price %></dt>
-              </li>
-          </div>
-        <div class="col-md-3">
-              <li class="item">
-                <img src="/assets/no_image.jpg" alt="">
-                <dt>商品名<%#= item.name %></dt>
-                <dt>¥0,000<%#= item.price %></dt>
-              </li>
-          </div>
-          </ul>
-        <div class="pagination">
-          <p>・　・　・　・</p>
-      </div>
+    <div class="col-lg-1">
+      ここは余白
+      ここは余白
+      ここは余白
+      ここは余白
+      ここは余白
+      ここは余白
+      ここは余白
+      ここは余白
+      ここは余白
+      ここは余白
+      ここは余白
+      ここは余白
+      ここは余白
+      ここは余白
+      ここは余白
+      ここは余白
+      ここは余白
+      ここは余白
+    </div>
 
+    <div class="col-lg-5">
+      <h2>一般ユーザ</h2>
+      <% if end_user_signed_in? then %>
+      現在、<span style="color:red; background-color:yellow;"><%= current_end_user.last_name%> <%= current_end_user.first_name%></span>さんがログイン中<br>
+      current_end_user.is_deleted => <%= current_end_user.is_deleted.inspect%><br>
+      EndUser<%= link_to 'ログアウト',  destroy_end_user_session_path, method: :delete %>
+      <% else %>
+      EndUserで<%= link_to 'ログイン', new_end_user_session_path %>
+      <% end %><br>
+      <%= link_to 'Addresses#index => 住所録一覧', addresses_path %><br>
+      <%= link_to 'Orders#index => 注文履歴一覧', orders_path %><br>
+      <%= link_to 'CartItems#index => カート内アイテム一覧', cart_items_path %><br>
+      <%= link_to 'CartItems#index => マイページ', end_users_path %><br>
+    </div>
+
+    <div class="col-lg-5">
+      <h2>管理人</h2>
+      <% if admin_user_signed_in? then %>
+      AdminUser<%= link_to 'ログアウト',  destroy_admin_user_session_path, method: :delete %>
+      <% else %>
+      AdminUserで<%= link_to 'ログイン', new_admin_user_session_path %>
+      <% end %><br>
+    </div>
+
+    <div class="col-lg-1">
+      ここは余白
+      ここは余白
+      ここは余白
+      ここは余白
+      ここは余白
+      ここは余白
+      ここは余白
+      ここは余白
+      ここは余白
+      ここは余白
+      ここは余白
+      ここは余白
+      ここは余白
+      ここは余白
+      ここは余白
+      ここは余白
+      ここは余白
+      ここは余白
     </div>
   </div>
 </div>
