@@ -37,6 +37,7 @@
       <%= link_to 'Orders#index => 注文履歴一覧', orders_path %><br>
       <%= link_to 'CartItems#index => カート内アイテム一覧', cart_items_path %><br>
       <%= link_to 'CartItems#index => マイページ', end_users_path %><br>
+      <%= link_to 'Items#show => 商品詳細ページ', item_path(Item.find(1)) %><br>
     </div>
 
     <div class="col-lg-5">

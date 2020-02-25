@@ -4,7 +4,7 @@ class CartItemsController < ApplicationController
     # カートに入れるアイテムの情報取得
     cart_item = CartItem.new( cart_item_params )
     # アイテムを入れたユーザの関連付け
-    cart_item.user_id = current_user.id
+    cart_item.end_user_id = current_end_user.id
     # カートへアイテム保存
     cart_item.save
     # カート画面へ遷移
@@ -71,6 +71,6 @@ class CartItemsController < ApplicationController
   end
 
   def cart_item_params
-    params.require( :cart_item ).permit( :item_id, :amount )
+    params.require( :cart_item ).permit( :end_user_id, :item_id, :amount )
   end
 end
