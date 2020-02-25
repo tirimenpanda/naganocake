@@ -11,10 +11,8 @@ class CartItemsController < ApplicationController
   end
 
   def index
-    # ログインユーザ情報を取得
-    end_user = EndUser.find( current_user.id )
-    # 削除する全カートアイテム情報を取得
-    @cart_items = end_user.cart_item
+    # ログインユーザの全カートアイテム情報を取得
+    @cart_items = current_end_user.cart_items
   end
 
 
@@ -28,33 +26,47 @@ class CartItemsController < ApplicationController
   end
 
   def destroy
-    # 削除するカートアイテム情報を取得
-    cart_item = CartItem.find( params[:id] )
-    # 対象のカートアイテムを削除
-    cart_item.destroy
-    # カート画面へ遷移
-    redirect_to cart_items_path
-  end
-
-  def destroy_all
-    index
-    # カートアイテムが存在するか判定
-    if @cart_items.nil? then
-      # ない場合
-      # flash[ :caution ] = "カートに商品がないため、削除できませんでした。"
+    # ログに取得したidを出力
+    logger.debug(params[:id])
+    # ログにidの型を出力
+    logger.debug(params[:id].class)
+    if params[:id]=='destroy_all' then
+      # ログに destroy_allの実行を出力
+      logger.debug('performed: destroy_all')
+      #  destroy_all実行
+      destroy_all
     else
-      # １個以上ある場合
-      @cart_items.each do | cart_item |
-        # １個ずつ削除
-        cart_item.destroy
-      end
-      # flash[ :success ] = "削除が完了しました。"
+      # ログに 1個のカートアイテムを削除したことを出力
+      logger.debug('performed: destroy')
+      # 削除するカートアイテム情報を取得
+      cart_item = CartItem.find( params[:id] )
+      # 対象のカートアイテムを削除
+      cart_item.destroy
     end
     # カート画面へ遷移
     redirect_to cart_items_path
   end
 
   private
+  # ログインユーザの全カートアイテム削除アクション
+  def destroy_all
+    # ログインユーザの全カートアイテム情報を取得
+    cart_items = current_end_user.cart_items
+    # カートアイテムが存在するか判定
+    if cart_items.nil? then
+      # ない場合
+      # flash[ :caution ] = "カートに商品がないため、削除できませんでした。"
+    else
+      # １個以上ある場合
+      cart_items.each do | cart_item |
+        # １個ずつ削除
+        cart_item.destroy
+      end
+      # flash[ :success ] = "削除が完了しました。"
+    end
+    # カート画面へ遷移はdestroyにて定義されている
+  end
+
   def cart_item_params
     params.require( :cart_item ).permit( :item_id, :amount )
   end

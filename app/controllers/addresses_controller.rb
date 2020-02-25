@@ -2,17 +2,15 @@ class AddressesController < ApplicationController
   def index
     # 新規配送先作成
     @address = Address.new
-    # ログインユーザ情報取得
-    end_user = EndUser.find( current_user.id )
-    # ログインユーザの登録されている配送先一覧取得
-    @addresses = end_user.addresses
+    # ログイン中のエンドユーザが登録した配送先一覧取得
+    @addresses = current_end_user.addresses
   end
 
   def create
     # 編集する配送先を検索
-    address = Address.find( address_params )
+    address = Address.new( address_params )
     # ユーザの関連付け
-    address.user_id = current_user.id
+    address.end_user_id = current_end_user.id
     # 新規配送先情報保存
     address.save
     # Indexへ遷移

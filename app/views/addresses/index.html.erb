@@ -1,21 +1,21 @@
 
 <h2>配送先登録/一覧</h2>
-<%= form_for( @address, url: addresses_path ) do | f | %>
+<%= form_for( @address, url: addresses_path ) do | address | %>
 <table>
   <tr>
     <th>郵便番号</th>
-    <td><%= f.text_field :postal_code %></td>
+    <td><%= address.text_field :postal_code %></td>
   </tr>
   <tr>
     <th>住所</th>
-      <td><%= f.text_field :address %></td>
+      <td><%= address.text_field :ship_to %></td>
   </tr>
   <tr>
     <th>宛名</th>
-    <td><%= f.text_field :consignee %></td>
+    <td><%= address.text_field :consignee %></td>
   </tr>
 </table>
-<%= f.submit '登録する' %>
+<%= address.submit '登録する' %>
 <% end %>
 
 <table>
@@ -35,8 +35,8 @@
     <td><%= address.consignee %></td>
     <!--編集・削除ボタン-->
     <td>
-      <%= link_to '編集する', edit_address_path(address) %>
-      <%= link_to '削除する', address_path(address), method: :delete #, 'data-confirm' => '本当に削除しますか？' %>
+      <%= link_to '編集する', edit_address_path( address ) %>
+      <%= link_to '削除する', address_path( address ), method: :delete, 'data-confirm' => '本当に削除しますか？' %>
     </td>
   </tr>
   <% end %>
