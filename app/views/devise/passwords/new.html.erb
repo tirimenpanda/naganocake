@@ -1,16 +1,20 @@
-<h2>Forgot your password?</h2>
+<div class="container">
+  <div class="row" text-align="center">
+	<h4>パスワード再発行申請</h4>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+	<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+	  <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+	  <div class="field">
+	    <%= f.label :メールアドレスを入力してください %><br />
+	    <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "example@email.com" %>
+	  </div>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
+	  <div class="actions">
+	    <%= f.submit "パスワードを再発行する", class: "btn btn-primary" %>
+	  </div>
+	<% end %>
 
-<%= render "devise/shared/links" %>
+	<%= render "devise/shared/links" %>
+</div>
+</div>

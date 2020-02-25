@@ -27,30 +27,17 @@ a {
   text-decoration: none;
 }
 
-a:visited {
-  color: #FFF;
-}
-
 .container {
     margin: 0 auto;
     padding-left: 15px;
     padding-right: 15px;
 }
 
-.row {
-  margin: 0 auto;
-}
+
+/* header */
 
 header {
 	color: white
-}
-
-body {
-    background-color: #fff;
-    color: #333;
-    font-family: verdana, arial, helvetica, sans-serif;
-    font-size: 20px;
-    line-height: 18px;
 }
 
 .navbar {
@@ -59,12 +46,31 @@ body {
 }
 
 .navbar-nav {
-  	background-color: #222;
+    background-color: #222;
     border-color: #090909;
 }
 
 .navbar-left, .navbar-right {
     padding: 30px 0 0;
+}
+
+.header-menu {
+  color: #FFF;
+}
+
+.header-menu:visited {
+  color: #FFF;
+}
+
+/* body */
+
+body {
+    background-color: #FCF5C7;
+    color: #333;
+
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
 }
 
 span {
@@ -83,9 +89,21 @@ span {
   margin: 10px;
 }
 
+
+/*---withdraw.html.erb---*/
+.withdraw-text {
+  text-align: center;
+}
+
 strong {
   margin-right: 10px;
   font-size: 20px;
+}
+
+
+/*---top.html.erb---*/
+ul {
+  list-style: none;
 }
 
 li {
@@ -103,3 +121,18 @@ th,td {
   padding: 5px;
 }
 
+genres {
+  height: 1000px;
+}
+
+/*---login.html.erb---*/
+
+.field {
+  margin-bottom: 10px;
+}
+
+/*---thanks.html.erb---*/
+
+.thanks {
+  text-align: center;
+}
