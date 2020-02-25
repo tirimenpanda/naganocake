@@ -1,4 +1,3 @@
-<html>
 <body>
 	<!-- URL違うところに飛んじゃう -->
 	<div class="container">
@@ -22,42 +21,42 @@
 								<th>氏名</th>
 								<th>
 									<label for="current_end_user_name"></label>
-									   <%#= f.text_field :first_name, :last_name %>
+									<%= f.text_field :first_name :last_name %>
 								</th>
 							</tr>
 							<tr>
 								<th>カナ</th>
 								<th>
 									<label for="current_end_user_name"></label>
-										<%#= f.text_field :first_name(kana), :last_name(kana) %>
+									<%= f.text_field :first_name_kana, :last_name_kana %>
 								</th>
 							</tr>
 							<tr>
 								<th>郵便番号</th>
 								<th>
 									<label for="current_end_user_postal_code"></label>
-										<p>〒</p><%#= f.text_field :postal_code %>
+									<p>〒</p><%= f.text_field :postal_code %>
 								</th>
 							</tr>
 							<tr>
 								<th>住所</th>
 								<th>
 									<label for="current_end_user_adress"></label>
-										<%#= f.text_field :address %>
+									<%= f.text_field :address %>
 								</th>
 							</tr>
 							<tr>
 								<th>電話番号</th>
 								<th>
 									<label for="current_end_user_phone_number"></label>
-										<%#= f.text_field :phone_number %>
+									<%= f.text_field :phone_number %>
 								</th>
 							</tr>
 							<tr>
 								<th>メールアドレス</th>
 								<th>
 									<label for="current_end_user_email"></label>
-										<%#= f.text_field :email %>
+									<%= f.text_field :email %>
 								</th>
 							</tr>
 						</tbody>
