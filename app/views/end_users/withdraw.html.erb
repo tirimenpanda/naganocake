@@ -1,6 +1,16 @@
-<h2>退会画面</h2>
-<%= link_to '退会しない', end_users_path %>
-<%= form_for( current_end_user, url: end_users_path ) do | f | %>
-<%= f.hidden_field :is_deleted, value:true %>
-<%= f.submit '退会する' %>
-<% end %>
+
+<div class="container withdraw-text">
+	<h2>本当に退会しますか？</h2><br />
+	<p>退会すると、会員登録情報や<br />
+		これまでの購入履歴が閲覧できなくなります。<br />
+		退会する場合は、「退会する」をクリックしてください。</p>
+
+		<%= link_to "退会しない", end_users_path(current_end_user), class: "btn btn-primary" %>
+
+		<form style="display: inline">
+			<%= form_for(current_end_user, url: end_users_path) do | f | %>
+			<%= f.hidden_field :is_deleted, value:true %>
+			<%= f.submit "退会する", class: "btn btn-danger" %>
+			<% end %>
+		</form>
+</div>

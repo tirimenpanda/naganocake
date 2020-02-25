@@ -1,4 +1,5 @@
 class EndUsersController < ApplicationController
+
   def edit
     # なし
   end
@@ -26,4 +27,5 @@ class EndUsersController < ApplicationController
   def end_user_params
     params.require( :end_user ).permit( :first_name, :last_name, :first_name_kana, :last_name_kana, :postal_code, :address, :phone_number, :email, :is_deleted )
   end
+
 end

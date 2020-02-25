@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+
   include ApplicationHelper
   include OrdersHelper
   # ショッピングカート画面 => 購入情報画面へ
@@ -86,4 +87,5 @@ class OrdersController < ApplicationController
     # orderテーブルのorder_status以外の全てのカラム情報の取得を許可
     params.require( :order ).permit( :postal_code, :ship_to, :consignee, :payment, :postage, :total_price )
   end
+
 end

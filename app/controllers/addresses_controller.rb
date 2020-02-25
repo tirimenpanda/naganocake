@@ -1,4 +1,5 @@
 class AddressesController < ApplicationController
+
   def index
     # 新規配送先作成
     @address = Address.new
@@ -44,4 +45,5 @@ class AddressesController < ApplicationController
   def address_params
     params.require( :address ).permit( :postal_code, :ship_to, :consignee )
   end
+
 end
