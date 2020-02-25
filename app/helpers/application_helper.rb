@@ -3,8 +3,10 @@ module ApplicationHelper
   # ( 税抜価格, 個数, true => 小計をIntegerで返す )
   def subtotal( price=0, amount=0, formatting=false )
     # 引数に不適切な値が渡された場合の回避処理
-    # 小数切り捨てで計算
-    sn = price * amount * 110 / 100
+    # まず、１個の税込価格算出（端数切り捨て）
+    sn = price * 110 / 100
+    # 税込価格の個数分を算出
+    sn *= amount
     # リターンの書式を決める
     if formatting then
       # Integerで返す

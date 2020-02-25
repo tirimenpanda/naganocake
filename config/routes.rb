@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   # エンドユーザログイン管理ルーティング
   devise_for :end_users
   # エンドユーザ用ルーティング
-  # resource :end_users, only: [:show, :edit, :update] # => 上部へ移動deviseのeditにとばされるため
+  resource :end_users, only: [:show, :edit, :update]
   # 退会確認ページ用
   get '/end_users/withdraw' => 'end_users#withdraw'
   # アバウトページ用
