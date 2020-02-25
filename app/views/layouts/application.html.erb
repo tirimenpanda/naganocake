@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Ecsite</title>
+    <title>ながのCAKE</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -10,6 +10,35 @@
   </head>
 
   <body>
+    <header class="navbar navbar-inverse">
+      <div class="container">
+          <nav class="nav-logo navbar-left">
+            <span>LOGO（ながのCAKE）</span>
+          </nav>
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <h6>トップ .</h6>
+            </li>
+            <li>
+              <h6>| はじめての方へ .</h6>
+            </li>
+            <li>
+              <h6>| マイページ .</h6>
+            </li>
+            <li>
+              <h6>| ログアウト .</h6>
+            </li>
+            <li>
+              <h6 class="glyphicon glyphicon-shopping-cart">カート</h6>
+            </li>
+          </ul>
+      </div>
+    </header>
+
     <%= yield %>
+
+   <footer class="footer style-2">
+   </footer>
+
   </body>
 </html>
