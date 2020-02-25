@@ -1,4 +1,5 @@
 class OrdersController < ApplicationController
+  include ApplicationHelper
   # ショッピングカート画面 => 購入情報画面へ
   def new
     # 商品がカートに入っているか確認
@@ -23,38 +24,19 @@ class OrdersController < ApplicationController
     order = Order.new( cart_item_params )
     # ユーザの関連付け
     order.end_user_id = current_end_user.id
-    # 注文履歴の作成
+    # 注文履歴の登録
     order.save
-    current_end_user.cart_items.each do | cart_item |
-      order_detail = OrderDetail.new
+    # OrderDetailテーブルに購入商品の情報を追加する処理
+    gets_purchasing_information( current_end_user.cart_items ).each do | order_detail |
+      # order_idの格納
+      order_detail.order_id = order.id
+      # OrderDetailテーブルに登録
+      order_detail.save
     end
-    # 注文テーブルへの情報登録が適しているか判定
-    # => バリデーション未実装のため、コメントアウト
-    =begin
-    # Orderオブジェクトの保存に成功したか否かの処理
-    if order.save then
-      # 成功した場合
-      # エンドユーザオブジェクトを取得
-      end_user =  EndUser.find( current_user.id )
-      # 購入商品の種類だけ実行
-      end_user.cart_items.each do | cart_item |
-        # 空のOrderDetailオブジェクト作成
-        order_detail = OrderDetail.new
-        # 1. order_detailテーブルに購入商品情報を保存
-        # 2. 登録した購入商品をcart_itemsから削除
-      end
-      # サンクスページへ遷移
-      redirect_to finish_path # リンク名は適当
-    else
-      # 入力に不備があった場合（今回は想定されてない？）
-      # 警告内容（購入情報の不備）の説明
-      # flash[:caution] = '新しいお届け先情報に不備があります。'
-      # 空のorderオブジェクトを作成
-      # @order = Order.new
-      # 購入情報入力画面へ遷移
-      redirect_to new_order_path
-    end
-    =end
+    # ログインユーザのかカートアイテムを全部削除
+    current_end_user.cart_items.destroy_all
+    # 購入情報入力画面へ遷移
+    redirect_to orders_thanks_path
   end
 
   # 注文履歴（一覧）画面
@@ -87,7 +69,10 @@ class OrdersController < ApplicationController
     order = Order.new( cart_item_params )
     # 配送先情報などの処理（手抜き）
     @order = regulate_order_format( order )
-    @cart_items = current_end_user.cart_items
+    # 送料
+    @default_postage = 800
+    # 自分のカートアイテムから、保存前のOrderDetailオブジェクト群を取得
+    @order_details = gets_purchasing_information( current_end_user.cart_items )
   end
 
   def thanks
@@ -96,8 +81,30 @@ class OrdersController < ApplicationController
 
   private
   def cart_item_params
-    # orderテーブルの全てのカラム情報の取得を許可
-    params.require( :order ).permit( :postal_code, :ship_to, :consignee, :payment, :postage, :total_price, :order_status )
+    # orderテーブルのorder_status以外の全てのカラム情報の取得を許可
+    params.require( :order ).permit( :postal_code, :ship_to, :consignee, :payment, :postage, :total_price )
+  end
+
+  # 自分のカートアイテムから、保存前のOrderDetailオブジェクト群に書き換え
+  def gets_purchasing_information( cart_items )
+    # 合計金額を格納する変数
+    @total_price = 0
+    objects = cart_items.map do | cart_item |
+      # 空のOrderDetailオブジェクトを作成
+      order_detail = OrderDetail.new
+      # item_idを取得
+      order_detail.item_id = cart_item.item_id
+      # 購入個数を取得
+      order_detail.amount = cart_item.amount
+      # 購入価格を算出・取得
+      order_detail.purchased_price = subtotal( cart_item.item.listed_price, cart_item.amount, true )
+      # 各商品の購入金額の加算処理
+      @total_price += order_detail.purchased_price
+      # order_id以外が入力されたOrderDetailオブジェクトを返す
+      order_detail
+    end
+    # OrderDetailオブジェクト群に変換された変数を返す
+    return objects
   end
 
   # 配送先情報を該当カラム３種に保存し直す

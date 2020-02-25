@@ -1,17 +1,10 @@
 module ApplicationHelper
   # 小計の計算
   # ( 税抜価格, 個数, true => 小計をIntegerで返す )
-  def subtotal( price, amount, formatting=false )
+  def subtotal( price=0, amount=0, formatting=false )
     # 引数に不適切な値が渡された場合の回避処理
-    begin
-      # 小数切り捨て
-      sn = price * amount * 110 / 100
-    rescue
-      # 計算エラーが生じた場合はエラー文字列を返す
-      # 基本的にはありえないけど
-      puts %?price=#{ price }, amount=#{ amount }?
-      return 'Error'
-    end
+    # 小数切り捨てで計算
+    sn = price * amount * 110 / 100
     # リターンの書式を決める
     if formatting then
       # Integerで返す
@@ -43,7 +36,7 @@ module ApplicationHelper
     %(#{"%04d" % x.year}/#{"%02d" % x.month}/#{"%02d" % x.day})
   end
 
-  # 日付表示形式に変換
+  # 郵便番号表示形式に変換
   def postal_code_format( postal_code)
     "〒 #{postal_code[0...3]}-#{postal_code[3..-1]}"
   end

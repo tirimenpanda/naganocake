@@ -7,47 +7,55 @@
     <th>数量</th>
     <th>小計</th>
   </tr>
-  <% sn = 0 %>
-  <% @cart_items.each do |cart_item| %>
+  <% @order_details.each do | order_detail | %>
   <tr>
     <td>
       <!--商品イメージ-->
       ここに商品イメージ表示させる（by ふじさん）<br>
       <!--商品名-->
-      <%= cart_item.item.name %>
+      <%= order_detail.item.name %>
     </td>
     <td>
       <!-- 単価（税込）-->
-      <!--subtotal( 税抜き価格, 個数 ) => 小計（税込）を計算-->
-      <%= subtotal( cart_item.item.listed_price, 1 ) %>
+      <!--subtotal( 税抜価格, 個数 ) => 小計（税込）を計算-->
+      <%= subtotal( order_detail.item.listed_price, 1 ) %>
     </td>
     <td>
       <!-- 数量-->
-      <%= cart_item.amount %>
+      <%= order_detail.amount %>
     </td>
     <td>
       <!-- 小計-->
-      <!--subtotal( 税抜き価格, 個数 ) => 小計（税込）を計算-->
-      <%= subtotal( cart_item.item.listed_price, cart_item.amount ) %>
-      <% sn += subtotal( cart_item.item.listed_price, cart_item.amount, true ) %>
+      <%= number_separation( order_detail.purchased_price ) %>
     </td>
   </tr>
   <% end %>
 </table>
 
 <%= form_for( @order, url: orders_path ) do | f | %>
+<!-- 郵便番号-->
+<%= f.hidden_field :postal_code, readonly:true %>
+<!-- 配送先住所-->
+<%= f.hidden_field :ship_to, readonly:true %>
+<!-- 宛名-->
+<%= f.hidden_field :consignee, readonly:true %>
+<!-- 支払方法-->
+<%= f.hidden_field :payment, readonly:true %>
 <table>
   <tr>
     <td>配送料</td>
-    <td><%= f.text_field :postage, value:800, readonly:true %></td>
+    <%= f.hidden_field :postage, value:@default_postage, readonly:true %>
+    <td><%= @default_postage %></td>
   </tr>
   <tr>
     <td>商品合計</td>
-    <td><%= number_separation( sn ) %></td>
+    <td><%= number_separation( @total_price ) %></td>
   </tr>
   <tr>
     <td><b>請求金額</b></td>
-    <td><%= f.text_field :total_price, value:(800 + sn), readonly:true %></td>
+    <% sum = @default_postage + @total_price %>
+    <%= f.hidden_field :total_price, value:(sum), readonly:true %>
+    <td><%= number_separation( sum ) %></td>
   </tr>
 </table>
 

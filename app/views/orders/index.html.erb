@@ -21,7 +21,7 @@
     <!--注文商品-->
     <td>
       <% order.order_details.each do | order_detail | %>
-      <%= order_detail.items.name %><br>
+      <%= order_detail.item.name %><br>
       <% end %>
     </td>
     <!--支払金額-->

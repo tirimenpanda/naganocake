@@ -4,7 +4,7 @@
 <table>
   <tr>
     <th>注文日</th>
-    <td><%= date_format( order.created_at ) %></td>
+    <td><%= date_format( @order.created_at ) %></td>
   </tr>
   <tr>
     <th>配送先</th>
@@ -28,15 +28,15 @@
 <table>
   <tr>
     <td>商品合計</td>
-    <td><%= number_separation( order.total_price - order.postage ) %></td>
+    <td><%= number_separation( @order.total_price - @order.postage ) %></td>
   </tr>
   <tr>
     <td>配送料</td>
-    <td><%= number_separation( order.postage ) %></td>
+    <td><%= number_separation( @order.postage ) %></td>
   </tr>
   <tr>
     <td><b>ご請求額</b></td>
-    <td><%= number_separation( order.total_price ) %></td>
+    <td><%= number_separation( @order.total_price ) %></td>
   </tr>
 </table>
 
@@ -51,7 +51,7 @@
   <% @order.order_details.each do | order_detail | %>
   <tr>
     <!--商品-->
-    <td><%= order_detail.items.name %></td>
+    <td><%= order_detail.item.name %></td>
     <!--単価（税込）-->
     <td><%= number_separation( order_detail.purchased_price ) %></td>
     <!--個数-->
