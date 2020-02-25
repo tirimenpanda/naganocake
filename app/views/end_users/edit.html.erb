@@ -1,78 +1,42 @@
-<body>
-	<!-- URL違うところに飛んじゃう -->
-	<div class="container">
-		<div class="row">
-			<div class="my_page">
-				<h3>マイページ</h3>
-					<h3><strobg>登録情報</strobg></h3>
-						<div class="btn-wrapper">
-							<!-- <div class="row"> -->
-								<p class="btn btn-info col-xs-2" href="/end_users/edit">編集する</p>
-							<!-- </div> -->
-							<!-- <div class="row"> -->
-								<p class="btn btn-info col-xs-4" href="/end_users/password/new">パスワードを変更する</p>
-							<!-- </div> -->
-						</div>
 
-					<table class="table">
-						<thead></thead>
-						<tbody>
-							<tr>
-								<th>氏名</th>
-								<th>
-									<label for="current_end_user_name"></label>
-									<%= f.text_field :first_name :last_name %>
-								</th>
-							</tr>
-							<tr>
-								<th>カナ</th>
-								<th>
-									<label for="current_end_user_name"></label>
-									<%= f.text_field :first_name_kana, :last_name_kana %>
-								</th>
-							</tr>
-							<tr>
-								<th>郵便番号</th>
-								<th>
-									<label for="current_end_user_postal_code"></label>
-									<p>〒</p><%= f.text_field :postal_code %>
-								</th>
-							</tr>
-							<tr>
-								<th>住所</th>
-								<th>
-									<label for="current_end_user_adress"></label>
-									<%= f.text_field :address %>
-								</th>
-							</tr>
-							<tr>
-								<th>電話番号</th>
-								<th>
-									<label for="current_end_user_phone_number"></label>
-									<%= f.text_field :phone_number %>
-								</th>
-							</tr>
-							<tr>
-								<th>メールアドレス</th>
-								<th>
-									<label for="current_end_user_email"></label>
-									<%= f.text_field :email %>
-								</th>
-							</tr>
-						</tbody>
-					</table>
-					<!-- <div class="row"> -->
-						<div class="btn-wrapper">
-							<h3><strong>配送先</strong></h3>
-								<p class="btn btn-info" href="/addresses">一覧を見る</p>
-						</div>
-						<h3><strong>注文履歴</strong></h3>
-								<p class="btn btn-info" href="/addresses">一覧を見る</p>
-
-
-			</div>
-		</div>
-	</div>
-</body>
-</html>
-
+<h2>登録情報編集</h2>
+<%= link_to '退会する', end_users_withdraw_path %>
+<%= form_for( current_end_user, url: end_users_path ) do | f | %>
+<table>
+  <tr>
+    <th>氏名</th>
+    <td>
+      <!--苗字-->
+      <%= f.text_field :last_name, placeholder:'福澤' %>
+      <!--名前-->
+      <%= f.text_field :first_name, placeholder:'諭吉' %>
+    </td>
+  </tr>
+  <tr>
+    <th>カナ</th>
+    <td>
+      <!--苗字-->
+      <%= f.text_field :last_name_kana, placeholder:'フクザワ' %>
+      <!--名前-->
+      <%= f.text_field :first_name_kana, placeholder:'ユキチ' %>
+    </td>
+  </tr>
+  <tr>
+    <th>郵便番号</th>
+    <td><%= f.text_field :postal_code, placeholder:'1002100' %></td>
+  </tr>
+  <tr>
+    <th>住所</th>
+    <td><%= f.text_field :address, placeholder:'東京都小笠原村沖ノ鳥島1番地' %></td>
+  </tr>
+  <tr>
+    <th>電話番号</th>
+    <td><%= f.text_field :phone_number, placeholder:'0455034000' %></td>
+  </tr>
+  <tr>
+    <th>メールアドレス</th>
+    <td><%= f.text_field :email, placeholder:'end_user@example.com' %></td>
+  </tr>
+</table>
+<%= f.submit '編集内容を保存する' %>
+<% end %>

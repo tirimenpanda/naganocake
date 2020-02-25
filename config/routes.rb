@@ -1,6 +1,7 @@
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 Rails.application.routes.draw do
   ##エンドユーザ用ルーティング############################################
+  resource :end_users, only: [:show, :edit, :update]
   # アドレス帳用ルーティング
   resources :addresses, only: [:index, :create, :edit, :update, :destroy]
   # カートアイテム用index
