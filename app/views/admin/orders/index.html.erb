@@ -1,7 +1,18 @@
-<p>本日の注文件数</p>
-<h3><strong>管理者画面</strong></h3>
+<h2>注文履歴（全部、当日、１会員）</h2>
 
-<div class="daily_orders">
-	<h3>本日の注文件数</h3>
-	<span><%#= link_to '当日の注文数'件　admin_orders_path %></span>
-</div>
+<table>
+	<tr>
+		<th>購入日時</th>
+		<th>購入者</th>
+		<th>注文個数</th>
+		<th>注文ステータス</th>
+	</tr>
+	<% @orders.each do | order | %>
+	<tr>
+		<td><%= link_to order_datetime_format( order.created_at ), admin_order_path( order ) %></td>
+		<td><%= order.end_user.last_name + order.end_user.first_name %></td>
+		<td><%= order.order_details.map{ | order_detail | order_detail.amount }.sum %></td>
+		<td><%= order.order_status %></td>
+	</tr>
+	<% end %>
+</table>

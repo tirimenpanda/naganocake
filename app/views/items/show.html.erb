@@ -3,35 +3,35 @@
 <div class="container">
   <!-- ジャンル検索 部分テンプレートで入れる -->
   <div class="row">
-    <div class=col-xs-4>
-      <%= attachment_image_tag @item, :image, size:'100x100', format: 'jpeg', fallback: "no_image.jpg", size:'100x100' %>
+    <div class="col-xs-4">
+      <%= attachment_image_tag @item, :image, size:'100x100', format: 'jpeg', fallback: 'no_image.jpg', size:'100x100' %>
     </div>
 
-    <!-- item画像に対して<form style= "display: inline">入れる？-->
-      <div class="col-xs-4">
-        <h2><strong><%= @item.name %></strong></h2>
-        <br>
-        <p><%= @item.introduction %></p>
-        <br>
+    <div class="col-xs-4">
+      <h2><strong><%= @item.name %></strong></h2>
+      <br>
+      <p><%= @item.introduction %></p>
+      <br>
 
-        <ul>
-          <li>￥ <%= number_separation ( @item.listed_price )%>(税込)</li>
-        </ul>
-        <br>
+      <ul>
+        <li>￥ <%= number_separation ( @item.listed_price )%>(税込)</li>
+      </ul>
+      <br>
 
-        <div class="serect-amount">
-          <% if end_user_signed_in? then%>
-          <%= form_for( @cart_item ) do | f |%>
-          <%= f.hidden_field :item_id, value:@item.id, readonly:true %>
-          <% if @cart_item.amount.nil? then  %>
-          <%= f.select :amount, create_selection_amount(), include_blank:'個数選択' %>
-          <% else %>
-          <%= f.select :amount, create_selection_amount( @cart_item.amount ) %>
-          <% end %>
-          <div style="display: inline;"><%= f.submit 'カートに入れる', class: "btn btn-primary" %></div>
-          <% end %>
-          <% end %>
-        </div>
+      <div class="serect-amount">
+        <% if end_user_signed_in? then%>
+        <%= form_for( @cart_item ) do | f |%>
+        <%= f.hidden_field :item_id, value:@item.id, readonly:true %>
+        <%= f.hidden_field :end_user_id, value:current_end_user.id, readonly:true %>
+        <% if @cart_item.amount.nil? then  %>
+        <%= f.select :amount, create_selection_amount(), include_blank:'個数選択' %>
+        <% else %>
+        <%= f.select :amount, create_selection_amount( @cart_item.amount ) %>
+        <% end %>
+        <div style="display: inline;"><%= f.submit 'カートに入れる', class: "btn btn-primary" %></div>
+        <% end %>
+        <% end %>
       </div>
     </div>
   </div>
+</div>

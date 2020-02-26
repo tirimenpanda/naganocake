@@ -1,1 +1,59 @@
-<p>会員情報編集画面</p>
+
+<h2>会員編集画面</h2>
+<div class="container">
+  <div class="row">
+    <div class="page_title">
+      <h3><strong>会員詳細画面</strong></h3>
+    </div>
+    <%= form_for( @end_user, url:  admin_end_user_path ) do | f | %>
+    <table class="table">
+      <tr>
+        <th>会員ID</th>
+        <td><%= @end_user.id %></td>
+      </tr>
+      <tr>
+        <th>氏名</th>
+        <td>
+          <!--苗字-->
+          <%= f.text_field :last_name %>
+          <!--名前-->
+          <%= f.text_field :first_name %>
+        </td>
+      </tr>
+      <tr>
+        <th>フリガナ</th>
+        <td>
+          <!--苗字-->
+          <%= f.text_field :last_name_kana %>
+          <!--名前-->
+          <%= f.text_field :first_name_kana %>
+        </td>
+      </tr>
+      <tr>
+        <th>郵便番号</th>
+        <td><%= f.text_field :postal_code %></td>
+      </tr>
+      <tr>
+        <th>住所</th>
+        <td><%= f.text_field :address %></td>
+      </tr>
+      <tr>
+        <th>電話番号</th>
+        <td><%= f.telephone_field :phone_number %></td>
+      </tr>
+      <tr>
+        <th>メールアドレス</th>
+        <td><%= f.text_field :email %></td>
+      </tr>
+      <tr>
+        <th>会員ステータス</th>
+        <td>
+          <label><%= f.radio_button :is_deleted, false %>有効</label>
+          <label><%= f.radio_button :is_deleted, true %>退会済み</label>
+        </td>
+      </tr>
+    </table>
+    <%= f.submit '変更を保存する' %>
+    <% end %>
+  </div>
+</div>

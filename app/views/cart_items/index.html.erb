@@ -14,7 +14,7 @@
   <tr>
     <td>
       <!--商品イメージ-->
-      ここに商品イメージ表示させる（by ふじさん）<br>
+      <%= attachment_image_tag cart_item.item, :image, size:'70x70', format: 'jpeg', fallback: 'no_image.jpg', size:'70x70' %>
       <!--商品名-->
       <%= cart_item.item.name %>
     </td>

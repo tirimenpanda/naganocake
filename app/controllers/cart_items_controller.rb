@@ -22,8 +22,10 @@ class CartItemsController < ApplicationController
   def update
     # 更新するカートアイテム情報を取得
     cart_item = CartItem.find( params[:id] )
-    # 更新処理
-    cart_item.update( cart_item_params )
+    if params[:cart_item][:amount].to_i > 0 then
+      # 更新処理
+      cart_item.update( cart_item_params )
+    end
     # カート画面へ遷移
     redirect_to cart_items_path
   end
@@ -60,11 +62,8 @@ class CartItemsController < ApplicationController
       # ない場合
       # flash[ :caution ] = "カートに商品がないため、削除できませんでした。"
     else
-      # １個以上ある場合
-      cart_items.each do | cart_item |
-        # １個ずつ削除
-        cart_item.destroy
-      end
+      # １個以上ある場合 => 全部削除
+      cart_items.map(&:destroy)
       # flash[ :success ] = "削除が完了しました。"
     end
     # カート画面へ遷移はdestroyにて定義されている

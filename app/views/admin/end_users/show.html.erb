@@ -1,1 +1,54 @@
-<p>会員詳細</p>
+
+<div class="container">
+  <div class="row">
+    <div class="page_title">
+      <h3><strong>会員詳細画面</strong></h3>
+    </div>
+
+    <table class="table">
+      <tr>
+        <th>氏名</th>
+        <td>
+          <!--苗字-->
+          <%= @end_user.last_name %>&nbsp;
+          <!--名前-->
+          <%= @end_user.first_name %>
+        </td>
+      </tr>
+      <tr>
+        <th>フリガナ</th>
+        <td>
+          <!--苗字-->
+          <%= @end_user.last_name_kana %>&nbsp;
+          <!--名前-->
+          <%= @end_user.first_name_kana %>
+        </td>
+      </tr>
+      <tr>
+        <th>郵便番号</th>
+        <td><%= @end_user.postal_code %></td>
+      </tr>
+      <tr>
+        <th>住所</th>
+        <td><%= @end_user.address %></td>
+      </tr>
+      <tr>
+        <th>電話番号</th>
+        <td><%= @end_user.phone_number %></td>
+      </tr>
+      <tr>
+        <th>メールアドレス</th>
+        <td><%= @end_user.email %></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="row">
+    <%= link_to '編集する', edit_admin_end_user_path( @end_user ), class:"btn btn-primary col-xs-3" %>
+  </div>
+  <div class="row">
+    <%= form_for( @end_user, url: admin_orders_path, method: :get) do | f | %>
+    <%= f.submit '注文履歴一覧を見る', class:"btn btn-primary col-xs-3" %>
+    <% end %>
+  </div>
+</div>
