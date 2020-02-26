@@ -2,13 +2,14 @@
 	<h3>ジャンル編集画面</h3>
 		<form style="display: inline">
 			<p>ジャンル</p>
-				<%=form_for(@genres) do |f| %>
+				<%=form_for(@genre) do |f| %>
 					<%=f.text_field :genres_name %>
 					<%= f.submit "変更を保存する", class: "btn btn-primary" %>
-					<label>
-				  	<%= f.radio_button :is_displayed, true %>有効</label>
-				  	<label>
-		 	    	<%= f.radio_button :is_displayed, false %>無効</label>
+
+				  	<%= f.radio_button :is_displayed, '有効', :true %>
+				  	<%= f.label :is_displayed, '有効' %>
+		 	    	<%= f.radio_button :is_displayed, '無効', :false %>
+		 	    	<%= f.label :is_displayed, '無効' %>
  	   			<% end %>
  	    </form>
 </div>
