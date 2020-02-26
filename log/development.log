@@ -698,3 +698,140 @@ Completed 404 Not Found in 2ms (ActiveRecord: 0.5ms)
 ActiveRecord::RecordNotFound (Couldn't find Order with 'id'=created_at_today):
   
 app/controllers/homes_controller.rb:7:in `about'
+app/controllers/admin/end_users_controller.rb:4:in `index'
+ an ID):
+d/log_subscriber.rb:98
+ons" ORDER BY "schema_migrations"."version" ASC[0m
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           :in `index'
+Started GET "/admin/end_users" for 10.0.2.2 at 2020-02-26 07:01:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Admin::EndUsersController#index as HTML
+Completed 404 Not Found in 9ms (ActiveRecord: 2.3ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find EndUser without an ID):
+  
+app/controllers/admin/end_users_controller.rb:4:in `index'
+Started GET "/admin/end_users" for 10.0.2.2 at 2020-02-26 07:01:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::EndUsersController#index as HTML
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find EndUser without an ID):
+  
+app/controllers/admin/end_users_controller.rb:4:in `index'
+Started GET "/admin/end_users" for 10.0.2.2 at 2020-02-26 07:01:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::EndUsersController#index as HTML
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find EndUser without an ID):
+  
+app/controllers/admin/end_users_controller.rb:4:in `index'
+Started GET "/admin/end_users" for 10.0.2.2 at 2020-02-26 07:01:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::EndUsersController#index as HTML
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find EndUser without an ID):
+  
+app/controllers/admin/end_users_controller.rb:4:in `index'
+Started GET "/admin/end_users" for 10.0.2.2 at 2020-02-26 07:01:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::EndUsersController#index as HTML
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find EndUser without an ID):
+  
+app/controllers/admin/end_users_controller.rb:4:in `index'
+Started GET "/admin/end_users" for 10.0.2.2 at 2020-02-26 07:01:38 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::EndUsersController#index as HTML
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find EndUser without an ID):
+  
+app/controllers/admin/end_users_controller.rb:4:in `index'
+Started GET "/homes/about" for 10.0.2.2 at 2020-02-26 07:51:47 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by HomesController#about as HTML
+  Rendering homes/about.html.erb within layouts/application
+  Rendered homes/about.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 439ms (Views: 432.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/homes/about" for 10.0.2.2 at 2020-02-26 07:53:21 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#about as HTML
+  Rendering homes/about.html.erb within layouts/application
+  Rendered homes/about.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/vagrant/naganocake/app/views/homes/about.html.erb:13: syntax error, unexpected keyword_end
+...eze;@output_buffer.append=( end );@output_buffer.safe_append...
+...                            ^~~
+/vagrant/naganocake/app/views/homes/about.html.erb:19: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/vagrant/naganocake/app/views/homes/about.html.erb:21: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/homes/about.html.erb:13: syntax error, unexpected keyword_end
+app/views/homes/about.html.erb:19: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/homes/about.html.erb:21: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/homes/about" for 10.0.2.2 at 2020-02-26 07:54:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#about as HTML
+  Rendering homes/about.html.erb within layouts/application
+  Rendered homes/about.html.erb within layouts/application (3.6ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    3: 	<h3>ジャンル編集画面</h3>
+    4: 		<form style="display: inline">
+    5: 			<p>ジャンル</p>
+    6: 				<%=form_for(@genres) do |f| %>
+    7: 					<%=f.text_field :genres_name %>
+    8: 					<%= f.submit "変更を保存する", class: "btn btn-primary" %>
+    9: 					<label>
+  
+app/views/homes/about.html.erb:6:in `_app_views_homes_about_html_erb__413942254365905560_70144985850040'
+Started GET "/homes/about" for 10.0.2.2 at 2020-02-26 07:55:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#about as HTML
+  Rendering homes/about.html.erb within layouts/application
+  Rendered homes/about.html.erb within layouts/application (178.0ms)
+Completed 500 Internal Server Error in 189ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x0000558ccc60f2f8>:0x00007f97ce089400>):
+    4: 		<form style="display: inline">
+    5: 			<p>ジャンル</p>
+    6: 				<%#=form_for(@genres) do |f| %>
+    7: 					<%=f.text_field :genres_name %>
+    8: 					<%= f.submit "変更を保存する", class: "btn btn-primary" %>
+    9: 					<label>
+   10: 				  	<%= f.radio_button :is_displayed, true %>有効</label>
+  
+app/views/homes/about.html.erb:7:in `_app_views_homes_about_html_erb__413942254365905560_70144986730200'
