@@ -11,11 +11,11 @@
 				<tbody>
 					<%= @users.each do |user|%>
 						<tr>
-							<td><%= link_to @user.name, admin_end_user_path %></td>
-							<td><%= @user.email %></td>
-							<td><%= @user.is_deleated %></td>
+							<td><%= link_to user.name, admin_end_user_path %></td>
+							<td><%= user.email %></td>
+							<td><%= user.is_deleated %></td>
 						</tr>
-					<%= end %>
+					<% end %>
 				</tbody>
 			</table>
 		</div>
