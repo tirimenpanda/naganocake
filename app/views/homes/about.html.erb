@@ -1,1 +1,9 @@
 <p>Aboutページ</p>
+
+<p>本日の注文件数</p>
+<h3><strong>管理者画面</strong></h3>
+
+<div class="daily_orders">
+	<h3>本日の注文件数</h3>
+	<span><%= link_to @orders.count, admin_orders_path %>件</span>
+</div>
