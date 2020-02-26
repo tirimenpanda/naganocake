@@ -3,10 +3,8 @@
 
 <div class="daily_orders">
 	<h3>本日の注文件数</h3>
-	<span><%= link_to 'order.count(:created_at)'件　admin_orders_path %></span>
+	<span><%= link_to @orders.count, admin_orders_path %>件</span>
 </div>
-
-
 
 
 
