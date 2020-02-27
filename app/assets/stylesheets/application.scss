@@ -100,6 +100,9 @@
    font-size: 20px;
  }
 
+.btn-withdraw {
+  display: inline;
+}
 
  /*---top.html.erb---*/
  ul {
@@ -113,7 +116,7 @@
 
  table {
    border-collapse: collapse;
-   width: 500px;
+   width: 1000px;
  }
 
  th,td {

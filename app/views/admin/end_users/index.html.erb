@@ -11,7 +11,7 @@
 				<tbody>
 					<%= @users.each do |user|%>
 						<tr>
-							<td><%= link_to user.name, edit_admin_end_user_path %></td>
+							<td><%= link_to user.name, edit_admin_end_user_path(user.id) %></td>
 							<td><%= user.email %></td>
 							<td><%= user.is_deleated %></td>
 						</tr>

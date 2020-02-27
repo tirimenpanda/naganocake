@@ -1,63 +1,65 @@
-<h2>注文履歴詳細</h2>
+<div class="container">
+  <h2>注文履歴詳細</h2>
 
-<h3>注文情報</h3>
-<table>
-  <tr>
-    <th>注文日</th>
-    <td><%= date_format( @order.created_at ) %></td>
-  </tr>
-  <tr>
-    <th>配送先</th>
-    <td>
-      <%= postal_code_format( @order.postal_code ) %><br>
-      <%= @order.ship_to %><br>
-      <%= @order.consignee %>
-    </td>
-  </tr>
-  <th>支払方法</th>
-  <tr>
-    <td><%= @order.payment %></td>
-  </tr>
-  <tr>
-    <th>ステータス</th>
-    <td><%= @order.order_status %></td>
-  </tr>
-</table>
+  <h3>注文情報</h3>
+  <table>
+    <tr>
+      <th>注文日</th>
+      <td><%= date_format( @order.created_at ) %></td>
+    </tr>
+    <tr>
+      <th>配送先</th>
+      <td>
+        <%= postal_code_format( @order.postal_code ) %><br>
+        <%= @order.ship_to %><br>
+        <%= @order.consignee %>
+      </td>
+    </tr>
+    <tr>
+      <th>支払方法</th>
+      <td><%= @order.payment %></td>
+    </tr>
+    <tr>
+      <th>ステータス</th>
+      <td><%= @order.order_status %></td>
+    </tr>
+  </table>
 
-<h3>請求情報</h3>
-<table>
-  <tr>
-    <td>商品合計</td>
-    <td><%= number_separation( @order.total_price - @order.postage ) %></td>
-  </tr>
-  <tr>
-    <td>配送料</td>
-    <td><%= number_separation( @order.postage ) %></td>
-  </tr>
-  <tr>
-    <td><b>ご請求額</b></td>
-    <td><%= number_separation( @order.total_price ) %></td>
-  </tr>
-</table>
+  <h3>請求情報</h3>
+  <table>
+    <tr>
+      <td>商品合計</td>
+      <td><%= number_separation( @order.total_price - @order.postage ) %></td>
+    </tr>
+    <tr>
+      <td>配送料</td>
+      <td><%= number_separation( @order.postage ) %></td>
+    </tr>
+    <tr>
+      <td><b>ご請求額</b></td>
+      <td><%= number_separation( @order.total_price ) %></td>
+    </tr>
+  </table>
 
-<h3>注文内容</h3>
-<table>
-  <tr>
-    <th>商品</th>
-    <th>単価（税込）</th>
-    <th>個数</th>
-    <th>小計</th>
-  </tr>
-  <% @order.order_details.each do | order_detail | %>
-  <tr>
-    <!--商品-->
-    <td><%= order_detail.item.name %></td>
-    <!--単価（税込）-->
-    <td><%= number_separation( order_detail.purchased_price / order_detail.amount ) %></td>
-    <!--個数-->
-    <td><%= order_detail.amount %></td>
-    <!--小計-->
-    <td><%= number_separation( order_detail.purchased_price ) %></td>
-  </tr>
-  <% end %>
-</table>
+  <h3>注文内容</h3>
+  <table>
+    <tr>
+      <th>商品</th>
+      <th>単価（税込）</th>
+      <th>個数</th>
+      <th>小計</th>
+    </tr>
+    <% @order.order_details.each do | order_detail | %>
+    <tr>
+      <!--商品-->
+      <td><%= order_detail.item.name %></td>
+      <!--単価（税込）-->
+      <td><%= number_separation( order_detail.purchased_price / order_detail.amount ) %></td>
+      <!--個数-->
+      <td><%= order_detail.amount %></td>
+      <!--小計-->
+      <td><%= number_separation( order_detail.purchased_price ) %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>

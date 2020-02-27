@@ -84,8 +84,7 @@ class OrdersController < ApplicationController
 
   private
   def cart_item_params
-    # orderテーブルのorder_status以外の全てのカラム情報の取得を許可
+    # Ordersテーブルのorder_status以外の全てのカラム情報の取得を許可
     params.require( :order ).permit( :postal_code, :ship_to, :consignee, :payment, :postage, :total_price )
   end
-
 end
