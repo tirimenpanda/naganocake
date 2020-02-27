@@ -26,7 +26,7 @@
     <td>
       <!-- 数量-->
       <%= form_for( cart_item, url: cart_item_path( cart_item ) ) do | c | %>
-      <%= c.text_field :amount %>
+      <%= c.number_field :amount, min:1 %>
       <%= c.submit '変更' %>
       <% end %>
     </td>

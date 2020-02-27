@@ -22,10 +22,8 @@ class CartItemsController < ApplicationController
   def update
     # 更新するカートアイテム情報を取得
     cart_item = CartItem.find( params[:id] )
-    if params[:cart_item][:amount].to_i > 0 then
-      # 更新処理
-      cart_item.update( cart_item_params )
-    end
+    # 更新処理
+    cart_item.update( cart_item_params )
     # カート画面へ遷移
     redirect_to cart_items_path
   end

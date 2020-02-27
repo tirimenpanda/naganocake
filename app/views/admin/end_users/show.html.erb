@@ -48,6 +48,7 @@
   </div>
   <div class="row">
     <%= form_for( @end_user, url: admin_orders_path, method: :get) do | f | %>
+    <%= f.hidden_field :id, readonly:true %>
     <%= f.submit '注文履歴一覧を見る', class:"btn btn-primary col-xs-3" %>
     <% end %>
   </div>

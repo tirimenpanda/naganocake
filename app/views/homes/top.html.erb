@@ -23,6 +23,8 @@
     </div>
     <div class="col-lg-10">
       <h1>Top画面</h1>
+      <% t = Time.zone.now %>
+      <%= t>(t+0.day).to_date %>
 
       <h1>デバッグページとして使用</h1>
       <table>
@@ -33,7 +35,6 @@
           <th>.to_date</th>
         </tr>
         <tr>
-          <% t = Time.zone.now %>
           <td>Time.zone.now</td>
           <td><%= t %></td>
           <td><%= t.class %></td>
@@ -129,6 +130,10 @@
       <%= link_to 'admin/Items#index => 商品一覧', admin_items_path %><br>
       <%= link_to 'admin/Items#new => 商品の新規投稿', new_admin_item_path %><br>
       <%= link_to 'admin/Orders#index => 注文履歴一覧（全部）', admin_orders_path %><br>
+      <%= form_for AdminUser.new, url:admin_orders_path, method: :get do | f | %>
+      <%= f.hidden_field :id, readonly:true %>
+      <%= f.submit 'admin/Orders#index => 注文履歴一覧（本日）' %><br>
+      <% end %>
       アカウント登録数（全<%= EndUser.count %>ユーザ）<br>
       admin/EndUsers#show => 会員詳細ページ
       <% EndUser.all.each do |end_user| %><%= link_to ( " %02d" % end_user.id ), admin_end_user_path(end_user.id) %><% end %>

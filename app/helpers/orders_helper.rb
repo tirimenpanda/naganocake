@@ -65,19 +65,17 @@ module OrdersHelper
     sprintf( "%04d/%02d/%02d %02d:%02d:%02d" , t.year, t.month, t.day, t.hour, t.minute, t.sec )
   end
 
-  def order_status_selection( order_status='入金待ち' )
+  def order_status_selection(  )
     dic = Hash.new
-    dic[order_status] = order_status
     ['入金待ち', '入金確認', '発送準備中', '発送済み'].each do | str |
-      dic[str] = str if str != order_status
+      dic[str] = str
     end
   end
 
-  def making_status_selection( making_status='着手不可' )
+  def making_status_selection(  )
     dic = Hash.new
-    dic[making_status] = making_status
     ['着手不可', '製作待ち', '製作中', '製作完了' ].each do | str |
-      dic[str] = str if str != making_status
+      dic[str] = str
     end
   end
 end
