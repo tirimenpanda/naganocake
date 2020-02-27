@@ -29,8 +29,10 @@ class Admin::OrdersController < ApplicationController
 	end
 
 	def show
+
 		# 詳細を確認したい注文データの取得
 		@order = Order.find(params[:id])
+
 	end
 
 	def update_order_status
