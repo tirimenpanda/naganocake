@@ -52,6 +52,21 @@
 
         <!-- adminの場合 -->
           <% if admin_users signed_in? %>
+            <ul class="nav navbar-nav navbar-right">
+                  <li>
+                    <%= link_to "商品一覧", items_path %>
+                  </li>
+                  <li>
+                    <%= link_to "会員一覧", end_user_registration_path %>
+                  </li>
+                  <li>
+                    <%= link_to "注文履歴一覧", destroy_user_registration_path, method: :delete  %>
+                  </li>
+                  <li>
+                    <%= link_to "ジャンル管理", cart_items_path, class: "glyphicon glyphicon-shopping-cart" %>
+                  </li>
+                </ul>
+            <% else %>
 
 
         </div>

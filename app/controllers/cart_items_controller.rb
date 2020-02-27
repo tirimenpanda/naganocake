@@ -4,7 +4,7 @@ class CartItemsController < ApplicationController
     # カートに入れるアイテムの情報取得
     cart_item = CartItem.new( cart_item_params )
     # アイテムを入れたユーザの関連付け
-    cart_item.user_id = current_user.id
+    cart_item.end_user_id = current_end_user.id
     # カートへアイテム保存
     cart_item.save
     # カート画面へ遷移
@@ -60,17 +60,14 @@ class CartItemsController < ApplicationController
       # ない場合
       # flash[ :caution ] = "カートに商品がないため、削除できませんでした。"
     else
-      # １個以上ある場合
-      cart_items.each do | cart_item |
-        # １個ずつ削除
-        cart_item.destroy
-      end
+      # １個以上ある場合 => 全部削除
+      cart_items.map(&:destroy)
       # flash[ :success ] = "削除が完了しました。"
     end
     # カート画面へ遷移はdestroyにて定義されている
   end
 
   def cart_item_params
-    params.require( :cart_item ).permit( :item_id, :amount )
+    params.require( :cart_item ).permit( :end_user_id, :item_id, :amount )
   end
 end

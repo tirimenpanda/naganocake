@@ -1,6 +1,6 @@
 <div class="container">
-	<h3>会員一覧画面</h3>
-		<div class="row">
+	<div class="row">
+		<h3><strong>会員一覧画面</strong></h3>
 			<table class="end_users_index">
 				<tr>
 					<th>会員ID</th>
@@ -12,9 +12,10 @@
 					<% @users.each do |user| %>
 						<tr>
 							<td><%= user.id %></td>
-							<td><%= link_to "{#user.first_name}{user.last_name}", edit_admin_end_user_path(user.id) %></td>
+							<td><%= link_to "#{user.last_name} #{user.first_name}", admin_end_user_path(user.id) %></td>
 							<td><%= user.email %></td>
 							<td>
+								<!-- 下の5行を1行にまとめる方法　byふじさん<%#= user.is_deleted ? '退会済み' : '有効' %> -->
 								<% if user.is_deleted then %>
 								退会済み
 								<% else %>

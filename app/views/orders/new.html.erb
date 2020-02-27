@@ -21,7 +21,12 @@
 </p>
 <p>
   <!--ラジオボタン２ => 登録済み配送先から選択-->
+
+  <% if current_end_user.addresses.count == 0 then %>
+  <label><%= f.radio_button :postage, -2, disabled:true %>登録済住所から選択</label><br>
+  <% else %>
   <label><%= f.radio_button :postage, -2 %>登録済住所から選択</label><br>
+  <% end %>
   <%= f.select :total_price, create_selection( current_end_user.addresses ) %>
 </p>
 <p>

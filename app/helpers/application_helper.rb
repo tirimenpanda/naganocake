@@ -18,7 +18,7 @@ module ApplicationHelper
   end
 
   # 整数を３桁区切りの文字列として返すメソッド
-  def number_separation ( number )
+  def number_separation( number )
     # 返す変数
     result = number.to_s
     # 「,」を入れる数の導出

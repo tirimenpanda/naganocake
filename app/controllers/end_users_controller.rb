@@ -1,4 +1,5 @@
 class EndUsersController < ApplicationController
+before_action :authenticate_end_user!
 
   def edit
     # なし
@@ -11,9 +12,12 @@ class EndUsersController < ApplicationController
     end_user.update( end_user_params )
     # ユーザが退会状態に変化した場合の処理
     if end_user.is_deleted then
-      logger.debug 'ログアウト処理実行'
+      # logger.debug 'ログアウト処理実行'
       # ログアウト処理
-       sign_out  end_user
+      sign_out end_user
+      # ログアウト時にトップに飛ばされるようにコントローラー設定必要？？
+      redirect_to root_path
+      return
     end
     # ログインユーザ詳細画面へ遷移
     redirect_to end_users_path

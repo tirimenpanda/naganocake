@@ -7,7 +7,7 @@
         <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "example@email.com"%>
       </div>
       <div class="field">
-        <%= f.password_field :encrypted_password, autocomplete: "current-password", placeholder: "your password" %>
+        <%= f.password_field :password, autocomplete: "current-password", placeholder: "your password" %>
       </div>
 
       <% if devise_mapping.rememberable? %>

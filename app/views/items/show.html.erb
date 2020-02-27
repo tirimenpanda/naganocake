@@ -1,45 +1,37 @@
-<P>URLエラーのため表示されない</P>
+
 <p>商品詳細画面</p>
 <div class="container">
-    <!-- ジャンル検索 部分テンプレートで入れる -->
-    <div class="row">
-        <div class=col-xs-4>
-            <%#= attachment_image_tag items.image, :profile_image, size:"100x100", format: 'jpeg',fallback: "no_image.jpg" %>
-            <%# end %>
-        </div>
-
-        <!-- item画像に対して<form style= "display: inline">入れる？-->
-            <div class="col-xs-4">
-                <h2><strong>商品名<%#= items.name %></strong></h2>
-                <br>
-                <p>商品紹介文が入ります商品紹介文が入ります商品紹介文が入ります<%#= items.introduction %></p>
-                <br>
-
-                <ul>
-                    <li>￥<%#= items.listed_price %>(税込)</li>
-                </ul>
-                <br>
-
-                <div class="serect-amount">
-                    <label for="cart_items_amount"></label>
-                    <select name="amount">
-                        <option value="個数選択">個数選択</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
-                    </select>
-                    <form style="display: inline">
-                        <%= link_to "カートに入れる", end_users_path(current_end_user), class: "btn btn-primary" %>
-                    </form>
-                    <!-- ↑↑link先のpath エラー出るので最後にpath変える。。。cart_items_path(cart_items.id)-->
-                </div>
-            </div>
+  <!-- ジャンル検索 部分テンプレートで入れる -->
+  <div class="row">
+    <div class="col-xs-4">
+      <%= attachment_image_tag @item, :image, size:'100x100', format: 'jpeg', fallback: 'no_image.jpg', size:'100x100' %>
     </div>
-</div>
 
+    <div class="col-xs-4">
+      <h2><strong><%= @item.name %></strong></h2>
+      <br>
+      <p><%= @item.introduction %></p>
+      <br>
+
+      <ul>
+        <li>￥ <%= number_separation ( @item.listed_price )%>(税込)</li>
+      </ul>
+      <br>
+
+      <div class="serect-amount">
+        <% if end_user_signed_in? then%>
+        <%= form_for( @cart_item ) do | f |%>
+        <%= f.hidden_field :item_id, value:@item.id, readonly:true %>
+        <%= f.hidden_field :end_user_id, value:current_end_user.id, readonly:true %>
+        <% if @cart_item.amount.nil? then  %>
+        <%= f.select :amount, create_selection_amount(), include_blank:'個数選択' %>
+        <% else %>
+        <%= f.select :amount, create_selection_amount( @cart_item.amount ) %>
+        <% end %>
+        <div style="display: inline;"><%= f.submit 'カートに入れる', class: "btn btn-primary" %></div>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
