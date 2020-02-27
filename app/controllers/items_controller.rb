@@ -3,18 +3,17 @@ class ItemsController < ApplicationController
 		# ジャンルIDが指定されているかで分岐処理
 		if params[:id].nil? then
 			# ジャンルIDが指定されていない場合
-			# 全ジャンル取得
-			genres = Genre.where( is_displayed:true )
-			# 表示が有効なジャンルの商品情報を取得
-			@items = Item.where( genre_id: genres.map{ | genre | genre.id } )
+			items = Item.where(selling_status: true)
 		else
 			# ジャンル指定ありの場合
 			# 該当ジャンルオブジェクト取得
 			genre = Genre.find( params[:id] )
 			# ジャンル表示は有効か否か？
-			@items = ( genre.is_displayed ? genre.items : nil )
+			items = ( genre.is_displayed ? genre.items : nil )
 			# 有効(true) なら、対象ジャンル商品情報取得
 		end
+			@pages = items.all.page(params[:page]).reverse_order
+			@counts = items.count
 	end
 
 	def show

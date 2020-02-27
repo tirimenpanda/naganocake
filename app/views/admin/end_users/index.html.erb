@@ -1,22 +1,23 @@
 <div class="container">
-	<h3>会員一覧画面</h3>
-		<div class="row">
-			<table class="end_users_index">
-				<tr>
-					<th>会員ID</th>
-					<th>氏名</th>
-					<th>メールアドレス</th>
-					<th>ステータス</th>
-				</tr>
-				<tbody>
-					<%= @users.each do |user|%>
-						<tr>
-							<td><%= link_to user.name, edit_admin_end_user_path(user.id) %></td>
-							<td><%= user.email %></td>
-							<td><%= user.is_deleated %></td>
-						</tr>
-					<% end %>
-				</tbody>
-			</table>
-		</div>
+	<div class="row">
+		<h3><strong>会員一覧画面</strong></h3>
+		<table class="end_users_index">
+			<tr>
+				<th>会員ID</th>
+				<th>氏名</th>
+				<th>メールアドレス</th>
+				<th>ステータス</th>
+			</tr>
+			<tbody>
+				<% @users.each do |user|%>
+					<tr>
+						<td><%= user.id %></td>
+						<td><%= link_to "#{user.last_name} #{user.first_name}", admin_end_user_path(user.id) %></td>
+						<td><%= user.email %></td>
+						<td><%= user.is_deleted ? '退会済み' : '有効' %></td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
 </div>

@@ -35,4 +35,10 @@ class Admin::ItemsController < ApplicationController
 		# :imge_idではなく:imageっぽい
 		params.require(:item).permit( :genre_id, :name, :introduction, :listed_price, :image, :selling_status )
 	end
+
+	private
+	def item_params
+		# :imge_idではなく:imageっぽい
+		params.require(:item).permit( :genre_id, :name, :introduction, :listed_price, :image, :selling_status )
+	end
 end

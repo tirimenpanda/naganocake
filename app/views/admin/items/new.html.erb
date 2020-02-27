@@ -1,22 +1,30 @@
-
-<p>商品新規登録画面</p>
-
 <div class="container">
+	<h2>商品登録画面</h2>
+	<%= form_for( @item, url:admin_items_path ) do | item | %>
+  <!-- ジャンル検索 部分テンプレートで入れる -->
   <div class="row">
-    <%= form_for( @item, url:admin_items_path ) do | item | %>
-    <div class="col-xs-4">
-      <%= attachment_image_tag @item, :image, size:'100x100', format: 'jpeg', fallback: 'no_image.jpg', size:'100x100' %><br>
+    <div class="col-xs-4 ">
+      <div class="field">
+        <%= attachment_image_tag @item, :image, size:'350x200', format: 'jpeg', fallback: 'no_image.jpg', size:'350x200' %><br>
+      </div>
       <%= item.attachment_field :image, placeholder: "画像選択" %>
     </div>
 
     <div class="col-xs-4">
-      商品名<%= item.text_field :name %><br>
-      商品説明<%= item.text_area :introduction %><br>
-      ジャンル<%= item.select :genre_id, create_selection_genre(), prompt:'--選択してください--' %><br>
-      税抜価格<%= item.number_field :listed_price, min:0 %>円<br>
-      販売ステータス<%= item.select :selling_status, { 販売中:true, 売切れ:false } %><br>
+      <label>商品名</label><br />
+      <%= item.text_field :name ,class: "field" %><br />
+      <label>商品説明</label><br />
+      <%= item.text_area :introduction %><br />
+      <label>ジャンル</label><br />
+      <%= item.select :genre_id, Genre.all.map{|genre|[genre.name, genre.id]}.to_h , prompt:'--選択してください--' ,class: "field" %><br />
+      <label>価格(税抜)</label><br />
+      <%= item.number_field :listed_price, min:0 ,class: "field" %>円<br />
+      <label>販売ステータス</label><br />
+      <%= item.select :selling_status, { 販売中:true, 売切れ:false } %><br />
       <%= item.submit '新規登録', class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>
+</div>
+
 </div>
