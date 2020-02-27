@@ -1,18 +1,26 @@
 class ItemsController < ApplicationController
 	def index
+		# ジャンル表示OKのやつを全部取得
+		@genres = Genre.where( is_displayed: true)
 		# ジャンルIDが指定されているかで分岐処理
-		if params[:id].nil? then
+		if !genre_params then
 			# ジャンルIDが指定されていない場合
-			items = Item.where(selling_status: true)
+			# ジャンル表示OKのやつを全部取得
+			genres = @genres.map{ | g | g.id }
+			# ジャンル表示OKの商品を全部取得
+			items = Item.where( genre_id: genres)
+			# indexページタイトル情報
+			@info = '商品'
 		else
 			# ジャンル指定ありの場合
 			# 該当ジャンルオブジェクト取得
-			genre = Genre.find( params[:id] )
+			genre = Genre.find( genre_params[:id] )
 			# ジャンル表示は有効か否か？
-			items = ( genre.is_displayed ? genre.items : nil )
-			# 有効(true) なら、対象ジャンル商品情報取得
+			items = ( genre.is_displayed ? genre.items : nil ) # 有効(true) なら、対象ジャンル商品情報取得
+			# indexページタイトル情報
+			@info = genre.name
 		end
-			@pages = items.all.page(params[:page]).reverse_order
+			@pages = items.page(params[:page]).reverse_order
 			@counts = items.count
 	end
 
@@ -29,6 +37,15 @@ class ItemsController < ApplicationController
 		if @cart_item.nil? then
 			# 新規CartItemオブジェクトの作成
 			@cart_item = CartItem.new
+		end
+	end
+
+	private
+	def genre_params
+		begin
+			params.require(:genre)
+		rescue
+			false
 		end
 	end
 end

@@ -1,81 +1,15 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>ながのCAKE</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>ながのCAKE</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <header class="navbar navbar-inverse">
-      <div class="container">
-          <nav class="nav-logo navbar-left">
-            <span>LOGO（ながのCAKE）</span>
-          </nav>
-        <!-- end_userの場合 -->
-          <nav>
-            <% if end_users signed_in? %>
-                <ul class="nav navbar-nav navbar-right">
-                  <li>
-                    <%= link_to "トップ.", items_path %>
-                  </li>
-                  <li>
-                    <%= link_to "| マイページ.", end_user_registration_path %>
-                  </li>
-                  <li>
-                    <%= link_to "| ログアウト.", destroy_user_registration_path, method: :delete  %>
-                  </li>
-                  <li>
-                    <%= link_to "カート", cart_items_path, class: "glyphicon glyphicon-shopping-cart" %>
-                  </li>
-                </ul>
-            <% else %>
-                <ul class="nav navbar-nav navbar-right">
-                  <li>
-                    <%= link_to "はじめての方へ." %>
-                  </li>
-                  <li>
-                    <%= link_to "About." %>
-                  </li>
-                  <li>
-                    <%= link_to "| Sign in.", new_end_user_registration_path %>
-                  </li>
-                  <li>
-                     <%= link_to "| Log in.", new_end_user_session_path %>
-                  </li>
-                </ul>
-            <% end %>
-          </nav>
-
-        <!-- adminの場合 -->
-          <% if admin_users signed_in? %>
-            <ul class="nav navbar-nav navbar-right">
-                  <li>
-                    <%= link_to "商品一覧", items_path %>
-                  </li>
-                  <li>
-                    <%= link_to "会員一覧", end_user_registration_path %>
-                  </li>
-                  <li>
-                    <%= link_to "注文履歴一覧", destroy_user_registration_path, method: :delete  %>
-                  </li>
-                  <li>
-                    <%= link_to "ジャンル管理", cart_items_path, class: "glyphicon glyphicon-shopping-cart" %>
-                  </li>
-                </ul>
-            <% else %>
-
-
-        </div>
-      </header>
-
-      <%= yield %>
-
-   <footer class="footer style-2">
-   </footer>
-
-  </body>
+<body>
+  <%= yield %>
+</body>
 </html>
