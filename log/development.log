@@ -1,0 +1,359 @@
+Started GET "/homes/about" for 10.0.2.2 at 2020-02-27 03:42:29 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by HomesController#about as HTML
+  Rendering homes/about.html.erb within layouts/application
+  Rendered homes/about.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 4040ms (Views: 4030.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 10.0.2.2 at 2020-02-27 03:42:39 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  Rendered homes/top.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 77ms (Views: 71.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/admin/end_users" for 10.0.2.2 at 2020-02-27 03:42:55 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::EndUsersController#index as HTML
+  Rendering admin/end_users/index.html.erb within layouts/application
+  Rendered admin/end_users/index.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/vagrant/naganocake/app/views/admin/end_users/index.html.erb:28: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/admin/end_users/index.html.erb:28: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/admin/end_users" for 10.0.2.2 at 2020-02-27 03:45:10 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::EndUsersController#index as HTML
+  Rendering admin/end_users/index.html.erb within layouts/application
+  Rendered admin/end_users/index.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/vagrant/naganocake/app/views/admin/end_users/index.html.erb:31: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/admin/end_users/index.html.erb:31: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/admin/end_users" for 10.0.2.2 at 2020-02-27 03:46:12 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::EndUsersController#index as HTML
+  Rendering admin/end_users/index.html.erb within layouts/application
+  Rendered admin/end_users/index.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/vagrant/naganocake/app/views/admin/end_users/index.html.erb:34: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/admin/end_users/index.html.erb:34: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/admin/end_users" for 10.0.2.2 at 2020-02-27 03:46:23 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Admin::EndUsersController#index as HTML
+  Rendering admin/end_users/index.html.erb within layouts/application
+  Rendered admin/end_users/index.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/vagrant/naganocake/app/views/admin/end_users/index.html.erb:34: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/admin/end_users/index.html.erb:34: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/admin/end_users" for 10.0.2.2 at 2020-02-27 03:46:24 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::EndUsersController#index as HTML
+  Rendering admin/end_users/index.html.erb within layouts/application
+  Rendered admin/end_users/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/vagrant/naganocake/app/views/admin/end_users/index.html.erb:34: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/admin/end_users/index.html.erb:34: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/admin/end_users" for 10.0.2.2 at 2020-02-27 03:47:42 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::EndUsersController#index as HTML
+  Rendering admin/end_users/index.html.erb within layouts/application
+  Rendered admin/end_users/index.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/vagrant/naganocake/app/views/admin/end_users/index.html.erb:34: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/admin/end_users/index.html.erb:34: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/admin/end_users" for 10.0.2.2 at 2020-02-27 03:47:49 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by Admin::EndUsersController#index as HTML
+  Rendering admin/end_users/index.html.erb within layouts/application
+  Rendered admin/end_users/index.html.erb within layouts/application (0.6ms)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/vagrant/naganocake/app/views/admin/end_users/index.html.erb:34: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/admin/end_users/index.html.erb:34: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/admin/end_users" for 10.0.2.2 at 2020-02-27 03:49:31 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::EndUsersController#index as HTML
+  Rendering admin/end_users/index.html.erb within layouts/application
+  [1m[36mEndUser Load (0.8ms)[0m  [1m[34mSELECT "end_users".* FROM "end_users"[0m
+  ↳ app/views/admin/end_users/index.html.erb:12
+  Rendered admin/end_users/index.html.erb within layouts/application (32.1ms)
+Completed 200 OK in 555ms (Views: 550.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/admin/end_users" for 10.0.2.2 at 2020-02-27 03:51:43 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::EndUsersController#index as HTML
+  Rendering admin/end_users/index.html.erb within layouts/application
+  [1m[36mEndUser Load (0.5ms)[0m  [1m[34mSELECT "end_users".* FROM "end_users"[0m
+  ↳ app/views/admin/end_users/index.html.erb:12
+  Rendered admin/end_users/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 59ms (Views: 56.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/admin/end_users" for 10.0.2.2 at 2020-02-27 03:52:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::EndUsersController#index as HTML
+  Rendering admin/end_users/index.html.erb within layouts/application
+  [1m[36mEndUser Load (0.3ms)[0m  [1m[34mSELECT "end_users".* FROM "end_users"[0m
+  ↳ app/views/admin/end_users/index.html.erb:14
+  Rendered admin/end_users/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 61ms (Views: 56.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/end_users" for 10.0.2.2 at 2020-02-27 03:52:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::EndUsersController#index as HTML
+  Rendering admin/end_users/index.html.erb within layouts/application
+  [1m[36mEndUser Load (0.3ms)[0m  [1m[34mSELECT "end_users".* FROM "end_users"[0m
+  ↳ app/views/admin/end_users/index.html.erb:14
+  Rendered admin/end_users/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 55ms (Views: 51.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/end_users" for 10.0.2.2 at 2020-02-27 03:53:06 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::EndUsersController#index as HTML
+  Rendering admin/end_users/index.html.erb within layouts/application
+  [1m[36mEndUser Load (0.3ms)[0m  [1m[34mSELECT "end_users".* FROM "end_users"[0m
+  ↳ app/views/admin/end_users/index.html.erb:12
+  Rendered admin/end_users/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 58ms (Views: 53.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/end_users" for 10.0.2.2 at 2020-02-27 03:54:05 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::EndUsersController#index as HTML
+  Rendering admin/end_users/index.html.erb within layouts/application
+  [1m[36mEndUser Load (0.3ms)[0m  [1m[34mSELECT "end_users".* FROM "end_users"[0m
+  ↳ app/views/admin/end_users/index.html.erb:12
+  Rendered admin/end_users/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 71ms (Views: 64.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/admin/end_users" for 10.0.2.2 at 2020-02-27 03:55:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::EndUsersController#index as HTML
+  Rendering admin/end_users/index.html.erb within layouts/application
+  Rendered admin/end_users/index.html.erb within layouts/application (2.7ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `each' for nil:NilClass):
+     9: 					<th>ステータス</th>
+    10: 				</tr>
+    11: 				<tbody>
+    12: 					<%= @user.each do |user|%>
+    13: 						<tr>
+    14: 							<td><%= user.id %></td>
+    15: 							<td><%= link_to "{#user.first_name}{user.last_name}", edit_admin_end_user_path(user.id) %></td>
+  
+app/views/admin/end_users/index.html.erb:12:in `_app_views_admin_end_users_index_html_erb__2757593380216383368_70000525747000'
+Started GET "/admin/end_users" for 10.0.2.2 at 2020-02-27 03:57:14 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::EndUsersController#index as HTML
+  Rendering admin/end_users/index.html.erb within layouts/application
+  [1m[36mEndUser Load (0.6ms)[0m  [1m[34mSELECT "end_users".* FROM "end_users"[0m
+  ↳ app/views/admin/end_users/index.html.erb:12
+  Rendered admin/end_users/index.html.erb within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.6ms)
+
+
+  
+SyntaxError (/vagrant/naganocake/app/views/layouts/application.html.erb:24: syntax error, unexpected '<'
+                </li>
+                ^
+/vagrant/naganocake/app/views/layouts/application.html.erb:26: unknown regexp option - h
+/vagrant/naganocake/app/views/layouts/application.html.erb:26: syntax error, unexpected tINTEGER, expecting ')'
+...6>| はじめての方へ .</h6>
+...                              ^
+/vagrant/naganocake/app/views/layouts/application.html.erb:29: unknown regexp option - h
+/vagrant/naganocake/app/views/layouts/application.html.erb:29: syntax error, unexpected tINTEGER, expecting ')'
+...    <h6>| マイページ .</h6>
+...                              ^
+/vagrant/naganocake/app/views/layouts/application.html.erb:32: unknown regexp option - h
+/vagrant/naganocake/app/views/layouts/application.html.erb:32: syntax error, unexpected tINTEGER, expecting ')'
+...    <h6>| ログアウト .</h6>
+...                              ^
+/vagrant/naganocake/app/views/layouts/application.html.erb:35: unknown regexp option - h
+/vagrant/naganocake/app/views/layouts/application.html.erb:35: syntax error, unexpected tINTEGER, expecting ')'
+...on-shopping-cart">カート</h6>
+...                              ^
+/vagrant/naganocake/app/views/layouts/application.html.erb:37: unknown regexp option - l
+/vagrant/naganocake/app/views/layouts/application.html.erb:38: syntax error, unexpected '<'
+        </div>
+        ^
+/vagrant/naganocake/app/views/layouts/application.html.erb:39: unknown regexp options - hadr
+/vagrant/naganocake/app/views/layouts/application.html.erb:41: syntax error, unexpected '<'
+      <%= yield );@output_buffer.saf...
+      ^
+/vagrant/naganocake/app/views/layouts/application.html.erb:50: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/vagrant/naganocake/app/views/layouts/application.html.erb:52: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/layouts/application.html.erb:24: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:26: unknown regexp option - h
+app/views/layouts/application.html.erb:26: syntax error, unexpected tINTEGER, expecting ')'
+app/views/layouts/application.html.erb:29: unknown regexp option - h
+app/views/layouts/application.html.erb:29: syntax error, unexpected tINTEGER, expecting ')'
+app/views/layouts/application.html.erb:32: unknown regexp option - h
+app/views/layouts/application.html.erb:32: syntax error, unexpected tINTEGER, expecting ')'
+app/views/layouts/application.html.erb:35: unknown regexp option - h
+app/views/layouts/application.html.erb:35: syntax error, unexpected tINTEGER, expecting ')'
+app/views/layouts/application.html.erb:37: unknown regexp option - l
+app/views/layouts/application.html.erb:38: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:39: unknown regexp options - hadr
+app/views/layouts/application.html.erb:41: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:50: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/layouts/application.html.erb:52: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/admin/end_users" for 10.0.2.2 at 2020-02-27 03:58:48 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::EndUsersController#index as HTML
+  Rendering admin/end_users/index.html.erb within layouts/application
+  [1m[36mEndUser Load (1.0ms)[0m  [1m[34mSELECT "end_users".* FROM "end_users"[0m
+  ↳ app/views/admin/end_users/index.html.erb:12
+  Rendered admin/end_users/index.html.erb within layouts/application (3.3ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 1.0ms)
+
+
+  
+SyntaxError (/vagrant/naganocake/app/views/layouts/application.html.erb:24: syntax error, unexpected '<'
+                </li>
+                ^
+/vagrant/naganocake/app/views/layouts/application.html.erb:26: unknown regexp option - h
+/vagrant/naganocake/app/views/layouts/application.html.erb:26: syntax error, unexpected tINTEGER, expecting ')'
+...6>| はじめての方へ .</h6>
+...                              ^
+/vagrant/naganocake/app/views/layouts/application.html.erb:29: unknown regexp option - h
+/vagrant/naganocake/app/views/layouts/application.html.erb:29: syntax error, unexpected tINTEGER, expecting ')'
+...    <h6>| マイページ .</h6>
+...                              ^
+/vagrant/naganocake/app/views/layouts/application.html.erb:32: unknown regexp option - h
+/vagrant/naganocake/app/views/layouts/application.html.erb:32: syntax error, unexpected tINTEGER, expecting ')'
+...    <h6>| ログアウト .</h6>
+...                              ^
+/vagrant/naganocake/app/views/layouts/application.html.erb:35: unknown regexp option - h
+/vagrant/naganocake/app/views/layouts/application.html.erb:35: syntax error, unexpected tINTEGER, expecting ')'
+...on-shopping-cart">カート</h6>
+...                              ^
+/vagrant/naganocake/app/views/layouts/application.html.erb:37: unknown regexp option - l
+/vagrant/naganocake/app/views/layouts/application.html.erb:38: syntax error, unexpected '<'
+        </div>
+        ^
+/vagrant/naganocake/app/views/layouts/application.html.erb:39: unknown regexp options - hadr
+/vagrant/naganocake/app/views/layouts/application.html.erb:41: syntax error, unexpected '<'
+      <%= yield );@output_buffer.saf...
+      ^
+/vagrant/naganocake/app/views/layouts/application.html.erb:50: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/vagrant/naganocake/app/views/layouts/application.html.erb:52: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/layouts/application.html.erb:24: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:26: unknown regexp option - h
+app/views/layouts/application.html.erb:26: syntax error, unexpected tINTEGER, expecting ')'
+app/views/layouts/application.html.erb:29: unknown regexp option - h
+app/views/layouts/application.html.erb:29: syntax error, unexpected tINTEGER, expecting ')'
+app/views/layouts/application.html.erb:32: unknown regexp option - h
+app/views/layouts/application.html.erb:32: syntax error, unexpected tINTEGER, expecting ')'
+app/views/layouts/application.html.erb:35: unknown regexp option - h
+app/views/layouts/application.html.erb:35: syntax error, unexpected tINTEGER, expecting ')'
+app/views/layouts/application.html.erb:37: unknown regexp option - l
+app/views/layouts/application.html.erb:38: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:39: unknown regexp options - hadr
+app/views/layouts/application.html.erb:41: syntax error, unexpected '<'
+app/views/layouts/application.html.erb:50: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/layouts/application.html.erb:52: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/admin/end_users" for 10.0.2.2 at 2020-02-27 03:59:37 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::EndUsersController#index as HTML
+  Rendering admin/end_users/index.html.erb within layouts/application
+  [1m[36mEndUser Load (0.3ms)[0m  [1m[34mSELECT "end_users".* FROM "end_users"[0m
+  ↳ app/views/admin/end_users/index.html.erb:12
+  Rendered admin/end_users/index.html.erb within layouts/application (2.0ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/vagrant/naganocake/app/views/layouts/application.html.erb:50: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+          ^~~~~~
+/vagrant/naganocake/app/views/layouts/application.html.erb:52: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/layouts/application.html.erb:50: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/layouts/application.html.erb:52: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/admin/end_users" for 10.0.2.2 at 2020-02-27 04:51:58 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::EndUsersController#index as HTML
+  Rendering admin/end_users/index.html.erb within layouts/application
+  [1m[36mEndUser Load (0.8ms)[0m  [1m[34mSELECT "end_users".* FROM "end_users"[0m
+  ↳ app/views/admin/end_users/index.html.erb:12
+  Rendered admin/end_users/index.html.erb within layouts/application (3.8ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.8ms)
+
+
+  
+SyntaxError (/vagrant/naganocake/app/views/layouts/application.html.erb:69: syntax error, unexpected keyword_ensure, expecting keyword_end
+          ensure
+          ^~~~~~
+/vagrant/naganocake/app/views/layouts/application.html.erb:71: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/layouts/application.html.erb:69: syntax error, unexpected keyword_ensure, expecting keyword_end
+app/views/layouts/application.html.erb:71: syntax error, unexpected end-of-input, expecting keyword_end

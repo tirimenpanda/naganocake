@@ -9,11 +9,18 @@
 					<th>ステータス</th>
 				</tr>
 				<tbody>
-					<%= @users.each do |user|%>
+					<% @users.each do |user| %>
 						<tr>
-							<td><%= link_to user.name, edit_admin_end_user_path %></td>
+							<td><%= user.id %></td>
+							<td><%= link_to "{#user.first_name}{user.last_name}", edit_admin_end_user_path(user.id) %></td>
 							<td><%= user.email %></td>
-							<td><%= user.is_deleated %></td>
+							<td>
+								<% if user.is_deleted then %>
+								退会済み
+								<% else %>
+								有効
+								<% end %>
+							</td>
 						</tr>
 					<% end %>
 				</tbody>
