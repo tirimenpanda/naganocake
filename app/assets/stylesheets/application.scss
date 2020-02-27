@@ -13,8 +13,8 @@
  *= require_tree .
  *= require_self
  */
- @import "bootstrap-sprockets";  /*ここを追加*/
- @import "bootstrap";                   /*ここを追加*/
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
 
 
  * {
@@ -25,6 +25,8 @@
 
  a {
    text-decoration: none;
+   color: #483d8b;
+   font-weight: bold;
  }
 
  .container {
@@ -134,7 +136,7 @@
 
  table {
    border-collapse: collapse;
-   width: 500px;
+   width: 1000px;
  }
 
  th,td {

@@ -1,1 +1,26 @@
+
 <p>商品詳細画面</p>
+<div class="container">
+  <!-- ジャンル検索 部分テンプレートで入れる -->
+  <div class="row">
+    <div class="col-xs-4">
+    <%= attachment_image_tag @item, :image, size:'100x100', format: 'jpeg', fallback: 'no_image.jpg', size:'100x100' %>
+    </div>
+
+    <div class="col-xs-4">
+      <h2><strong><%= @item.name %></strong></h2>
+      <br>
+      <p><%= @item.introduction %></p>
+      <br>
+
+      <ul>
+        <li>￥ <%= number_separation ( @item.listed_price )%>(税込)</li>
+      </ul>
+      <br>
+
+      <div class="serect-amount">
+        <%= link_to '編集する', edit_admin_item_path( @item )%>
+      </div>
+    </div>
+  </div>
+</div>
