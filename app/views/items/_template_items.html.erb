@@ -1,0 +1,18 @@
+<div class="container">
+  <p><strong>商品一覧</strong>(全<%= counts %>件)</p><br />
+  <ul>
+    <% pages.each do |itm| %>
+      <div class="col-xs-3">
+        <li class="item_data">
+          <%= attachment_image_tag itm, :image, size:'150x80', format: 'jpeg', fallback: 'no_image.jpg', size:'150x80' %><br />
+          <dt><%= itm.name %></dt>
+          <dt>¥<%= itm.listed_price %></dt>
+        </li>
+      </div>
+    <% end %>
+  </ul>
+
+  <div class="col-xs-10">
+    <%= paginate pages, class: "paginate" %>
+  </div>
+</div>
