@@ -3,7 +3,9 @@ class ItemsController < ApplicationController
 		# ジャンルIDが指定されているかで分岐処理
 		if params[:id].nil? then
 			# ジャンルIDが指定されていない場合
-			items = Item.where(selling_status: true)
+			# ジャンル表示が有効の商品を全て取得
+			genres = Genre.where(is_displayed: true).map{|g|g.id}
+			items = Item.where(genre_id: genres)
 		else
 			# ジャンル指定ありの場合
 			# 該当ジャンルオブジェクト取得

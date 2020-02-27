@@ -1,12 +1,11 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xs-1" style="background-color: #FFD166;">
-			<%#= render 'items/template_genres' genres: @genres %>
+			<%= render 'items/template_genres' %>
 		</div>
 
 		<div class="col-xs-11">
 			<%= render 'items/template_items', pages: @pages , counts: @counts %>
 		</div>
-		<%#= render 'items/template_items', post_images: @post_images %>
 	</div>
 </div>

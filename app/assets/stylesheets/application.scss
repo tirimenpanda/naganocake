@@ -21,11 +21,12 @@
    margin: 0;
    padding: 0;
    box-sizing: border-box;
+   font-family: "irohamaru-Regular";
  }
 
  a {
    text-decoration: none;
-   color: #483d8b;
+   color: #4682b4;
    font-weight: bold;
  }
 
@@ -48,11 +49,16 @@
  }
 
  .navbar-nav {
+   width: 100%;
    background-color: #222;
    border-color: #090909;
  }
 
- .navbar-left, .navbar-right {
+ .logo {
+   padding-top: 10px;
+ }
+
+ .navbar-right {
    padding: 30px 0 0;
  }
 

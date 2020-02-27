@@ -1,52 +1,56 @@
-<h2>購入情報入力</h2>
-<%= form_for( @order, url: orders_confirm_path, method: :get) do | f | %>
-<h3>支払方法</h3>
-<p>
-  <!--ラジオボタン１ => クレジットカード-->
-  <%= f.radio_button :payment, 'クレジットカード', checked:true %>
-  <%= f.label :payment, 'クレジットカード' %>
-  <br>
-  <!--ラジオボタン２ => 銀行振込-->
-  <%= f.radio_button :payment, '銀行振込' %>
-  <%= f.label :payment, '銀行振込' %>
-</p>
+<div class="container">
+  <h2>購入情報入力</h2>
+  <%= form_for( @order, url: orders_confirm_path, method: :get) do | f | %><br />
+  <strong>支払方法</strong>
+  <p>
+    <!--ラジオボタン１ => クレジットカード-->
+    <%= f.radio_button :payment, 'クレジットカード', checked:true %>
+    <%= f.label :payment, 'クレジットカード' %>
+    <br>
+    <!--ラジオボタン２ => 銀行振込-->
+    <%= f.radio_button :payment, '銀行振込' %>
+    <%= f.label :payment, '銀行振込' %>
+  </p>
 
-<h3>お届け先</h3>
-<p>
-  <!--ラジオボタン１ => 自分宛-->
-  <label><%= f.radio_button :postage, -1, checked:true %>ご自身の住所</label><br>
-  <%= postal_code_format( current_end_user.postal_code ) %>
-  <%= current_end_user.address %><br>
-  <%= current_end_user.last_name %>&nbsp;&nbsp;<%= current_end_user.first_name %>
-</p>
-<p>
-  <!--ラジオボタン２ => 登録済み配送先から選択-->
+  <strong>お届け先</strong>
+  <p>
+    <!--ラジオボタン１ => 自分宛-->
+    <%= f.radio_button :postage, -1, checked:true %>ご自身の住所<br>
+    <%= postal_code_format( current_end_user.postal_code ) %>
+    <%= current_end_user.address %><br>
+    <%= current_end_user.last_name %>&nbsp;&nbsp;<%= current_end_user.first_name %>
+  </p>
+  <p>
+    <!--ラジオボタン２ => 登録済み配送先から選択-->
 
-  <% if current_end_user.addresses.count == 0 then %>
-  <label><%= f.radio_button :postage, -2, disabled:true %>登録済住所から選択</label><br>
-  <% else %>
-  <label><%= f.radio_button :postage, -2 %>登録済住所から選択</label><br>
-  <% end %>
-  <%= f.select :total_price, create_selection( current_end_user.addresses ) %>
-</p>
-<p>
-  <!--ラジオボタン３ => 新規登録-->
-  <label><%= f.radio_button :postage, -3 %>新しいお届け先</label><br>
-  <table>
-    <tr>
-      <td>郵便番号</td>
-      <td><%= f.text_field :postal_code %></td>
-    </tr>
-    <tr>
-      <td>住所</td>
-      <td><%= f.text_field :ship_to %></td>
-    </tr>
-    <tr>
-      <td>宛名</td>
-      <td><%= f.text_field :consignee %></td>
-    </tr>
-  </table>
-</p>
+    <% if current_end_user.addresses.count == 0 then %>
+    <label><%= f.radio_button :postage, -2, disabled:true %>登録済住所から選択</label><br>
+    <% else %>
+    <label><%= f.radio_button :postage, -2 %>登録済住所から選択</label><br>
+    <% end %>
+    <%= f.select :total_price, create_selection( current_end_user.addresses ) %>
+  </p>
+  <p>
+    <!--ラジオボタン３ => 新規登録-->
+    <label><%= f.radio_button :postage, -3 %>新しいお届け先</label><br>
+    <table>
+      <tr>
+        <td>郵便番号</td>
+        <td><%= f.text_field :postal_code %></td>
+      </tr>
+      <tr>
+        <td>住所</td>
+        <td><%= f.text_field :ship_to %></td>
+      </tr>
+      <tr>
+        <td>宛名</td>
+        <td><%= f.text_field :consignee %></td>
+      </tr>
+    </table>
+  </p>
 
-<%= f.submit '確認画面へ進む' %>
-<% end %>
+  <div style="display: inline;">
+    <%= f.submit '確認画面に進む', class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

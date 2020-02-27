@@ -1,67 +1,68 @@
+<div class="container">
+  <h2>注文詳細画面</h2>
 
-<h2>注文詳細画面</h2>
+  <table>
+    <tr>
+      <td>購入者</td>
+      <td><%= link_to @order.end_user.last_name + @order.end_user.first_name, admin_end_user_path( @order.end_user_id ) %></td>
+    </tr>
+    <tr>
+      <td>配送先</td>
+      <td>
+        <%= postal_code_format( @order.postal_code ) + @order.ship_to %><br>
+        <%= @order.consignee %>
+      </td>
+    </tr>
+    <tr>
+      <td>支払方法</td>
+      <td><%= @order.payment %></td>
+    </tr>
+    <tr>
+      <td>注文ステータス</td>
+      <td>
+        <%= form_for( @order, url:admin_path, method: :patch ) do | order | %>
+        <%= order.select :order_status, order_status_selection() %>
+        <%= order.submit '更新' %>
+        <% end %>
+      </td>
+    </tr>
+  </table>
 
-<table>
-  <tr>
-    <td>購入者</td>
-    <td><%= link_to @order.end_user.last_name + @order.end_user.first_name, admin_end_user_path( @order.end_user_id ) %></td>
-  </tr>
-  <tr>
-    <td>配送先</td>
-    <td>
-      <%= postal_code_format( @order.postal_code ) + @order.ship_to %><br>
-      <%= @order.consignee %>
-    </td>
-  </tr>
-  <tr>
-    <td>支払方法</td>
-    <td><%= @order.payment %></td>
-  </tr>
-  <tr>
-    <td>注文ステータス</td>
-    <td>
-      <%= form_for( @order, url:admin_path, method: :patch ) do | order | %>
-      <%= order.select :order_status, order_status_selection() %>
-      <%= order.submit '更新' %>
+  <table>
+    <tr>
+      <th>商品名</th>
+      <th>単価（税込）</th>
+      <th>数量</th>
+      <th>小計</th>
+      <th>製作ステータス</th>
+      <th></th>
+    </tr>
+    <% @order.order_details.each do | order_detail | %>
+    <tr>
+      <td><%= order_detail.item.name %></td>
+      <td><%= number_separation( order_detail.purchased_price / order_detail.amount ) %></td>
+      <td><%= order_detail.amount %></td>
+      <td><%= number_separation( order_detail.purchased_price ) %></td>
+      <%= form_for( order_detail, url:admin_path( order_detail ), method: :put ) do | f | %>
+      <td><%= f.select :making_status, making_status_selection() %></td>
+      <td><%= f.submit '更新' %></td>
       <% end %>
-    </td>
-  </tr>
-</table>
-
-<table>
-  <tr>
-    <th>商品名</th>
-    <th>単価（税込）</th>
-    <th>数量</th>
-    <th>小計</th>
-    <th>製作ステータス</th>
-    <th></th>
-  </tr>
-  <% @order.order_details.each do | order_detail | %>
-  <tr>
-    <td><%= order_detail.item.name %></td>
-    <td><%= number_separation( order_detail.purchased_price / order_detail.amount ) %></td>
-    <td><%= order_detail.amount %></td>
-    <td><%= number_separation( order_detail.purchased_price ) %></td>
-    <%= form_for( order_detail, url:admin_path( order_detail ), method: :put ) do | f | %>
-    <td><%= f.select :making_status, making_status_selection() %></td>
-    <td><%= f.submit '更新' %></td>
+    </tr>
     <% end %>
-  </tr>
-  <% end %>
-</table>
+  </table>
 
-<table>
-  <tr>
-    <td>商品合計</td>
-    <td><%= number_separation( @order.total_price - @order.postage ) %></td>
-  </tr>
-  <tr>
-    <td>配送料</td>
-    <td><%= number_separation( @order.postage ) %></td>
-  </tr>
-  <tr>
-    <td><b>ご請求額</b></td>
-    <td><%= number_separation( @order.total_price ) %></td>
-  </tr>
-</table>
+  <table>
+    <tr>
+      <td>商品合計</td>
+      <td><%= number_separation( @order.total_price - @order.postage ) %></td>
+    </tr>
+    <tr>
+      <td>配送料</td>
+      <td><%= number_separation( @order.postage ) %></td>
+    </tr>
+    <tr>
+      <td><b>ご請求額</b></td>
+      <td><%= number_separation( @order.total_price ) %></td>
+    </tr>
+  </table>
+</div>

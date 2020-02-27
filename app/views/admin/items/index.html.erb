@@ -1,23 +1,24 @@
-
-<h2>商品一覧画面</h2>
-<%= link_to new_admin_item_path do %>
-<%= image_tag 'adding_item.png' %>
-<% end %>
-<table>
-  <tr>
-    <th>商品ID</th>
-    <th>商品名</th>
-    <th>税抜価格</th>
-    <th>ジャンル</th>
-    <th>ステータス</th>
-  </tr>
-  <% Item.all.each do | item | %>
-  <tr>
-    <td><%= item.id %></td>
-    <td><%= link_to item.name, admin_item_path( item ) %></td>
-    <td><%= item.listed_price %></td>
-    <td><%= item.genre.name %></td>
-    <td><%= item.selling_status ? '販売中' : '販売停止中' %></td>
-  </tr>
+<div class="container">
+  <h2>商品一覧画面</h2>
+  <%= link_to new_admin_item_path do %>
+  <%= image_tag 'adding_item.png' , class: "col-ws-12" %>
   <% end %>
-</table>
+  <table>
+    <tr>
+      <th>商品ID</th>
+      <th>商品名</th>
+      <th>税抜価格</th>
+      <th>ジャンル</th>
+      <th>ステータス</th>
+    </tr>
+    <% Item.all.each do | item | %>
+    <tr>
+      <td><%= item.id %></td>
+      <td><%= link_to item.name, admin_item_path( item ) %></td>
+      <td><%= item.listed_price %></td>
+      <td><%= item.genre.name %></td>
+      <td><%= item.selling_status ? '販売中' : '販売停止中' %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
