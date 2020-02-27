@@ -17,16 +17,19 @@
           </nav>
         <!-- end_userの場合 -->
           <nav>
-            <% if end_users signed_in? %>
+            <% if end_user_signed_in? %>
                 <ul class="nav navbar-nav navbar-right">
                   <li>
-                    <%= link_to "トップ.", items_path %>
+                    <%= link_to "| Top.", items_path %>
+                  </li>
+                  <li>
+                    <%= link_to "| About.", homes_about_path %>
                   </li>
                   <li>
                     <%= link_to "| マイページ.", end_user_registration_path %>
                   </li>
                   <li>
-                    <%= link_to "| ログアウト.", destroy_user_registration_path, method: :delete  %>
+                    <%= link_to "| ログアウト.", destroy_end_user_session_path, method: :delete  %>
                   </li>
                   <li>
                     <%= link_to "カート", cart_items_path, class: "glyphicon glyphicon-shopping-cart" %>
@@ -35,10 +38,7 @@
             <% else %>
                 <ul class="nav navbar-nav navbar-right">
                   <li>
-                    <%= link_to "はじめての方へ." %>
-                  </li>
-                  <li>
-                    <%= link_to "About." %>
+                    <%= link_to "About.", homes_about_path %>
                   </li>
                   <li>
                     <%= link_to "| Sign in.", new_end_user_registration_path %>
@@ -48,29 +48,34 @@
                   </li>
                 </ul>
             <% end %>
+           </nav>
+
+        <!-- <-- adminの場合 -->
+            <% if admin_user_signed_in? %>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                      <%= link_to "商品一覧", admin_items_path %>
+                    </li>
+                    <li>
+                      <%= link_to "会員一覧", admin_end_users_path %>
+                    </li>
+                    <li>
+                      <%= link_to "注文履歴一覧", admin_orders_path %>
+                    </li>
+                    <li>
+                      <%= link_to "ジャンル管理", admin_genres_path %>
+                    </li>
+                </ul>
+                <!-- <div class="jenre_serch"> -->
+                  <!-- <input type="serch" name="genre" placeholder="フリーワードを入力"></input> -->
+                <!-- 虫眼鏡マーク＝glyphicon glyphicon-serch -->
+                <!-- </div> -->
+            <% end %>
           </nav>
 
-        <!-- adminの場合 -->
-          <% if admin_users signed_in? %>
-            <ul class="nav navbar-nav navbar-right">
-                  <li>
-                    <%= link_to "商品一覧", items_path %>
-                  </li>
-                  <li>
-                    <%= link_to "会員一覧", end_user_registration_path %>
-                  </li>
-                  <li>
-                    <%= link_to "注文履歴一覧", destroy_user_registration_path, method: :delete  %>
-                  </li>
-                  <li>
-                    <%= link_to "ジャンル管理", cart_items_path, class: "glyphicon glyphicon-shopping-cart" %>
-                  </li>
-                </ul>
-            <% else %>
 
-
-        </div>
-      </header>
+      </div>
+    </header>
 
       <%= yield %>
 
