@@ -1,55 +1,72 @@
-<h3>ショッピングカート</h3>
-<!-- カートアイテム全項目の削除-->
-<%= link_to 'カートを空にする', cart_items_destroy_all_path, method: :delete, 'data-confirm' => '本当に削除しますか？' %>
+<body>
+  <div class="container">
+    <h3>ショッピングカート</h3>
+      <!-- カートアイテム全項目の削除-->
+       <%= link_to 'カートを空にする', cart_items_destroy_all_path, method: :delete, 'data-confirm' => '本当に削除しますか？', class: "btn btn-danger" %>
+       <!-- 本当はグリッドシステムで揃えたい<div class="col-xs-12"> 磯辺-->
+      <table class="cart-items">
+        <tr class="cart-items-heading">
+          <th width="300">商品名</th>
+          <th width="120">単価（税込）</th>
+          <th width="120" >数量</th>
+          <th width="120">小計</th>
+          <th width="100"></th>
+        </tr>
+        <% @cart_items.each do |cart_item| %>
+        <tr>
+          <td>
+            <!--商品イメージ-->
+            <%= attachment_image_tag cart_item.item, :image, size:'70x70', format: 'jpeg', fallback: 'no_image.jpg', size:'70x70' %>
+            <!--商品名-->
+            <%= cart_item.item.name %>
+          </td>
+          <td>
+            <!-- 単価（税込）-->
+            <!--subtotal( 税抜き価格, 個数 ) => 小計（税込）を計算-->
+            <%= subtotal( cart_item.item.listed_price, 1 ) %>
+          </td>
+          <td class="array-center">
+            <!-- 数量-->
+            <%= form_for( cart_item, url: cart_item_path( cart_item ) ) do | c | %>
+            <%= c.number_field :amount, min:1, style:'width: 60px;'%>
+            <%= c.submit '変更', class: "btn btn-primary" %>
+            <% end %>
+          </td>
+          <td>
+            <!-- 小計-->
+            <!--subtotal( 税抜き価格, 個数 ) => 小計（税込）を計算-->
+            <%= subtotal( cart_item.item.listed_price, cart_item.amount ) %>
+          </td>
+          <td class="array-center">
+            <!-- カートアイテム１項目の削除-->
+            <%= link_to '削除する', cart_item_path( cart_item ), method: :delete, 'data-confirm' => "#{cart_item.item.name}をカートから削除しますか？", class: " btn btn-danger" %>
+          </td>
+        </tr>
+        <% end %>
+      </table>
+    <!-- col-xs-12の閉じタグ</div> 磯辺-->
 
-<table>
-  <tr>
-    <th>商品名</th>
-    <th>単価（税込）</th>
-    <th>数量</th>
-    <th>小計</th>
-    <th></th>
-  </tr>
-  <% @cart_items.each do |cart_item| %>
-  <tr>
-    <td>
-      <!--商品イメージ-->
-      <%= attachment_image_tag cart_item.item, :image, size:'70x70', format: 'jpeg', fallback: 'no_image.jpg', size:'70x70' %>
-      <!--商品名-->
-      <%= cart_item.item.name %>
-    </td>
-    <td>
-      <!-- 単価（税込）-->
-      <!--subtotal( 税抜き価格, 個数 ) => 小計（税込）を計算-->
-      <%= subtotal( cart_item.item.listed_price, 1 ) %>
-    </td>
-    <td>
-      <!-- 数量-->
-      <%= form_for( cart_item, url: cart_item_path( cart_item ) ) do | c | %>
-      <%= c.number_field :amount, min:1 %>
-      <%= c.submit '変更' %>
-      <% end %>
-    </td>
-    <td>
-      <!-- 小計-->
-      <!--subtotal( 税抜き価格, 個数 ) => 小計（税込）を計算-->
-      <%= subtotal( cart_item.item.listed_price, cart_item.amount ) %>
-    </td>
-    <td>
-      <!-- カートアイテム１項目の削除-->
-      <%= link_to '削除する', cart_item_path( cart_item ), method: :delete, 'data-confirm' => "#{cart_item.item.name}をカートから削除しますか？" %>
-    </td>
-  </tr>
-  <% end %>
-</table>
+      <div class="row">
+        <div class="col-xs-1 btn-shopping">
+            <%= link_to '買い物を続ける', root_path, class: "btn btn-primary" %>
+        </div>
+        <!-- 横並び中央余白分col -->
+        <div class="col-xs-5">
+        </div>
+        <table class="col-xs-4">
+          <!-- <table> -->
+            <tr>
+              <td class="total-price">合計金額</td>
+              <td><%= number_separation( @total_price ) %></td>
+            </tr>
+          </table>
+        </div>
+        <!-- 画面右の余白分 -->
+      </div>
 
-<%= link_to '買い物を続ける', root_path %>
+      <div class="row">
+        <%= link_to '情報入力に進む', new_order_path, class: "btn btn-primary" %>
+      </div>
 
-<table>
-  <tr>
-    <td>合計金額</td>
-    <td><%= number_separation( @total_price ) %></td>
-  </tr>
-</table>
-
-<%= link_to '情報入力に進む', new_order_path %>
+  </div>
+</body>
