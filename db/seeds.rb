@@ -51,22 +51,23 @@ Item.create( genre_id: 6, name: %?アイスクリーム?, introduction: %?Häage
   Item.create( genre_id: 9, name: "サンプル(No.#{"%02d" % (i+1)})", introduction: "サンプル説明文(No.#{"%02d" % (i+1)}) #{'ここには商品説明文が入ります'*10}", listed_price: (10_000*rand).to_i, image: File.open( "./app/assets/images/sample#{"%02d" % (i+1)}.png", ?r ) )
 end
 
-
+arr = ( (1..13).to_a  - [Item.find_by( genre_id: 8 ).id] ).shuffle
+# arr = ( (1..13).to_a  - Item.find_by( genre_id: 8 )).shuffle
 # CartItemのサンプルデータ（全11件）
-CartItem.create( end_user_id:1, item_id:1, amount:2 )
-CartItem.create( end_user_id:1, item_id:2, amount:3 )
-CartItem.create( end_user_id:1, item_id:3, amount:5 )
-CartItem.create( end_user_id:1, item_id:4, amount:7 )
-CartItem.create( end_user_id:1, item_id:5, amount:11 )
-CartItem.create( end_user_id:1, item_id:6, amount:13 )
-CartItem.create( end_user_id:2, item_id:1, amount:17 )
-CartItem.create( end_user_id:2, item_id:2, amount:19 )
-CartItem.create( end_user_id:2, item_id:3, amount:23)
-CartItem.create( end_user_id:3, item_id:3, amount:31 )
-CartItem.create( end_user_id:3, item_id:2, amount:37 )
+CartItem.create( end_user_id: 1, item_id: arr.pop, amount: 2 )
+CartItem.create( end_user_id: 1, item_id: arr.pop, amount: 3 )
+CartItem.create( end_user_id: 1, item_id: arr.pop, amount: 5 )
+CartItem.create( end_user_id: 1, item_id: arr.pop, amount: 7 )
+CartItem.create( end_user_id: 1, item_id: arr.pop, amount: 11 )
+CartItem.create( end_user_id: 1, item_id: arr.pop, amount: 13 )
+CartItem.create( end_user_id: 2, item_id: arr.pop, amount: 17 )
+CartItem.create( end_user_id: 2, item_id: arr.pop, amount: 19 )
+CartItem.create( end_user_id: 2, item_id: arr.pop, amount: 23)
+CartItem.create( end_user_id: 3, item_id: arr.pop, amount: 31 )
+CartItem.create( end_user_id: 3, item_id: arr.pop, amount: 37 )
+CartItem.create( end_user_id: 3, item_id: arr.pop, amount: 3 )
 
 t = Time.zone.now - 1.day
-
 # Orderのサンプルデータ（全1件）
 Order.create( end_user_id: 1, postal_code: "1010041", ship_to: "東京都千代田区神田須田町１−２２", consignee: "株式会社ハル研究所", payment: "クレジットカード", postage: 800, total_price: 15585, order_status: "入金確認", created_at: t )
 Order.create( end_user_id: 1, postal_code: "1070052", ship_to: "東京都港区赤坂２丁目１２−２３ キャビンアリーナ赤坂 201", consignee: "株式会社京都アニメーション 東京オフィス", payment: "銀行振込", postage: 800, total_price: 40069, order_status: "入金確認" )
