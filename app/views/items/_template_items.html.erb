@@ -4,7 +4,9 @@
     <% pages.each do |itm| %>
       <div class="col-xs-3">
         <li class="item_data">
-          <%= attachment_image_tag itm, :image, size:'150x80', format: 'jpeg', fallback: 'no_image.jpg', size:'150x80' %><br />
+          <%= link_to itm do %>
+            <%= attachment_image_tag itm, :image, size:'150x80', format: 'jpeg', fallback: 'no_image.jpg', size:'150x80' %><br />
+          <% end %>
           <dt><%= itm.name %></dt>
           <dt>¥<%= itm.listed_price %></dt>
         </li>

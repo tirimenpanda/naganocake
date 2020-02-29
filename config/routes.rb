@@ -1,8 +1,8 @@
 # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 Rails.application.routes.draw do
-  ##エンドユーザ用ルーティング############################################
-  resource :end_users, only: [:show, :edit, :update]
   # アドレス帳用ルーティング
+  patch '/end_user' => 'end_users#update'
+
   resources :addresses, only: [:index, :create, :edit, :update, :destroy]
   # カートアイテム用index
   # get '/cart_items' => 'cart_items#index'
@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   # エンドユーザログイン管理ルーティング
   devise_for :end_users
   # エンドユーザ用ルーティング
-  resource :end_users, only: [:show, :edit, :update]
+  resource :end_users, only: [:show, :update]
+  get '/end_users/editing' => 'end_users#edit'
   # 退会確認ページ用
   get '/end_users/withdraw' => 'end_users#withdraw'
   # アバウトページ用
@@ -28,7 +29,8 @@ Rails.application.routes.draw do
   get '/orders/confirm' => 'orders#confirm'
   # 購入完了ページ用
   get '/orders/thanks' => 'orders#thanks'
-
+  ##エンドユーザ用ルーティング############################################
+  resource :end_users, only: [:show, :edit, :update]
 
   ##管理ユーザ用ルーティング#############################################
   # 管理ユーザユーザログイン管理ルーティング
