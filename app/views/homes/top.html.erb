@@ -1,29 +1,32 @@
 <div class="container">
 	<div class="row">
-		<div class="col-xs-12 genresShowing" style='text-align: right;' >
+		<div class="col-xs-offset-10 col-xs-2" id='genresShowing'>
 			ジャンル検索
 		</div>
 	</div>
 	<div class="row">
-    <div id='genre-window2' class="col-xs-1"> </div>
 		<div id='genre-window1' class="col-xs-1">
 			<%= render 'items/template_genres', genres: @genres %>
 		</div>
+		<div id='genre-window2' class="col-xs-1"> </div>
 
 		<div class="col-xs-11">
 			<%= render 'items/template_items', pages: @pages, counts: @counts, info: '商品' %>
 		</div>
 	</div>
 </div>
-
-  <%= render 'homes/subtop' %>
+<div class="container">
+	<div class="row">
+		<%= render 'homes/subtop' %>
+	</div>
+</div>
 
 <script>
 	$(function(){
 		$('#genre-window1').hide();
 	});
-	$('.genresShowing').on('click',function() {
-		$('#genre-window1').show();
+	$('#genresShowing').on('click',function() {
 		$('#genre-window2').hide();
+		$('#genre-window1').show();
 	});
 </script>

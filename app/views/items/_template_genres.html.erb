@@ -1,12 +1,12 @@
 
 
-<ul style='background-color: yellow; width: 100px;'>
+<ul>
   <li>ジャンル検索</li>
   <% genres.each do | genre | %>
   <li>
     <%= form_for( genre, url:items_path, method: :get ) do | f | %>
     <%= f.hidden_field :id, readonly:true%>
-    <%= f.submit genre.name, style: 'border: none; margin: 8px; background-color: yellow;' %>
+    <%= f.submit genre.name, style: 'border: none; margin: 8px;' %>
     <% end %>
   </li>
   <% end %>

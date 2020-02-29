@@ -5,10 +5,10 @@ class ItemsController < ApplicationController
 		# ジャンルIDが指定されているかで分岐処理
 		if !genre_params then
 			# ジャンルIDが指定されていない場合
-			# ジャンル表示OKのやつを全部取得
+			# ジャンル表示OKのやつのidを配列形式に変換
 			genres = @genres.map{ | g | g.id }
 			# ジャンル表示OKの商品を全部取得
-			items = Item.where( genre_id: genres)
+			items = Item.where( genre_id: genres )
 			# indexページタイトル情報
 			@info = '商品'
 		else
