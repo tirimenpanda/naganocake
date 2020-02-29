@@ -1,4 +1,5 @@
 class Admin::OrdersController < ApplicationController
+	before_action :authenticate_admin_user!
 	def index
 		if !!end_user_params then
 			# 会員詳細ページからアクセスされた場合

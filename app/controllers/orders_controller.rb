@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
-
   include ApplicationHelper
   include OrdersHelper
+  before_action :authenticate_end_user!
   # ショッピングカート画面 => 購入情報画面へ
   def new
     # 商品がカートに入っているか確認

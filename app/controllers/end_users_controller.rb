@@ -1,5 +1,5 @@
 class EndUsersController < ApplicationController
-before_action :authenticate_end_user!
+  before_action :authenticate_end_user!
 
   def edit
     # なし
