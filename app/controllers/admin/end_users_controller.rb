@@ -1,4 +1,5 @@
 class Admin::EndUsersController < ApplicationController
+	before_action :authenticate_admin_user!
 	def index
 		@users = EndUser.all
 	end

@@ -1,4 +1,5 @@
 class Admin::ItemsController < ApplicationController
+	before_action :authenticate_admin_user!
 	def new
 		@item = Item.new
 	end

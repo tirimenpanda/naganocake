@@ -1,5 +1,5 @@
 class AddressesController < ApplicationController
-
+  before_action :authenticate_end_user!
   def index
     # 新規配送先作成
     @address = Address.new

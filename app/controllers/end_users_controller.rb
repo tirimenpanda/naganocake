@@ -1,5 +1,5 @@
 class EndUsersController < ApplicationController
-before_action :authenticate_end_user!
+  before_action :authenticate_end_user!
 
   def edit
     # なし
@@ -17,10 +17,10 @@ before_action :authenticate_end_user!
       sign_out end_user
       # ログアウト時にトップに飛ばされるようにコントローラー設定必要？？
       redirect_to root_path
-      return
-    end
-    # ログインユーザ詳細画面へ遷移
+    else
+      # ログインユーザ詳細画面へ遷移
     redirect_to end_users_path
+    end
   end
 
   def show

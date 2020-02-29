@@ -1,5 +1,5 @@
 <div class="container">
-  <p><strong>商品一覧</strong>(全<%= counts %>件)</p><br />
+  <p><strong><%= info %>一覧</strong>(全<%= counts %>件)</p><br>
   <ul>
     <% pages.each do |itm| %>
       <div class="col-xs-3">
@@ -17,5 +17,4 @@
   <div class="col-xs-10">
     <%= paginate pages, class: "paginate" %>
   </div>
-
 </div>

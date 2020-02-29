@@ -1,4 +1,5 @@
 class CartItemsController < ApplicationController
+  before_action :authenticate_end_user!
   include ApplicationHelper
   def create
     # カートに入れるアイテムの情報取得

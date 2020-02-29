@@ -1,7 +1,6 @@
 class Admin::OrdersController < ApplicationController
+	before_action :authenticate_admin_user!
 	def index
-		# logger.debug "ここみろ"
-		# logger.debug params.inspect
 		if !!end_user_params then
 			# 会員詳細ページからアクセスされた場合
 			# 会員IDから該当エンドユーザを検索
