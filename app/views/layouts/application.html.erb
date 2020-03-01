@@ -46,7 +46,7 @@
                 <%= link_to "About", homes_about_path %>
               </li>
               <li>
-                <%= link_to "Sign in", new_end_user_registration_path %>
+                <%= link_to "Sign up", new_end_user_registration_path %>
               </li>
               <li>
                 <%= link_to "Log in", new_end_user_session_path %>
@@ -67,6 +67,9 @@
               </li>
               <li>
                 <%= link_to "ジャンル管理", admin_genres_path %>
+              </li>
+              <li>
+                <%= link_to "ログアウト", destroy_admin_user_session_path, method: :delete  %>
               </li>
               <li>
               <input type="serch" name="genre" placeholder="フリーワードを入力"></input>
