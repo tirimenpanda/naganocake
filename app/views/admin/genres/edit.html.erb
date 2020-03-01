@@ -1,16 +1,11 @@
 <div class="container">
-	<h3>ジャンル編集画面</h3>
-		<form style="display: inline">
-			<p>ジャンル</p>
-				<%=form_for(@genre) do |f| %>
-					<%=f.text_field :genres_name %>
-					<%= f.submit "変更を保存する", class: "btn btn-primary" %>
-
-				  	<%= f.radio_button :is_displayed, '有効', :true %>
-				  	<%= f.label :is_displayed, '有効' %>
-		 	    	<%= f.radio_button :is_displayed, '無効', :false %>
-		 	    	<%= f.label :is_displayed, '無効' %>
- 	   			<% end %>
- 	    </form>
+	<h3><strong>ジャンル編集画面</strong></h3>
+	<form style="display: inline"></form>
+	<%= form_for(@genre, url: admin_genre_path) do |f| %>
+		<p>ジャンル
+		<%=f.text_field :name %>
+		<label><%= f.radio_button :is_displayed, true %>有効</label>
+    	<label><%= f.radio_button :is_displayed, false %>無効</label></p>
+		<%= f.submit "変更を保存する", class: "btn btn-primary" %>
+	<% end %>
 </div>
-

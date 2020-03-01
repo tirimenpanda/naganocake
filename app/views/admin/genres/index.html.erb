@@ -1,38 +1,25 @@
 <div class="container">
-	<h3>ジャンル追加・一覧画面</h3>
-		<div class="row">
-			<form style="display: inline">
-				<p>ジャンル</p>
-					<%=form_for(@genre, url:admin_genres_path) do |f| %>
-						<%=f.text_field :name %>
+	<h3><strong>ジャンル追加・一覧画面</strong></h3>
+	<p>ジャンル</p>
+	<%= form_for(@genre, url:admin_genres_path) do |f| %>
+		<%= f.text_field :name %>
+		<label><%= f.radio_button :is_displayed, true %>有効</label>
+    	<label><%= f.radio_button :is_displayed, false %>無効</label>
+    	<%= f.submit "追加", class: "btn btn-info" %>
+	<% end %>
 
-						<%= f.radio_button :is_displayed, '有効', :true %>
-					  	<%= f.label :is_displayed, '有効' %>
-			 	    	<%= f.radio_button :is_displayed, '無効', :false %>
-			 	    	<%= f.label :is_displayed, '無効' %>
-
-			 	    	<%= f.submit "追加", class: "btn btn-info" %>
-	 	   			<% end %>
-	 	    </form>
-	 	</div>
-
-	 	<div class="row">
-	 		<table class="genre_index">
-	 			<tr>
-	 				<th>ジャンル</th>
-	 				<th>状態</th>
-	 				<th>(空白)</th>
-	 			</tr>
-	 			<% @genres.each do |genre| %>
-		 			<tr>
-		 				<td><%= genre.name %></td>
-		 				<td><%= genre.is_displayed %></td>
-		 				<td><%= link_to "編集する", edit_admin_genre, class: "btn btn-primary" %></td>
-		 			</tr>
-	 			<% end %>
-	 		</table>
-	 	</div>
+	<table class="genre_index">
+		<tr>
+			<th>ジャンル</th>
+			<th>状態</th>
+			<th></th>
+		</tr>
+		<% @genres.each do |genre| %>
+ 			<tr>
+ 				<td><%= genre.name %></td>
+ 				<td><%= genre.is_displayed %></td>
+ 				<td><%= link_to "編集する", edit_admin_genre_path(genre.id), class: "btn btn-primary" %></td>
+ 			</tr>
+		<% end %>
+	</table>
 </div>
-
-
-
