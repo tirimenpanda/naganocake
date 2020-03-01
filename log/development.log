@@ -9560,3 +9560,236 @@ Processing by OrdersController#new as HTML
 Completed 200 OK in 1178ms (Views: 1170.1ms | ActiveRecord: 1.2ms)
 
 
+app/controllers/admin/genres_controller.rb:5:in `index'
+t an ID):
+::1, 127.0.0.0/127.255.255.255
+(3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.mes/top.html.erb within layouts/application (51.6ms)
+Completed 200 OK in 997ms (Views: 980.1ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/homes/about" for 10.0.2.2 at 2020-03-01 04:17:20 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#about as HTML
+  Rendering homes/about.html.erb within layouts/application
+  Rendered homes/about.html.erb within layouts/application (0.3ms)
+  [1m[36mEndUser Load (0.3ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 73ms (Views: 66.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/homes/top" for 10.0.2.2 at 2020-03-01 04:17:26 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/homes/top"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/" for 10.0.2.2 at 2020-03-01 04:17:32 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by HomesController#top as HTML
+  Rendering homes/top.html.erb within layouts/application
+  [1m[36mEndUser Load (1.3ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/homes/top.html.erb:44
+  [1m[36mCACHE EndUser Load (0.0ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/homes/top.html.erb:45
+  [1m[36mCACHE EndUser Load (0.0ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/views/homes/top.html.erb:46
+  [1m[36mEndUser Load (0.6ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/homes/top.html.erb:104
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "items"[0m
+  ↳ app/views/homes/top.html.erb:117
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items"[0m
+  ↳ app/views/homes/top.html.erb:119
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "end_users"[0m
+  ↳ app/views/homes/top.html.erb:136
+  [1m[36mEndUser Load (0.2ms)[0m  [1m[34mSELECT "end_users".* FROM "end_users"[0m
+  ↳ app/views/homes/top.html.erb:138
+  Rendered homes/top.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 94ms (Views: 86.0ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/items" for 10.0.2.2 at 2020-03-01 04:22:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by ItemsController#index as HTML
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "items" WHERE "items"."selling_status" = ?[0m  [["selling_status", 1]]
+  ↳ app/controllers/items_controller.rb:16
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."selling_status" = ? ORDER BY "items"."id" DESC LIMIT ? OFFSET ?[0m  [["selling_status", 1], ["LIMIT", 12], ["OFFSET", 0]]
+  ↳ app/views/items/_template_items.html.erb:4
+  Rendered items/_template_items.html.erb (7.0ms)
+  Rendered items/index.html.erb within layouts/application (9.7ms)
+  [1m[36mEndUser Load (0.2ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/views/layouts/application.html.erb:20
+Completed 200 OK in 78ms (Views: 70.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/attachments/5efd80bb9267e7a5591821902ff7e7e3d82d6a33/store/aa24ab66b19e2e0ede3bf8c2e1800066224b9fce533acdf102332da65985/image.jpeg" for 10.0.2.2 at 2020-03-01 04:22:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/attachments/0f650a396569cc73088fe3a3867958e451d89a19/store/FHdKL3GJIOY/image.jpeg" for 10.0.2.2 at 2020-03-01 04:22:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/attachments/d73f7c46fbaeba91bf4eaaf0a2ff9931babac142/store/HD78F3GRVY/image.jpeg" for 10.0.2.2 at 2020-03-01 04:22:33 +0000
+Started GET "/attachments/cbde01379c7d75b6b57e52b5704af8e7706e35af/store/dg62tfe79/image.jpeg" for 10.0.2.2 at 2020-03-01 04:22:33 +0000
+Refile::App: Could not find attachment by id: FHdKL3GJIOY
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/attachments/dd78e2a59159b0b5ce7ff6eea62b7491cb1b71d8/store/FHKL3GJIOY/image.jpeg" for 10.0.2.2 at 2020-03-01 04:22:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: [2020-03-01 04:22:33 +0000] GET "/0f650a396569cc73088fe3a3867958e451d89a19/store/FHdKL3GJIOY/image.jpeg" 404 12.7ms
+
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Started GET "/attachments/ba313de5f0293c54a1e3725a6432b327906c5c57/store/843y7ghiufdo/image.jpeg" for 10.0.2.2 at 2020-03-01 04:22:33 +0000
+Refile::App: Could not find attachment by id: FHKL3GJIOY
+Refile::App: [2020-03-01 04:22:33 +0000] GET "/dd78e2a59159b0b5ce7ff6eea62b7491cb1b71d8/store/FHKL3GJIOY/image.jpeg" 404 7.1ms
+
+Refile::App: Could not find attachment by id: dg62tfe79
+Refile::App: [2020-03-01 04:22:33 +0000] GET "/cbde01379c7d75b6b57e52b5704af8e7706e35af/store/dg62tfe79/image.jpeg" 404 4.8ms
+
+Refile::App: Could not find attachment by id: HD78F3GRVY
+Started GET "/attachments/05cd63cc28107bff65ca62fc694a4172156dbdc0/store/jucwhvbj83247ryu/image.jpeg" for 10.0.2.2 at 2020-03-01 04:22:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: [2020-03-01 04:22:33 +0000] GET "/d73f7c46fbaeba91bf4eaaf0a2ff9931babac142/store/HD78F3GRVY/image.jpeg" 404 12.6ms
+
+Refile::App: [2020-03-01 04:22:33 +0000] GET "/5efd80bb9267e7a5591821902ff7e7e3d82d6a33/store/aa24ab66b19e2e0ede3bf8c2e1800066224b9fce533acdf102332da65985/image.jpeg" 200 34.7ms
+
+Refile::App: Could not find attachment by id: jucwhvbj83247ryu
+Refile::App: [2020-03-01 04:22:33 +0000] GET "/05cd63cc28107bff65ca62fc694a4172156dbdc0/store/jucwhvbj83247ryu/image.jpeg" 404 3.6ms
+
+Refile::App: Could not find attachment by id: 843y7ghiufdo
+Refile::App: [2020-03-01 04:22:33 +0000] GET "/ba313de5f0293c54a1e3725a6432b327906c5c57/store/843y7ghiufdo/image.jpeg" 404 6.7ms
+
+Started GET "/attachments/157c37299dfac75ec8ba90110361810349101f89/store/84dkwojio/image.jpeg" for 10.0.2.2 at 2020-03-01 04:22:33 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: Could not find attachment by id: 84dkwojio
+Refile::App: [2020-03-01 04:22:33 +0000] GET "/157c37299dfac75ec8ba90110361810349101f89/store/84dkwojio/image.jpeg" 404 1.9ms
+
+Started GET "/genres" for 10.0.2.2 at 2020-03-01 04:34:59 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  
+ActionController::RoutingError (No route matches [GET] "/genres"):
+  
+actionpack (5.2.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:22:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.4.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.4.1) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.2) lib/rack/method_override.rb:24:in `call'
+rack (2.2.2) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.4.1) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.2.2) lib/rack/sendfile.rb:110:in `call'
+railties (5.2.4.1) lib/rails/engine.rb:524:in `call'
+puma (3.12.2) lib/puma/configuration.rb:227:in `call'
+puma (3.12.2) lib/puma/server.rb:674:in `handle_request'
+puma (3.12.2) lib/puma/server.rb:476:in `process_client'
+puma (3.12.2) lib/puma/server.rb:334:in `block in run'
+puma (3.12.2) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/admin/genres" for 10.0.2.2 at 2020-03-01 04:35:17 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by Admin::GenresController#index as HTML
+Completed 404 Not Found in 9ms (ActiveRecord: 1.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Genre without an ID):
+  
+app/controllers/admin/genres_controller.rb:5:in `index'
+Started GET "/cart_items" for 10.0.2.2 at 2020-03-01 05:18:05 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /var/lib/gems/2.5.0/gems/activerecord-5.2.4.1/lib/active_record/log_subscriber.rb:98
+Processing by CartItemsController#index as HTML
+  [1m[36mEndUser Load (0.7ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:16
+  [1m[36mCartItem Load (1.0ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."end_user_id" = ?[0m  [["end_user_id", 4]]
+  ↳ app/controllers/cart_items_controller.rb:18
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:18
+  Rendering cart_items/index.html.erb within layouts/application
+  Rendered cart_items/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 569ms (Views: 500.6ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/attachments/05cd63cc28107bff65ca62fc694a4172156dbdc0/store/jucwhvbj83247ryu/image.jpeg" for 10.0.2.2 at 2020-03-01 05:18:05 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: Could not find attachment by id: jucwhvbj83247ryu
+Refile::App: [2020-03-01 05:18:06 +0000] GET "/05cd63cc28107bff65ca62fc694a4172156dbdc0/store/jucwhvbj83247ryu/image.jpeg" 404 5.5ms
+
+Started GET "/cart_items" for 10.0.2.2 at 2020-03-01 05:21:03 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by CartItemsController#index as HTML
+  [1m[36mEndUser Load (0.3ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? ORDER BY "end_users"."id" ASC LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:16
+  [1m[36mCartItem Load (0.2ms)[0m  [1m[34mSELECT "cart_items".* FROM "cart_items" WHERE "cart_items"."end_user_id" = ?[0m  [["end_user_id", 4]]
+  ↳ app/controllers/cart_items_controller.rb:18
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/cart_items_controller.rb:18
+  Rendering cart_items/index.html.erb within layouts/application
+  Rendered cart_items/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 65ms (Views: 57.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/attachments/05cd63cc28107bff65ca62fc694a4172156dbdc0/store/jucwhvbj83247ryu/image.jpeg" for 10.0.2.2 at 2020-03-01 05:21:03 +0000
+Cannot render console from 10.0.2.2! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Refile::App: Could not find attachment by id: jucwhvbj83247ryu
+Refile::App: [2020-03-01 05:21:03 +0000] GET "/05cd63cc28107bff65ca62fc694a4172156dbdc0/store/jucwhvbj83247ryu/image.jpeg" 404 1.5ms
+
