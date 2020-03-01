@@ -12,72 +12,69 @@
   <body>
     <header class="navbar navbar-inverse">
       <div class="container">
-          <nav class="nav-logo navbar-left">
-            <span>LOGO（ながのCAKE）</span>
+        <nav class="navbar-left">
+          <%= link_to root_path do %>
+            <%= image_tag 'ながのCAKE.png' %>
+          <% end %>
           </nav>
-        <!-- end_userの場合 -->
-          <nav>
-            <% if end_user_signed_in? %>
-                <ul class="nav navbar-nav navbar-right">
-                  <li>
-                    | <%= link_to "Top", items_path %>
-                  </li>
-                  <li>
-                    | <%= link_to "About", homes_about_path %>
-                  </li>
-                  <li>
-                    | <%= link_to "マイページ", end_user_registration_path %>
-                  </li>
-                  <li>
-                    | <%= link_to "ログアウト", destroy_end_user_session_path, method: :delete  %>
-                  </li>
-                  <li>
-                    <%= link_to "カート", cart_items_path, class: "glyphicon glyphicon-shopping-cart" %>
-                  </li>
-                </ul>
-            <% else %>
-                <ul class="nav navbar-nav navbar-right">
-                  <li>
-                    <%= link_to "About", homes_about_path %>
-                  </li>
-                  <li>
-                    | <%= link_to "Sign in", new_end_user_registration_path %>
-                  </li>
-                  <li>
-                    | <%= link_to "Log in", new_end_user_session_path %>
-                  </li>
-                </ul>
-            <% end %>
-           </nav>
-
-        <!-- <-- adminの場合 -->
-            <% if admin_user_signed_in? %>
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                      <%= link_to "商品一覧", admin_items_path %>
-                    </li>
-                    <li>
-                      <%= link_to "会員一覧", admin_end_users_path %>
-                    </li>
-                    <li>
-                      <%= link_to "注文履歴一覧", admin_orders_path %>
-                    </li>
-                    <li>
-                      <%= link_to "ジャンル管理", admin_genres_path %>
-                    </li>
-                </ul>
-                <!-- <div class="jenre_serch"> -->
-                  <!-- <input type="serch" name="genre" placeholder="フリーワードを入力"></input> -->
-                <!-- 虫眼鏡マーク＝glyphicon glyphicon-serch -->
-                <!-- </div> -->
-            <% end %>
-          </nav>
-
-
+        <nav>
+          <!-- end_userの場合 -->
+          <% if end_user_signed_in? %>
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <%= link_to "Top", items_path %>
+              </li>
+              <li>
+                <%= link_to "About", homes_about_path %>
+              </li>
+              <li>
+                <%= link_to "マイページ", end_user_registration_path %>
+              </li>
+              <li>
+                <%= link_to "ログアウト", destroy_end_user_session_path, method: :delete  %>
+              </li>
+              <li>
+                <%= link_to "カート", cart_items_path, class: "glyphicon glyphicon-shopping-cart" %>
+              </li>
+            </ul>
+          <% else %>
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <%= link_to "About", homes_about_path %>
+              </li>
+              <li>
+                <%= link_to "Sign in", new_end_user_registration_path %>
+              </li>
+              <li>
+                <%= link_to "Log in", new_end_user_session_path %>
+              </li>
+            </ul>
+          <% end %>
+          <!-- <-- adminの場合 -->
+          <% if admin_user_signed_in? %>
+            <ul class="nav navbar-nav navbar-right">
+              <li>
+                <%= link_to "商品一覧", admin_items_path %>
+              </li>
+              <li>
+                <%= link_to "会員一覧", admin_end_users_path %>
+              </li>
+              <li>
+                <%= link_to "注文履歴一覧", admin_orders_path %>
+              </li>
+              <li>
+                <%= link_to "ジャンル管理", admin_genres_path %>
+              </li>
+            </ul>
+            <div class="jenre_serch" >
+              <input type="serch" name="genre" placeholder="フリーワードを入力"></input>
+            </div>
+          <% end %>
+        </nav>
       </div>
     </header>
 
-      <%= yield %>
+   <%= yield %>
 
    <footer class="footer style-2">
    </footer>
