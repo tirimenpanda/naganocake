@@ -1,7 +1,5 @@
-
-<p>商品編集画面</p>
-
 <div class="container">
+  <h3><strong>商品編集画面</strong></h3>
   <div class="row">
     <%= form_for( @item, url:admin_item_path ) do | item | %>
     <div class="col-xs-4">
@@ -10,11 +8,11 @@
     </div>
 
     <div class="col-xs-4">
-      商品名<%= item.text_field :name %><br>
-      商品説明<%= item.text_area :introduction %><br>
-      ジャンル<%= item.select :genre_id, create_selection_genre(), prompt:'--選択してください--' %><br>
-      税抜価格<%= item.number_field :listed_price, min:0 %>円<br>
-      販売ステータス<%= item.select :selling_status, { 販売中:true, 売切れ:false } %><br>
+      商品名<br><%= item.text_field :name ,class: "field"%><br>
+      商品説明<br><%= item.text_area :introduction ,class: "field"%><br>
+      ジャンル<br><%= item.select :genre_id, create_selection_genre(), prompt:'--選択してください--' ,class: "field" %><br>
+      価格(税抜)<br><%= item.number_field :listed_price, min:0 ,class: "field" %>円<br>
+      販売ステータス<br><%= item.select :selling_status, { 販売中:true, 売切れ:false },class: "field" %><br>
       <%= item.submit '変更を保存', class: "btn btn-primary" %>
       <% end %>
     </div>

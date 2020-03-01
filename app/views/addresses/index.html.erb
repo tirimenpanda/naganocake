@@ -1,43 +1,46 @@
+<div class="container">
+  <strong>配送先登録/一覧</strong>
+  <%= form_for( @address, url: addresses_path ) do | address | %>
+  <table>
+    <tr>
+      <th>郵便番号</th>
+      <td><%= address.text_field :postal_code %></td>
+    </tr>
+    <tr>
+      <th>住所</th>
+        <td><%= address.text_field :ship_to %></td>
+    </tr>
+    <tr>
+      <th>宛名</th>
+      <td><%= address.text_field :consignee %></td>
+    </tr>
+  </table>
+  <div style="display: inline;">
+    <%= address.submit '登録する', class: "btn btn-primary" %>
+    <% end %>
+  </div>
 
-<h2>配送先登録/一覧</h2>
-<%= form_for( @address, url: addresses_path ) do | address | %>
-<table>
-  <tr>
-    <th>郵便番号</th>
-    <td><%= address.text_field :postal_code %></td>
-  </tr>
-  <tr>
-    <th>住所</th>
-      <td><%= address.text_field :ship_to %></td>
-  </tr>
-  <tr>
-    <th>宛名</th>
-    <td><%= address.text_field :consignee %></td>
-  </tr>
-</table>
-<%= address.submit '登録する' %>
-<% end %>
-
-<table>
-  <tr>
-    <th>郵便番号</th>
-    <th>住所</th>
-    <th>宛名</th>
-    <th></th>
-  </tr>
-  <% @addresses.each do | address | %>
-  <tr>
-    <!--郵便番号-->
-    <td><%= postal_code_format( address.postal_code ) %></td>
-    <!--住所-->
-    <td><%= address.ship_to %></td>
-    <!--宛名-->
-    <td><%= address.consignee %></td>
-    <!--編集・削除ボタン-->
-    <td>
-      <%= link_to '編集する', edit_address_path( address ) %>
-      <%= link_to '削除する', address_path( address ), method: :delete, 'data-confirm' => '本当に削除しますか？' %>
-    </td>
-  </tr>
-  <% end %>
-</table>
+  <table>
+    <tr>
+      <th>郵便番号</th>
+      <th>住所</th>
+      <th>宛名</th>
+      <th></th>
+    </tr>
+    <% @addresses.each do | address | %>
+    <tr>
+      <!--郵便番号-->
+      <td><%= postal_code_format( address.postal_code ) %></td>
+      <!--住所-->
+      <td><%= address.ship_to %></td>
+      <!--宛名-->
+      <td><%= address.consignee %></td>
+      <!--編集・削除ボタン-->
+      <td>
+        <%= link_to '編集する', edit_address_path( address ) %>
+        <%= link_to '削除する', address_path( address ), method: :delete, 'data-confirm' => '本当に削除しますか？' %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
+</div>

@@ -8,7 +8,7 @@
 		<div style="display:inline-flex">
 			<%= link_to "退会しない", end_users_path, class: "btn btn-primary" %>
 
-			<%= form_for(current_end_user, url: end_users_path) do | f | %>
+			<%= form_for(current_end_user, url: end_user_path) do | f | %>
 			<%= f.hidden_field :is_deleted, value:true %>
 			<%= f.submit "退会する", class: "btn btn-danger" %>
 			<% end %>

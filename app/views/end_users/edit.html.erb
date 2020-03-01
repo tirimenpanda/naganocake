@@ -1,42 +1,43 @@
-
-<h2>登録情報編集</h2>
-<%= link_to '退会する', end_users_withdraw_path %>
-<%= form_for( current_end_user, url: end_users_path ) do | f | %>
-<table>
-  <tr>
-    <th>氏名</th>
-    <td>
-      <!--苗字-->
-      <%= f.text_field :last_name, placeholder:'福澤' %>
-      <!--名前-->
-      <%= f.text_field :first_name, placeholder:'諭吉' %>
-    </td>
-  </tr>
-  <tr>
-    <th>カナ</th>
-    <td>
-      <!--苗字-->
-      <%= f.text_field :last_name_kana, placeholder:'フクザワ' %>
-      <!--名前-->
-      <%= f.text_field :first_name_kana, placeholder:'ユキチ' %>
-    </td>
-  </tr>
-  <tr>
-    <th>郵便番号</th>
-    <td><%= f.text_field :postal_code, placeholder:'1002100' %></td>
-  </tr>
-  <tr>
-    <th>住所</th>
-    <td><%= f.text_field :address, placeholder:'東京都小笠原村沖ノ鳥島1番地' %></td>
-  </tr>
-  <tr>
-    <th>電話番号</th>
-    <td><%= f.text_field :phone_number, placeholder:'0455034000' %></td>
-  </tr>
-  <tr>
-    <th>メールアドレス</th>
-    <td><%= f.text_field :email, placeholder:'end_user@example.com' %></td>
-  </tr>
-</table>
-<%= f.submit '編集内容を保存する' %>
-<% end %>
+<div class="container">
+  <h3><strong>登録情報編集</strong></h3>
+  <%= link_to '退会する', end_users_withdraw_path, class:"btn btn-danger col-xs-2"%>
+  <%= form_for( current_end_user, url: end_user_path ) do | f | %>
+  <table>
+    <tr>
+      <th>氏名</th>
+      <td>
+        <!--苗字-->
+        <%= f.text_field :last_name, placeholder:'福澤' %>
+        <!--名前-->
+        <%= f.text_field :first_name, placeholder:'諭吉' %>
+      </td>
+    </tr>
+    <tr>
+      <th>カナ</th>
+      <td>
+        <!--苗字-->
+        <%= f.text_field :last_name_kana, placeholder:'フクザワ' %>
+        <!--名前-->
+        <%= f.text_field :first_name_kana, placeholder:'ユキチ' %>
+      </td>
+    </tr>
+    <tr>
+      <th>郵便番号</th>
+      <td><%= f.text_field :postal_code, placeholder:'1002100' %></td>
+    </tr>
+    <tr>
+      <th>住所</th>
+      <td><%= f.text_field :address, placeholder:'東京都小笠原村沖ノ鳥島1番地' %></td>
+    </tr>
+    <tr>
+      <th>電話番号</th>
+      <td><%= f.text_field :phone_number, placeholder:'0455034000' %></td>
+    </tr>
+    <tr>
+      <th>メールアドレス</th>
+      <td><%= f.text_field :email, placeholder:'end_user@example.com' %></td>
+    </tr>
+  </table>
+  <%= f.submit '編集内容を保存する', class:"btn btn-primary col-xs-2" %>
+  <% end %>
+</div>

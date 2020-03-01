@@ -1,162 +1,32 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-offset-10 col-xs-2" id='genresShowing'>
+			ジャンル検索
+		</div>
+	</div>
+	<div class="row">
+		<div id='genre-window1' class="col-xs-1">
+			<%= render 'items/template_genres', genres: @genres %>
+		</div>
+		<div id='genre-window2' class="col-xs-1"> </div>
 
-  <div class="row">
-    <div class="col-lg-1">
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-    </div>
-    <div class="col-lg-10">
-      <h1>Top画面</h1>
-      <% t = Time.zone.now %>
-      <%= t>(t+0.day).to_date %>
-
-      <h1>デバッグページとして使用</h1>
-      <table>
-        <tr>
-          <th>code</th>
-          <th>出力 </th>
-          <th>クラス</th>
-          <th>.to_date</th>
-        </tr>
-        <tr>
-          <td>Time.zone.now</td>
-          <td><%= t %></td>
-          <td><%= t.class %></td>
-          <td><%= t.to_date %></td>
-        </tr>
-        <tr>
-          <td>EndUser.first.created_at</td>
-          <td><%= EndUser.first.created_at %></td>
-          <td><%= EndUser.first.created_at.class %></td>
-          <td><%= EndUser.first.created_at.to_date %></td>
-        </tr>
-        <% t = t.to_datetime %>
-        <tr>
-          <td>各時間抽出</td>
-          <td><%= t.hour %></td>
-          <td><%= t.minute %></td>
-          <td><%= t.sec %></td>
-        </tr>
-      </table>
-    </div>
-    <div class="col-lg-1">
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-    </div>
-  </div>
+		<div class="col-xs-11">
+			<%= render 'items/template_items', pages: @pages, counts: @counts, info: '商品' %>
+		</div>
+	</div>
 </div>
-<div class="continer">
-  <div class="row">
-    <div class="col-lg-1">
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-    </div>
-
-    <div class="col-lg-5">
-      <h2>一般ユーザ</h2>
-      <% if end_user_signed_in? then %>
-      現在、<span style="color:red; background-color:yellow;"><%= current_end_user.last_name%> <%= current_end_user.first_name%></span>さんがログイン中<br>
-      current_end_user.is_deleted => <%= current_end_user.is_deleted.inspect%><br>
-      EndUser<%= link_to 'ログアウト',  destroy_end_user_session_path, method: :delete %>
-      <% else %>
-      EndUserで<%= link_to 'ログイン', new_end_user_session_path %>
-      <% end %><br>
-      <% if end_user_signed_in? then %>
-      <%= link_to 'Addresses#index => 住所録一覧', addresses_path %><br>
-      <%= link_to 'Orders#index => 注文履歴一覧', orders_path %><br>
-      <%= link_to 'CartItems#index => カート内アイテム一覧', cart_items_path %><br>
-      <%= link_to 'CartItems#index => マイページ', end_users_path %><br>
-      <% end %>
-      商品登録件数（全<%= Item.count %>件）<br>
-      Items#show => 商品詳細ページ
-      <% Item.all.each do |item| %><%= link_to ( " %02d" % item.id ), item_path(item.id) %><% end %>
-    </div>
-
-    <div class="col-lg-5">
-      <h2>管理人</h2>
-      <% if admin_user_signed_in? then %>
-      AdminUser<%= link_to 'ログアウト',  destroy_admin_user_session_path, method: :delete %><br>
-      <% else %>
-      AdminUserで<%= link_to 'ログイン', new_admin_user_session_path %><br>
-      <% end %>
-      <%= link_to 'admin/Items#index => 商品一覧', admin_items_path %><br>
-      <%= link_to 'admin/Items#new => 商品の新規投稿', new_admin_item_path %><br>
-      <%= link_to 'admin/Orders#index => 注文履歴一覧（全部）', admin_orders_path %><br>
-      <%= form_for AdminUser.new, url:admin_orders_path, method: :get do | f | %>
-      <%= f.hidden_field :id, readonly:true %>
-      <%= f.submit 'admin/Orders#index => 注文履歴一覧（本日）' %><br>
-      <% end %>
-      アカウント登録数（全<%= EndUser.count %>ユーザ）<br>
-      admin/EndUsers#show => 会員詳細ページ
-      <% EndUser.all.each do |end_user| %><%= link_to ( " %02d" % end_user.id ), admin_end_user_path(end_user.id) %><% end %>
-    </div>
-
-    <div class="col-lg-1">
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-      ここは余白
-    </div>
-  </div>
+<div class="container">
+	<div class="row">
+		<%= render 'homes/subtop' %>
+	</div>
 </div>
+
+<script>
+	$(function(){
+		$('#genre-window1').hide();
+	});
+	$('#genresShowing').on('click',function() {
+		$('#genre-window2').hide();
+		$('#genre-window1').show();
+	});
+</script>

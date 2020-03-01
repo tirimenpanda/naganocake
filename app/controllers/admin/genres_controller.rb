@@ -1,12 +1,13 @@
 class Admin::GenresController < ApplicationController
+	before_action :authenticate_admin_user!
 	def index
 		@genre = Genre.new
 		@genres = Genre.all
-		genre = Genre.find(params[:id])
 	end
 
 	def create
 		@genre = Genre.new(genre_params)
+		@genre.save
 		redirect_to admin_genres_path
 	end
 
@@ -25,6 +26,6 @@ class Admin::GenresController < ApplicationController
 
 	private
 	def genre_params
-		params.require(:genres).permit(:name, :is_displayed)
+		params.require(:genre).permit(:name, :is_displayed)
 	end
 end

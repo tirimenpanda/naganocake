@@ -1,11 +1,7 @@
-
 <div class="container">
-  <div class="row">
-    <div class="page_title">
-      <h3>配送先編集</h3>
-    </div>
-    <table class="table">
-      <%= form_for( @address, url: address_path ) do | address | %>
+  <h3><strong>配送先編集</strong></h3>
+  <table class="table">
+    <%= form_for( @address, url: address_path ) do | address | %>
       <tr>
         <th>郵便番号</th>
         <td><%= address.text_field :postal_code %></td>
@@ -18,8 +14,7 @@
         <th>宛名</th>
         <td><%= address.text_field :consignee %></td>
       </tr>
-      <%= address.submit '編集する', class:"btn-wrapper" %>
-      <% end %>
-    </table>
-  </div>
+      <%= address.submit '編集を保存する', class:"btn btn-primary col-xs-2" %>
+    <% end %>
+  </table>
 </div>
