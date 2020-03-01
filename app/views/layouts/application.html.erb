@@ -22,6 +22,9 @@
           <% if end_user_signed_in? %>
             <ul class="nav navbar-nav navbar-right">
               <li>
+                ログインユーザ：<%= current_end_user.last_name%> <%= current_end_user.first_name%>
+              </li>
+              <li>
                 <%= link_to "Top", items_path %>
               </li>
               <li>
@@ -65,10 +68,10 @@
               <li>
                 <%= link_to "ジャンル管理", admin_genres_path %>
               </li>
-            </ul>
-            <div class="jenre_serch" >
+              <li>
               <input type="serch" name="genre" placeholder="フリーワードを入力"></input>
-            </div>
+              </li>
+            </ul>
           <% end %>
         </nav>
       </div>
