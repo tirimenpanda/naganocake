@@ -36,6 +36,20 @@
    padding-right: 15px;
  }
 
+ select {
+   height: 36px;
+ }
+
+ input {
+   height: 34px;
+   padding: 0 5px;
+ }
+ label {
+   height: 34px;
+   input {
+     height: auto;
+   }
+ }
 
  /* header */
 
@@ -79,7 +93,6 @@
  body {
    background-color: #FCF5C7;
    color: #333;
-
    font-family: verdana, arial, helvetica, sans-serif;
    font-size: 13px;
    line-height: 18px;
@@ -148,15 +161,11 @@
    text-align: right;
  }
 
-/*---border色変更しました(isobe)---*/
+/*---border---*/
  th,td {
    border: solid 1px #000;
    padding: 5px;
    height: 40px;
- }
-
- genres {
-   height: 1000px;
  }
 
  /*---login.html.erb---*/
@@ -171,3 +180,19 @@
    text-align: center;
  }
 
+ /*---admin/end_users/show.html.erb---*/
+
+ .valid-true {
+   border: solid 2px blue;
+ }
+
+ .valid-false {
+   border: solid 2px red;
+ }
+
+  .my-profile {
+  width:50%;
+  th{
+   background-color:#c0c0c0;
+  }
+  }

@@ -6,11 +6,18 @@ class Admin::ItemsController < ApplicationController
 
 	def create
 		# 新規登録するためのItemオブジェクトの作成と取得値代入
-		item = Item.new( item_params )
-		# 新規商品投稿内容の保存
-		item.save
-		# 新規商品投稿内容詳細画面へ
-		redirect_to admin_item_path( item )
+		@item = Item.new( item_params )
+		begin
+			# 新規商品投稿内容の保存
+			@item.save
+			# 新規商品投稿内容詳細画面へ
+			redirect_to admin_item_path( @item )
+		rescue => e
+			logger.debug '新規商品の登録に失敗しました。（始）'
+			logger.debug e
+			logger.debug '新規商品の登録に失敗しました。（終）'
+			render :new
+		end
 	end
 
 	def index
@@ -42,12 +49,6 @@ class Admin::ItemsController < ApplicationController
 		item = Item.find(params[:id])
 		item.update( item_params )
 		redirect_to admin_item_path( item )
-	end
-
-	private
-	def item_params
-		# :imge_idではなく:imageっぽい
-		params.require(:item).permit( :genre_id, :name, :introduction, :listed_price, :image, :selling_status )
 	end
 
 	private

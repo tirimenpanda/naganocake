@@ -6,23 +6,23 @@
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="field">
-        <%= f.label :first_name, 'ユーザーネーム（姓）' %><br>
-        <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder: "（例）佐藤" %>
+        <%= f.label :last_name, 'ユーザーネーム（姓）' %><br>
+        <%= f.text_field :last_name, autocomplete: "last_name", placeholder: "（例）佐藤" %>
       </div>
 
       <div class="field">
-        <%= f.label :first_name_kana, 'ユーザーネーム（カナ姓）' %><br>
-        <%= f.text_field :first_name_kana, autocomplete: "first_name_kana", placeholder: "（例）サトウ" %>
+        <%= f.label :last_name_kana, 'ユーザーネーム（カナ姓）' %><br>
+        <%= f.text_field :last_name_kana, autocomplete: "last_name_kana", placeholder: "（例）サトウ" %>
       </div>
 
       <div class="field">
-        <%= f.label :first_name_kana, 'ユーザーネーム（名）' %><br>
-        <%= f.text_field :last_name, autocomplete: "last_name", placeholder: "（例）花子" %>
+        <%= f.label :first_name, 'ユーザーネーム（名）' %><br>
+        <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder: "（例）太郎" %>
       </div>
 
       <div class="field">
-        <%= f.label :last_name_kana, 'ユーザーネーム（カナ名）' %><br>
-        <%= f.text_field :last_name_kana, autocomplete: "last_name_kana", placeholder: "（例）ハナコ" %>
+        <%= f.label :first_name_kana, 'ユーザーネーム（カナ名）' %><br>
+        <%= f.text_field :first_name_kana, autocomplete: "first_name_kana", placeholder: "（例）タロウ" %>
       </div>
 
       <div class="field">

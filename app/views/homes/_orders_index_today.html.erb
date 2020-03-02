@@ -1,0 +1,25 @@
+
+<% t = Time.zone.now.to_date %>
+<% orders = Order.where( ' created_at > ? ', t  ).where.not( ' created_at > ? ', ( t + 1.day ) ) %>
+<div class="row">
+  <div class="col-xs-offset-2 col-xs-10 col-xs-offset-2">
+
+	<h2><%= "本日の注文件数 #{orders.count}件" %></h2>
+	<table>
+		<tr>
+			<th>購入日時</th>
+			<th>購入者</th>
+			<th>注文個数</th>
+			<th>注文ステータス</th>
+		</tr>
+		<% orders.each do | order | %>
+		<tr>
+			<td><%= link_to order_datetime_format( order.created_at ), admin_order_path( order ) %></td>
+			<td><%= order.end_user.last_name + order.end_user.first_name %></td>
+			<td><%= order.order_details.map{ | order_detail | order_detail.amount }.sum %></td>
+			<td><%= order.order_status %></td>
+		</tr>
+		<% end %>
+	</table>
+</div>
+</div>

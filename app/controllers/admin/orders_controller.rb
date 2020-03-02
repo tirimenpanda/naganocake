@@ -1,6 +1,8 @@
 class Admin::OrdersController < ApplicationController
 	before_action :authenticate_admin_user!
 	def index
+		# logger.debug 'ここみろ'
+		# logger.debug end_user_params
 		if !!end_user_params then
 			# 会員詳細ページからアクセスされた場合
 			# 会員IDから該当エンドユーザを検索
@@ -9,16 +11,6 @@ class Admin::OrdersController < ApplicationController
 			@orders = end_user.orders
 			# タイトル情報作成
 			@info = "#{end_user.last_name} #{end_user.first_name}様の注文履歴（全#{@orders.count}件）"
-		elsif !!admin_user_params then
-			# 本日の注文を確認したい場合
-			# 今日の日付を取得
-			t = Time.zone.now.to_date
-			# 今日の日付の注文情報を取得
-			# where.notで明日以降の日付のものを除去（ありえないけど）
-			@orders = Order.where( ' created_at > ? ', t  ).where.not( ' created_at > ? ', (t+1.day) )
-			# タイトル情報作成
-			@info = "本日の注文件数 #{@orders.count}件"
-			# logger.debug "Time.zone.now.to_date= ##{t.inspect}"
 		else
 			# 全注文データの取得
 			@orders = Order.all
@@ -67,15 +59,6 @@ class Admin::OrdersController < ApplicationController
 		# EndUsersテーブルのデータ存在判定
 		begin
 			params.require( :end_user )
-		rescue
-			false
-		end
-	end
-
-	def admin_user_params
-		# AdminUsersテーブルのデータ存在判定
-		begin
-			params.require( :admin_user )
 		rescue
 			false
 		end
