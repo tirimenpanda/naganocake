@@ -4,6 +4,8 @@
 			ジャンル検索
 		</div>
 	</div>
+
+	<% if not admin_user_signed_in? then %>
 	<div class="row">
 		<div id='genre-window1' class="col-xs-1">
 			<%= render 'items/template_genres', genres: @genres %>
@@ -14,6 +16,9 @@
 			<%= render 'items/template_items', pages: @pages, counts: @counts, info: '商品' %>
 		</div>
 	</div>
+	<% else %>
+	<%= render 'homes/orders_index_today' %>
+	<% end %>
 </div>
 
 <script>
