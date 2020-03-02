@@ -1,11 +1,11 @@
 <div class="container">
+	<% if not admin_user_signed_in? then %>
 	<div class="row">
 		<div class="col-xs-offset-10 col-xs-2 btn btn-primary" id='genresShowing'>
 			ジャンル検索
 		</div>
 	</div>
 
-	<% if not admin_user_signed_in? then %>
 	<div class="row">
 		<div id='genre-window1' class="col-xs-1">
 			<%= render 'items/template_genres', genres: @genres %>

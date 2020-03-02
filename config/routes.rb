@@ -39,7 +39,7 @@ Rails.application.routes.draw do
     # エンドユーザ用ルーティング
     resources :end_users, only: [:index, :show, :edit, :update]
     # ジャンル用ルーティング
-    resources :genres, only: [:create, :index, :edit, :update]
+    resources :genres, except: [:new, :show]
     # 商品用ルーティング
     resources :items, except: [:destroy]
     # 注文用ルーティング
