@@ -5,5 +5,6 @@ class EndUser < ApplicationRecord
   has_many :orders
   has_many :addresses
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :authentication_keys => [ :email, :is_deleted ]
+
 end

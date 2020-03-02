@@ -36,8 +36,9 @@ module OrdersHelper
       # 配送先情報の更新
       order = input_confirm_data( order, address.postal_code, address.ship_to, address.consignee )
     else
-      # 新しいお届け先の情報は適正なカラムに格納されているため、特にデータはいじらない
-      nil
+      # 新しいお届け先をアドレス帳に登録（下記両パターンいける）
+      # Address.new( end_user_id: current_end_user.id, postal_code: order.postal_code, ship_to: order.ship_to, consignee: order.consignee ).save
+      current_end_user.addresses.new( postal_code: order.postal_code, ship_to: order.ship_to, consignee: order.consignee ).save
     end
     # 送料カラム情報をリセット
     order.postage = nil

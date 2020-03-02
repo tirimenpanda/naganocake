@@ -36,6 +36,20 @@
    padding-right: 15px;
  }
 
+ select {
+   height: 36px;
+ }
+
+ input {
+   height: 34px;
+   padding: 0 5px;
+ }
+ label {
+   height: 34px;
+   input {
+     height: auto;
+   }
+ }
 
  /* header */
 
@@ -176,3 +190,10 @@
  .valid-false {
    border: solid 2px red;
  }
+
+  .my-profile {
+  width:50%;
+  th{
+   background-color:#c0c0c0;
+  }
+  }
