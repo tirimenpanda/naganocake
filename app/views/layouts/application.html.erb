@@ -25,7 +25,7 @@
                 ログインユーザ：<%= current_end_user.last_name%> <%= current_end_user.first_name%>
               </li>
               <li>
-                <%= link_to "Top", items_path %>
+                <%= link_to "Top", root_path %>
               </li>
               <li>
                 <%= link_to "About", homes_about_path %>
@@ -53,7 +53,7 @@
               </li>
             </ul>
           <% end %>
-          <!-- <-- adminの場合 -->
+          <!-- adminの場合 -->
           <% if admin_user_signed_in? %>
             <ul class="nav navbar-nav navbar-right">
               <li>
