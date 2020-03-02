@@ -20,7 +20,7 @@
         <nav>
           <ul class="nav navbar-nav navbar-right">
          <!-- admin_userの場合 -->
-            <% if current_admin_user_signed_in? %>
+            <% if admin_user_signed_in? %>
                 <li>
                   <%= link_to "商品一覧", admin_items_path %>
                 </li>
@@ -40,7 +40,7 @@
                   <input type="serch" name="genre" placeholder="フリーワードを入力"></input>
                 </li>
             <!-- end_userの場合 -->
-            <% elsif current_end_admin_signed_in? %>
+            <% elsif end_user_signed_in? %>
                 <li>
                   ログインユーザ：<%= current_end_user.last_name%> <%= current_end_user.first_name%>
                 </li>
