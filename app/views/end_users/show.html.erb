@@ -1,9 +1,6 @@
 
 <div class="container">
-  <div class="row">
-    <div class="page_title">
-      <h3>マイページ</h3>
-    </div>
+    <h3>マイページ</h3>
     <h3><strong>登録情報</strong></h3>
     <div class="btn-wrapper">
       <%= link_to '編集する', '/end_users/editing', class:"btn btn-primary col-xs-2" %>
@@ -46,14 +43,10 @@
         <td><%= current_end_user.email %></td>
       </tr>
     </table>
-  </div>
 
-  <div class="row">
     <h3><strong>配送先</strong></h3>
     <!-- <div class="btn-wrapper"> -->
-    <%= link_to '一覧を見る', addresses_path, class:"btn btn-primary col-xs-3" %>
-  </div>
-  <div class="row">
+    <%= link_to '一覧を見る', addresses_path, class:"btn btn-primary col-xs-3" %><br><br><br>
     <h3><strong>注文履歴</strong></h3>
     <%= link_to '一覧を見る', orders_path, class:"btn btn-primary col-xs-3" %>
   </div>
