@@ -3,7 +3,7 @@
   <div class="row">
     <%= form_for( @item, url:admin_item_path ) do | item | %>
     <div class="col-xs-4">
-      <%= attachment_image_tag @item, :image, size:'100x100', format: 'jpeg', fallback: 'no_image.jpg', size:'100x100' %><br>
+      <%= attachment_image_tag @item, :image, size:'300x300', format: 'jpeg', fallback: 'no_image.jpg', size:'100x100' %><br>
       <%= item.attachment_field :image, placeholder: "画像選択" %>
     </div>
 
