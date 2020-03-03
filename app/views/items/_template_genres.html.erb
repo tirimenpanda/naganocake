@@ -1,11 +1,17 @@
-<ul>
-  <li>ジャンル検索</li>
-  <% genres.each do | genre | %>
-  <li>
-    <%= form_for( genre, url:items_path, method: :get ) do | f | %>
-    <%= f.hidden_field :id, readonly:true%>
-    <%= f.submit genre.name, style: 'border: none; margin: 8px;' %>
-    <% end %>
-  </li>
-  <% end %>
-</ul>
+<div class="container">
+	<div class="genre-index">
+		<ul>
+		  <h3><strong>
+		  	<li>ジャンル検索</li>
+		  </strong></h3>
+		  <% genres.each do | genre | %>
+		  <li>
+		    <%= form_for( genre, url:items_path, method: :get ) do | f | %>
+		    <%= f.hidden_field :id, readonly:true%>
+		    <%= f.submit genre.name, style: 'border: none; margin: 8px;' %>
+		    <% end %>
+		  </li>
+		  <% end %>
+		</ul>
+	</div>
+</div>

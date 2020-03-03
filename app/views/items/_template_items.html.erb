@@ -1,18 +1,22 @@
 <div class="container">
-  <p><strong><%= info %>一覧</strong>(全<%= counts %>件)</p><br>
-  <ul>
-    <% pages.each do |itm| %>
-      <div class="col-xs-3">
-        <li class="item_data">
-          <%= link_to itm do %>
-            <%= attachment_image_tag itm, :image, size:'150x80', format: 'jpeg', fallback: 'no_image.jpg', size:'150x80' %><br />
+  <div class="row">
+    <div class="col-xs-1">
+    </div>
+
+  <div class="col-xs-10">
+    <p><strong><%= info %>一覧</strong>(全<%= counts %>件)</p><br>
+          <% pages.each do |itm| %>
+            <div class="col-xs-3 item">
+                <li>
+                  <%= link_to itm do %>
+                    <%= attachment_image_tag itm, :image, size:'150x80', format: 'jpeg', fallback: 'no_image.jpg', size:'150x80' %><br />
+                  <% end %>
+                  <dt><%= itm.name %></dt>
+                  <dt>¥<%= itm.listed_price %></dt>
+                </li>
+            </div>
           <% end %>
-          <dt><%= itm.name %></dt>
-          <dt>¥<%= itm.listed_price %></dt>
-        </li>
-      </div>
-    <% end %>
-  </ul>
+  </div>
 
   <div class="col-xs-10">
     <%= paginate pages, class: "paginate" %>
