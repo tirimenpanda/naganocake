@@ -169,10 +169,10 @@ footer {
  li {
    display: list-item;
    text-align: -webkit-match-parent;
-   padding-top: 1em;
    &:last-child {
-     padding-top: 0;
-
+     .glyphicon {
+line-height: 0.5em;
+     }
    }
  }
 

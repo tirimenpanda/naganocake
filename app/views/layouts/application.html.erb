@@ -20,6 +20,12 @@
   <nav>
     <ul class="nav navbar-nav navbar-right">
       <!-- admin_userの場合 -->
+      <li>
+        <%= form_for( Genre.new, url: items_path, method: :get ) do | f | %>
+		    <%= f.text_field :name, style: 'border: none; margin: 8px; color: gray;', placeholder: "フリーワードを入力" %>
+		    <%= f.submit '検索', class: 'btn btn-default', style: 'border: none; margin: 8px; color: gray;' %>
+		    <% end %>
+      </li>
       <% if admin_user_signed_in? %>
       <li>
         <%= link_to "商品一覧", admin_items_path %>
@@ -35,9 +41,6 @@
       </li>
       <li>
         <%= link_to "ログアウト", destroy_admin_user_session_path, method: :delete  %>
-      </li>
-      <li>
-        <input type="serch" name="genre" placeholder="フリーワードを入力"></input>
       </li>
       <!-- end_userの場合 -->
       <% elsif end_user_signed_in? %>
@@ -85,12 +88,12 @@
   <div class="container flash-message">
     <% if flash.any? then %>
     <!-- deviceのflashメッセージが出ないようにするため↓↓ -->
-    <% if ( not flash[:notice].nil?) && (not flash[:notice].include?(%?translation?)) then %>
-      <% flash.each do |key, value| %>
-        <%= value %>
-      <% end %>
-      <% end %>
-    <% end %><br>
+    <% flash.each do |key, value| %>
+    <% if key != 'notice' then %>
+    <%= value %><br>
+    <% end %>
+    <% end %>
+    <% end %>
   </div>
 
   <%= yield %>
@@ -103,7 +106,7 @@
    <script>
      $(function(){
        $('b').css({
-         'top': '10px',
+         'bottom': '5px',
          'right': '<%= 22 - 5*cart_item_count.to_s.length %>px'
        });
      });

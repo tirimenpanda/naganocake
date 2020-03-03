@@ -12,7 +12,7 @@
                     <%= attachment_image_tag itm, :image, size:'150x80', format: 'jpeg', fallback: 'no_image.jpg', size:'150x80' %><br />
                   <% end %>
                   <dt><%= itm.name %></dt>
-                  <dt>¥<%= number_separation( itm.listed_price ) %></dt>
+                  <dt>¥<%= subtotal( itm.listed_price ) %></dt>
                 </li>
             </div>
           <% end %>
