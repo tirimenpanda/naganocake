@@ -17,9 +17,13 @@
     password: 'パスワード'
   } %>
     <ul>
-      <li style='padding: 10px 0 5px;'><b><%= 'エラー発生項目'.center( 12, ?　 ) %></b><%='エラー内容'.center( 13, ?　 ) %></li>
+      <li style='padding: 10px 0 5px;'><b><%= 'エラー発生項目'.center( 21, ?　 ) %></b><%='エラー内容'.center( 13, ?　 ) %></li>
       <% resource.errors.each do |key, message| %>
-        <li style='padding: 5px 0;'><b style='color: red;'><%= dic[key].center( 12, ?　 ) %></b>　の項目に不備があります。</li>
+      <% if dic.has_key?(key) then %>
+      <li style='padding: 5px 0;'><b style='color: red;'><%= dic[key].center( 21, ?　 ) %></b>　の項目に不備があります。</li>
+      <% else %>
+      <li style='padding: 5px 0;'><b style='color: red;'><%= key.to_s.center( 21, ?　 ) %></b>　の項目に不備があります。</li>
+      <% end %>
       <% end %>
     </ul>
   </div>

@@ -44,13 +44,11 @@ Item.create( genre_id: 2, name: %?フルーツパウンドケーキ?, introducti
 Item.create( genre_id: 2, name: %?クッキー?, introduction: %?懐かしい味。素朴なクッキーの3枚セット?, listed_price: 200, image: File.open( './app/assets/images/cookie.png', ?r ) )
 Item.create( genre_id: 3, name: %?チョコレート?, introduction: %?バンホーテンのカカオ豆を使ってますよ。?, listed_price: 100, image: File.open( './app/assets/images/chocolate.png', ?r ) )
 Item.create( genre_id: 4, name: %?カスタードプリン?, introduction: %?シンプルなプリンです。?, listed_price: 120, image: File.open( './app/assets/images/purin.png', ?r ) )
-
 Item.create( genre_id: 4, name: %?ミルクプリン?, introduction: %?北海道産牛乳を使用したクリームが絶品。?, listed_price: 180, image: File.open( './app/assets/images/milk_purin.png', ?r ) )
 Item.create( genre_id: 5, name: %?羊羹?, introduction: %?北海道産小豆を使用してます。裏ごししてあるので舌触り滑らか。?, listed_price: 800, image: File.open( './app/assets/images/youkan.png', ?r ) )
 Item.create( genre_id: 6, name: %?アイスクリーム?, introduction: %?Häagen-Dazsのアイスなので間違いなく美味しいです。?, listed_price: 398, image: File.open( './app/assets/images/icecream.png', ?r ) )
 
-end
-arr = ( (1..13).to_a  - [Item.find_by( genre_id: 8 ).id] ).shuffle
+arr = (1..13).to_a.shuffle
 # arr = ( (1..13).to_a  - Item.find_by( genre_id: 8 )).shuffle
 # CartItemのサンプルデータ（全11件）
 CartItem.create( end_user_id: 1, item_id: arr.pop, amount: 2 )
