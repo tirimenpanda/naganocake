@@ -75,22 +75,6 @@
   </nav>
 </header>
 
-<body>
-
-  <% if flash.any? then %>
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-offset-2 col-xs-8 col-xs-offset-2">
-        <% flash.each do |key, value| %>
-        <%= value %>
-        <% end %>
-      </div>
-    </div>
-  </div>
-  <% end %>
-
-  <%= yield %>
-
     <body>
       <div class="container flash-message">
         <% if flash.any? then %>

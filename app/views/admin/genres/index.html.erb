@@ -1,12 +1,12 @@
 <div class="container">
 	<h3><strong>ジャンル追加・一覧画面</strong></h3>
 
-	<p>ジャンル</p>
 	<%= form_for(@genre, url:admin_genres_path) do |f| %>
+		<p>ジャンル
 		<%= f.text_field :name %>
 		<label><%= f.radio_button :is_displayed, true %>有効</label>
     	<label><%= f.radio_button :is_displayed, false %>無効</label>
-    	<%= f.submit "追加", class: "btn btn-info" %>
+    	<%= f.submit "追加", class: "btn btn-primary" %></p>
 	<% end %>
 
 	<table class="genre_index">
