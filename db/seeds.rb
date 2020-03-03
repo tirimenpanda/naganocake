@@ -23,34 +23,34 @@ Address.create( end_user_id: 3, postal_code: '5830992', ship_to: '大阪府南�
 
 # Genreのサンプルデータ（全8件）
 Genre.create( name: 'ケーキ')
-Genre.create( name: 'クッキー')
+Genre.create( name: '焼き菓子')
 Genre.create( name: 'チョコレート')
-Genre.create( name: 'プリン・ゼリー')
+Genre.create( name: 'プリン')
+Genre.create( name: 'アイスクリーム')
 Genre.create( name: '和菓子')
-Genre.create( name: 'アイス')
 Genre.create( name: 'その他')
 Genre.create( name: '表示されないジャンル', is_displayed:  false )
-Genre.create( name: 'サンプル')
-
 
 # Itemのサンプルデータ（全8件）
-Item.create( genre_id: 1, name: 'ショートケーキ', introduction: 'シンプルisベスト', listed_price: 500, image: File.open( './app/assets/images/cake1.png', ?r ) )
-Item.create( genre_id: 1, name: %?チョコレートケーキ?, introduction: %?バンホーテンのカカオ豆を使っています。?, listed_price: 560, image: File.open( './app/assets/images/cake2.png', ?r ) )
+Item.create( genre_id: 1, name:  %?ショートケーキ?, introduction: %?シンプルisベスト!当店人気No.1のケーキです!?, listed_price: 500, image: File.open( './app/assets/images/cake1.png', ?r ) )
+Item.create( genre_id: 1, name: %?チョコレートケーキ?, introduction: %?バンホーテンのカカオ豆を使った濃厚チョコレートケーキ?, listed_price: 560, image: File.open( './app/assets/images/cake2.png', ?r ) )
 Item.create( genre_id: 1, name: %?チーズケーキ?, introduction: %?北海道産の最高級牛乳使用?, listed_price: 480, image: File.open( './app/assets/images/cake3.png', ?r ) )
+Item.create( genre_id: 1, name: %?ミルクレープ?, introduction: %?クレープ生地を15層に重ねたミルクレープです。?, listed_price: 480, image: File.open( './app/assets/images/mille_crepe.png', ?r ) )
+Item.create( genre_id: 1, name: %?モンブラン?, introduction: %?秋季限定!ケーキの中にも栗がたっぷり入ったモンブラン!?, listed_price: 580, image: File.open( './app/assets/images/montblanc.png', ?r ) )
+Item.create( genre_id: 1, name: %?アップルパイ?, introduction: %?サクッ！！あま〜い❤️シナモンとの相性抜群!長野県産のりんごを贅沢に使って作りました?, listed_price: 580, image: File.open( './app/assets/images/applepie.png', ?r ) )
 Item.create( genre_id: 2, name: %?スコーン?, introduction: %?スコーンとは、スコットランド料理の、バノックより重いパン。?, listed_price: 275, image: File.open( './app/assets/images/scone.png', ?r ) )
-Item.create( genre_id: 7, name: %?ドーナツ?, introduction: %?内側はしっとりふんわりしたケーキのような食感のものや、モチモチした食感のものなどがあり、形状はリング状が多く、ボール状のものなどもある。?, listed_price: 136, image: File.open( './app/assets/images/french_cruller.png', ?r ) )
-Item.create( genre_id: 7, name: %?チュロス?, introduction: %?各国で広く食べられている揚げ菓子である。?, listed_price: 128, image: File.open( './app/assets/images/Churros.png', ?r ) )
-Item.create( genre_id: 7, name: %?アップルパイ?, introduction: %?サクッ！！あま〜い❤️?, listed_price: 236, image: File.open( './app/assets/images/applepie.png', ?r ) )
-Item.create( genre_id: 8, name: %?これは表示されないジャンルです?, introduction: %?これは表示されないジャンルです?, listed_price: 9999, image: File.open( './app/assets/images/gomibukuro.png', ?r ) )
-Item.create( genre_id: 3, name: %?チョコレート?, introduction: %?これもバンホーテンのカカオ豆を使ってますよ。?, listed_price: 100, image: File.open( './app/assets/images/chocolate.png', ?r ) )
+Item.create( genre_id: 2, name: %?フルーツパウンドケーキ?, introduction: %?アプリコット、ラムレーズン、イチジク、オレンジを贅沢に使ったパウンドケーキ。?, listed_price: 1500, image: File.open( './app/assets/images/pound_cake.png', ?r ) )
+Item.create( genre_id: 2, name: %?クッキー?, introduction: %?懐かしい味。素朴なクッキーの3枚セット?, listed_price: 200, image: File.open( './app/assets/images/cookie.png', ?r ) )
+Item.create( genre_id: 3, name: %?チョコレート?, introduction: %?バンホーテンのカカオ豆を使ってますよ。?, listed_price: 100, image: File.open( './app/assets/images/chocolate.png', ?r ) )
 Item.create( genre_id: 4, name: %?カスタードプリン?, introduction: %?シンプルなプリンです。?, listed_price: 120, image: File.open( './app/assets/images/purin.png', ?r ) )
-Item.create( genre_id: 4, name: %?ミルクプリン?, introduction: %?北海道産牛乳を使用したクリームが絶品。?, listed_price: 180, image: File.open( './app/assets/images/milk_purin.png', ?r ) )
-Item.create( genre_id: 5, name: %?羊羹?, introduction: %?北海道産小豆を使用してます。裏ごししてあるので舌触り滑らか。?, listed_price: 800, image: File.open( './app/assets/images/youkan.png', ?r ) )
-Item.create( genre_id: 6, name: %?アイスクリーム?, introduction: %?Häagen-Dazsのアイスなので間違いなく美味しいです。?, listed_price: 398, image: File.open( './app/assets/images/icecream.png', ?r ) )
+Item.create( genre_id: 4, name: %?ミルクプリン?, introduction: %?北海道産牛乳を使用したクリームが絶品。とろける食感がたまりません?, listed_price: 180, image: File.open( './app/assets/images/milk_purin.png', ?r ) )
+Item.create( genre_id: 6, name: %?羊羹?, introduction: %?北海道産小豆を使用してます。裏ごししてあるので舌触り滑らか。?, listed_price: 800, image: File.open( './app/assets/images/youkan.png', ?r ) )
+Item.create( genre_id: 5, name: %?アイスクリーム?, introduction: %?Häagen-Dazsのアイスなので間違いなく美味しいです。?, listed_price: 398, image: File.open( './app/assets/images/icecream.png', ?r ) )
+Item.create( genre_id: 7, name: %?チュロス?, introduction: %?各国で広く食べられている揚げ菓子である。?, listed_price: 128, image: File.open( './app/assets/images/Churros.png', ?r ) )
+Item.create( genre_id: 8, name: %?これは表示されないジャンルです?, introduction: %?これは表示されないジャンルです?, listed_price: 9999, image: File.open( './app/assets/images/no_image.jpg', ?r ) )
 20.times do |i|
-  Item.create( genre_id: 9, name: "サンプル(No.#{"%02d" % (i+1)})", introduction: "サンプル説明文(No.#{"%02d" % (i+1)}) #{'ここには商品説明文が入ります'*10}", listed_price: (10_000*rand).to_i, image: File.open( "./app/assets/images/sample#{"%02d" % (i+1)}.png", ?r ) )
+ Item.create( genre_id: 9, name: "サンプル(No.#{"%02d" % (i+1)})", introduction: "サンプル説明文(No.#{"%02d" % (i+1)}) #{'ここには商品説明文が入ります'*10}", listed_price: (10_000*rand).to_i, image: File.open( "./app/assets/images/sample#{"%02d" % (i+1)}.png", ?r ) )
 end
-
 arr = ( (1..13).to_a  - [Item.find_by( genre_id: 8 ).id] ).shuffle
 # arr = ( (1..13).to_a  - Item.find_by( genre_id: 8 )).shuffle
 # CartItemのサンプルデータ（全11件）
