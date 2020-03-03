@@ -17,6 +17,8 @@ class Admin::EndUsersController < ApplicationController
 		end_user = EndUser.find(params[:id])
 		# アップデート
 		end_user.update( admin_end_user_params )
+		# フラッシュメッセージ
+		flash[:success] = '会員情報を更新しました。'
 		# 該当ユーザのshowページへ遷移
 		redirect_to admin_end_user_path( end_user.id )
 	end

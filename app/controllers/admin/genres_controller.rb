@@ -7,8 +7,9 @@ class Admin::GenresController < ApplicationController
 
 	def create
 		genre = Genre.new(genre_params)
+		flash[:success] = '新規ジャンルの投稿に成功しました。'
 		genre.save
-    	redirect_to admin_genres_path
+		redirect_to admin_genres_path
 	end
 
 	def edit
@@ -17,16 +18,18 @@ class Admin::GenresController < ApplicationController
 
 	def update
 		@genre = Genre.find(params[:id])
-    	if @genre.update(genre_params)
-      	   redirect_to admin_genres_path
-    	else
-           render :edit
-        end
+		if @genre.update(genre_params)
+			flash[:success] = "「#{@genre.name}」ジャンルの更新に成功しました。"
+			redirect_to admin_genres_path
+		else
+			render :edit
+		end
 	end
 
 	def destroy
 		genre = Genre.find(params[:id])
 		genre.destroy
+		flash[:success] = "「#{genre.name}」ジャンルの削除に成功しました。"
 		redirect_to admin_genres_path
 	end
 
