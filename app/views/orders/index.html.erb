@@ -3,7 +3,7 @@
   <table>
     <tr>
       <th>注文日</th>
-      <th>配送先</th>
+      <th width="300">配送先</th>
       <th>注文商品</th>
       <th>支払金額</th>
       <th>ステータス</th>
@@ -30,7 +30,7 @@
       <!--ステータス-->
       <td><%= order.order_status %></td>
       <!--注文詳細-->
-      <td><%= link_to '表示する', order_path( order ) %></td>
+      <td><%= link_to '表示する', order_path( order ), class: "btn btn-primary" %></td>
     </tr>
     <% end %>
   </table>

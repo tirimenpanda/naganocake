@@ -37,8 +37,8 @@
       <td><%= address.consignee %></td>
       <!--編集・削除ボタン-->
       <td>
-        <%= link_to '編集する', edit_address_path( address ) %>
-        <%= link_to '削除する', address_path( address ), method: :delete, 'data-confirm' => '本当に削除しますか？' %>
+        <%= link_to '編集する', edit_address_path( address ), class: "btn btn-primary" %>
+        <%= link_to '削除する', address_path( address ), class: "btn btn-danger", method: :delete, 'data-confirm' => '本当に削除しますか？' %>
       </td>
     </tr>
     <% end %>
