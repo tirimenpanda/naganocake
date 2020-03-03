@@ -30,7 +30,6 @@ Genre.create( name: '和菓子')
 Genre.create( name: 'アイス')
 Genre.create( name: 'その他')
 Genre.create( name: '表示されないジャンル', is_displayed:  false )
-Genre.create( name: 'サンプル')
 
 
 # Itemのサンプルデータ（全8件）
@@ -47,8 +46,6 @@ Item.create( genre_id: 4, name: %?カスタードプリン?, introduction: %?シ
 Item.create( genre_id: 4, name: %?ミルクプリン?, introduction: %?北海道産牛乳を使用したクリームが絶品。?, listed_price: 180, image: File.open( './app/assets/images/milk_purin.png', ?r ) )
 Item.create( genre_id: 5, name: %?羊羹?, introduction: %?北海道産小豆を使用してます。裏ごししてあるので舌触り滑らか。?, listed_price: 800, image: File.open( './app/assets/images/youkan.png', ?r ) )
 Item.create( genre_id: 6, name: %?アイスクリーム?, introduction: %?Häagen-Dazsのアイスなので間違いなく美味しいです。?, listed_price: 398, image: File.open( './app/assets/images/icecream.png', ?r ) )
-20.times do |i|
-  Item.create( genre_id: 9, name: "サンプル(No.#{"%02d" % (i+1)})", introduction: "サンプル説明文(No.#{"%02d" % (i+1)}) #{'ここには商品説明文が入ります'*10}", listed_price: (10_000*rand).to_i, image: File.open( "./app/assets/images/sample#{"%02d" % (i+1)}.png", ?r ) )
 end
 
 arr = ( (1..13).to_a  - [Item.find_by( genre_id: 8 ).id] ).shuffle
