@@ -20,10 +20,8 @@ class Admin::OrdersController < ApplicationController
 	end
 
 	def show
-
 		# 詳細を確認したい注文データの取得
 		@order = Order.find(params[:id])
-
 	end
 
 	def update_order_status
@@ -31,6 +29,7 @@ class Admin::OrdersController < ApplicationController
 		order = Order.find( params[:id] )
 		# 更新処理
 		order.update( order_status_params )
+		flash[:success] = '注文ステータスの更新に成功しました。'
 		# 注文詳細ページへ戻る
 		redirect_to admin_order_path( order )
 	end
@@ -40,6 +39,7 @@ class Admin::OrdersController < ApplicationController
 		order_detail = OrderDetail.find( params[:id] )
 		# 更新処理
 		order_detail.update( making_status_params )
+		flash[:success] = '製作ステータスの更新に成功しました。'
 		# 注文詳細ページへ戻る
 		redirect_to admin_order_path( order_detail.order )
 	end

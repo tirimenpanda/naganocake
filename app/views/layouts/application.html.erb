@@ -1,81 +1,109 @@
+
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>ながのCAKE</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>ながのCAKE</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <header class="navbar navbar-inverse">
-        <nav class="navbar-left">
-          <%= link_to root_path do %>
-            <%= image_tag 'ながのCAKE.png' %>
+<header class="navbar navbar-inverse">
+  <nav class="navbar-left">
+    <%= link_to root_path do %>
+    <%= image_tag 'ながのCAKE.png' %>
+    <% end %>
+  </nav>
+
+  <nav>
+    <ul class="nav navbar-nav navbar-right">
+      <!-- admin_userの場合 -->
+      <% if admin_user_signed_in? %>
+      <li>
+        <%= link_to "商品一覧", admin_items_path %>
+      </li>
+      <li>
+        <%= link_to "会員一覧", admin_end_users_path %>
+      </li>
+      <li>
+        <%= link_to "注文履歴一覧", admin_orders_path %>
+      </li>
+      <li>
+        <%= link_to "ジャンル管理", admin_genres_path %>
+      </li>
+      <li>
+        <%= link_to "ログアウト", destroy_admin_user_session_path, method: :delete  %>
+      </li>
+      <li>
+        <input type="serch" name="genre" placeholder="フリーワードを入力"></input>
+      </li>
+      <!-- end_userの場合 -->
+      <% elsif end_user_signed_in? %>
+      <li>
+        ログインユーザ：<%= current_end_user.last_name%> <%= current_end_user.first_name%>
+      </li>
+      <li>
+        <%= link_to "Top", root_path %>
+      </li>
+      <li>
+        <%= link_to "About", homes_about_path %>
+      </li>
+      <li>
+        <%= link_to "マイページ", end_user_registration_path %>
+      </li>
+      <li>
+        <%= link_to "ログアウト", destroy_end_user_session_path, method: :delete  %>
+      </li>
+      <li>
+        <%= link_to "カート", cart_items_path, class: "glyphicon glyphicon-shopping-cart" %>
+      </li>
+      <!-- どちらもlog inしていない場合 -->
+      <% else %>
+      <li>
+        <%= link_to "About", homes_about_path %>
+      </li>
+      <li>
+        <%= link_to "Sign up", new_end_user_registration_path %>
+      </li>
+      <li>
+        <%= link_to "Log in", new_end_user_session_path %>
+      </li>
+      <% end %>
+    </ul>
+  </nav>
+</header>
+
+<body>
+
+  <% if flash.any? then %>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-offset-2 col-xs-8 col-xs-offset-2">
+        <% flash.each do |key, value| %>
+        <%= value %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+
+  <%= yield %>
+
+    <body>
+      <div class="container flash-message">
+        <% if flash.any? then %>
+          <% flash.each do |key, value| %>
+            <%= value %>
           <% end %>
-        </nav>
+        <% end %><br />
+      </div>
 
-        <nav>
-          <ul class="nav navbar-nav navbar-right">
-         <!-- admin_userの場合 -->
-            <% if admin_user_signed_in? %>
-                <li>
-                  <%= link_to "商品一覧", admin_items_path %>
-                </li>
-                <li>
-                  <%= link_to "会員一覧", admin_end_users_path %>
-                </li>
-                <li>
-                  <%= link_to "注文履歴一覧", admin_orders_path %>
-                </li>
-                <li>
-                  <%= link_to "ジャンル管理", admin_genres_path %>
-                </li>
-                <li>
-                  <%= link_to "ログアウト", destroy_admin_user_session_path, method: :delete  %>
-                </li>
-                <li>
-                  <input type="serch" name="genre" placeholder="フリーワードを入力"></input>
-                </li>
-            <!-- end_userの場合 -->
-            <% elsif end_user_signed_in? %>
-                <li>
-                  ログインユーザ：<%= current_end_user.last_name%> <%= current_end_user.first_name%>
-                </li>
-                <li>
-                  <%= link_to "Top", root_path %>
-                </li>
-                <li>
-                  <%= link_to "About", homes_about_path %>
-                </li>
-                <li>
-                  <%= link_to "マイページ", end_user_registration_path %>
-                </li>
-                <li>
-                  <%= link_to "ログアウト", destroy_end_user_session_path, method: :delete  %>
-                </li>
-                <li>
-                  <%= link_to "カート", cart_items_path, class: "glyphicon glyphicon-shopping-cart" %>
-                </li>
-            <!-- どちらもlog inしていない場合 -->
-            <% else %>
-                <li>
-                  <%= link_to "About", homes_about_path %>
-                </li>
-                <li>
-                  <%= link_to "Sign up", new_end_user_registration_path %>
-                </li>
-                <li>
-                  <%= link_to "Log in", new_end_user_session_path %>
-                </li>
-            <% end %>
-          </ul>
-        </nav>
-    </header>
+      <%= yield %>
 
-   <%= yield %>
+    </body>
 
-  </body>
+   <footer>
+   </footer>
 </html>

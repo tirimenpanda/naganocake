@@ -10,12 +10,14 @@ class EndUsersController < ApplicationController
     end_user = EndUser.find( current_end_user.id )
     # ユーザ情報更新
     end_user.update( end_user_params )
+    flash[:notice] = "ユーザー更新が正常に完了しました。"
     # ユーザが退会状態に変化した場合の処理
     if end_user.is_deleted then
       # logger.debug 'ログアウト処理実行'
       # ログアウト処理
       sign_out end_user
-      # ログアウト時にトップに飛ばされるようにコントローラー設定必要？？
+
+      flash[:notice] = "退会処理が正常に完了しました。"
       redirect_to root_path
     else
       # ログインユーザ詳細画面へ遷移
