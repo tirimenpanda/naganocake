@@ -72,7 +72,7 @@
  }
 
  .navbar-left, .navbar-right {
-   padding: 30px 0 0;
+   padding: 30px 20px 0;
  }
 
  .logo {
@@ -91,6 +91,11 @@
  header:visited {
    color: #FFF;
  }
+
+footer {
+  height: 30px;
+  width: 100%;
+}
 
  /* body */
 
@@ -184,13 +189,11 @@
    text-align: center;
  }
 
-
  /*---about.html.erb---*/
 
  .about {
    text-align: center;
  }
-
 
  /*---admin/end_users/show.html.erb---*/
 
@@ -210,5 +213,5 @@
   }
 
   footer {
-  hight:100px;
+    height:100px;
   }
