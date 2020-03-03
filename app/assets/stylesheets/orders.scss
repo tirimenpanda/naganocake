@@ -28,3 +28,42 @@ p {
 .confirm-btn {
 	text-align: center;
 }
+
+/* order show */
+.pay-info {
+	display :inline;
+	float: right;
+}
+
+.order-table th {
+	width: 150px;
+}
+
+.order-info td {
+	width: 400px;
+}
+
+.pay-heading {
+	background-color: #C0C0C0;
+	width: 150px;
+}
+
+.pay-info td {
+	width: 130px;
+}
+
+.item-name {
+	width: 400px;
+}
+
+.sabtotal {
+	width: 100px;
+}
+
+.total-amount {
+	width: 100px;
+}
+
+.order-details, .order-info {
+	padding-top: 30px;
+}
