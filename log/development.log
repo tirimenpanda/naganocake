@@ -1,0 +1,638 @@
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateAdminUsers (20200222072014)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "admin_users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200222072014_devise_create_admin_users.rb:5
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admin_users_on_email" ON "admin_users" ("email")[0m
+  ↳ db/migrate/20200222072014_devise_create_admin_users.rb:39
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_admin_users_on_reset_password_token" ON "admin_users" ("reset_password_token")[0m
+  ↳ db/migrate/20200222072014_devise_create_admin_users.rb:40
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200222072014"]]
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to DeviseCreateEndUsers (20200222072022)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "end_users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "first_name" varchar NOT NULL, "last_name" varchar NOT NULL, "first_name_kana" varchar NOT NULL, "last_name_kana" varchar NOT NULL, "postal_code" varchar NOT NULL, "address" varchar NOT NULL, "phone_number" varchar NOT NULL, "is_deleted" boolean DEFAULT 0 NOT NULL)[0m
+  ↳ db/migrate/20200222072022_devise_create_end_users.rb:5
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_end_users_on_email" ON "end_users" ("email")[0m
+  ↳ db/migrate/20200222072022_devise_create_end_users.rb:48
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_end_users_on_reset_password_token" ON "end_users" ("reset_password_token")[0m
+  ↳ db/migrate/20200222072022_devise_create_end_users.rb:49
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200222072022"]]
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateAddresses (20200222072326)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "addresses" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "end_user_id" integer NOT NULL, "postal_code" varchar NOT NULL, "ship_to" varchar NOT NULL, "consignee" varchar NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200222072326_create_addresses.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200222072326"]]
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateCartItems (20200222072337)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "cart_items" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "end_user_id" integer NOT NULL, "item_id" integer NOT NULL, "amount" integer NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200222072337_create_cart_items.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200222072337"]]
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateOrders (20200222072345)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "orders" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "end_user_id" integer NOT NULL, "postal_code" varchar NOT NULL, "ship_to" varchar NOT NULL, "consignee" varchar NOT NULL, "payment" integer NOT NULL, "postage" integer NOT NULL, "total_price" integer NOT NULL, "order_status" integer DEFAULT 0 NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200222072345_create_orders.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200222072345"]]
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateOrderDetails (20200222072352)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "order_details" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "order_id" integer NOT NULL, "item_id" integer NOT NULL, "amount" integer NOT NULL, "purchased_price" integer NOT NULL, "making_status" integer DEFAULT 0 NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200222072352_create_order_details.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200222072352"]]
+  ↳ bin/rails:9
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateItems (20200222072404)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "items" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "genre_id" integer NOT NULL, "name" varchar NOT NULL, "introduction" text NOT NULL, "listed_price" integer NOT NULL, "image_id" varchar NOT NULL, "selling_status" boolean DEFAULT 1 NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200222072404_create_items.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200222072404"]]
+  ↳ bin/rails:9
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+Migrating to CreateGenres (20200222072412)
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE TABLE "genres" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar NOT NULL, "is_displayed" boolean DEFAULT 1 NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20200222072412_create_genres.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20200222072412"]]
+  ↳ bin/rails:9
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2020-03-03 12:56:15.542458"], ["updated_at", "2020-03-03 12:56:15.542458"]]
+  ↳ bin/rails:9
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /usr/local/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[36mAdminUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "admin_users" WHERE "admin_users"."email" = ? LIMIT ?[0m  [["email", "admin@naganocake.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:11
+  [1m[36mAdminUser Create (2.0ms)[0m  [1m[32mINSERT INTO "admin_users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "admin@naganocake.com"], ["encrypted_password", "$2a$11$ZetzoSN2wrmscdz1zp.nIuymaR97B.dDOeZGkuQuViObDnWTRgqru"], ["created_at", "2020-03-03 12:56:23.923902"], ["updated_at", "2020-03-03 12:56:23.923902"]]
+  ↳ db/seeds.rb:11
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:11
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[36mEndUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "end_users" WHERE "end_users"."email" = ? LIMIT ?[0m  [["email", "test@test.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:14
+  [1m[36mEndUser Create (1.8ms)[0m  [1m[32mINSERT INTO "end_users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "first_name_kana", "last_name_kana", "postal_code", "address", "phone_number") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "test@test.com"], ["encrypted_password", "$2a$11$z32jpOUIn80mkkkySV5m.uUshC//7MUE6mHTNem5yYfHsKLXmHd9m"], ["created_at", "2020-03-03 12:56:24.041013"], ["updated_at", "2020-03-03 12:56:24.041013"], ["first_name", "貴明"], ["last_name", "藤野"], ["first_name_kana", "タカアキ"], ["last_name_kana", "フジノ"], ["postal_code", "1234567"], ["address", "東京都"], ["phone_number", "09012345678"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[36mEndUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "end_users" WHERE "end_users"."email" = ? LIMIT ?[0m  [["email", "abe@shinzou.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:15
+  [1m[36mEndUser Create (1.9ms)[0m  [1m[32mINSERT INTO "end_users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "first_name_kana", "last_name_kana", "postal_code", "address", "phone_number") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "abe@shinzou.com"], ["encrypted_password", "$2a$11$QTPpeiAIDMDZ1p8TdcrtQe2IUaJQxYzlZI7A12dAHuapFWDyuOY.u"], ["created_at", "2020-03-03 12:56:24.138215"], ["updated_at", "2020-03-03 12:56:24.138215"], ["first_name", "晋三"], ["last_name", "安倍"], ["first_name_kana", "シンゾウ"], ["last_name_kana", "アベ"], ["postal_code", "1234567"], ["address", "国会議事堂"], ["phone_number", "09000889464"]]
+  ↳ db/seeds.rb:15
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:15
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[36mEndUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "end_users" WHERE "end_users"."email" = ? LIMIT ?[0m  [["email", "syoutoku@taishi.com"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+  [1m[36mEndUser Create (2.1ms)[0m  [1m[32mINSERT INTO "end_users" ("email", "encrypted_password", "created_at", "updated_at", "first_name", "last_name", "first_name_kana", "last_name_kana", "postal_code", "address", "phone_number") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["email", "syoutoku@taishi.com"], ["encrypted_password", "$2a$11$ABcqGPPUINqj3YNvzN2/MOQes5iL5P3yfjRxsa4vEajyw4IUYaFjy"], ["created_at", "2020-03-03 12:56:24.236568"], ["updated_at", "2020-03-03 12:56:24.236568"], ["first_name", "太子"], ["last_name", "聖徳"], ["first_name_kana", "タイシ"], ["last_name_kana", "ショウトク"], ["postal_code", "1234567"], ["address", "法隆寺"], ["phone_number", "57427311622"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:19
+  [1m[36mEndUser Load (0.3ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+  [1m[36mAddress Create (0.8ms)[0m  [1m[32mINSERT INTO "addresses" ("end_user_id", "postal_code", "ship_to", "consignee", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["end_user_id", 1], ["postal_code", "1700013"], ["ship_to", "東京都豊島区南池袋１丁目２８−２"], ["consignee", "ニコニコ本社"], ["created_at", "2020-03-03 12:56:24.254784"], ["updated_at", "2020-03-03 12:56:24.254784"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[36mEndUser Load (0.2ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+  [1m[36mAddress Create (0.9ms)[0m  [1m[32mINSERT INTO "addresses" ("end_user_id", "postal_code", "ship_to", "consignee", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["end_user_id", 1], ["postal_code", "1020072"], ["ship_to", "東京都千代田区飯田橋２丁目７−３"], ["consignee", "竹書房ビル"], ["created_at", "2020-03-03 12:56:24.259378"], ["updated_at", "2020-03-03 12:56:24.259378"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[36mEndUser Load (0.4ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:21
+  [1m[36mAddress Create (0.8ms)[0m  [1m[32mINSERT INTO "addresses" ("end_user_id", "postal_code", "ship_to", "consignee", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["end_user_id", 2], ["postal_code", "7000005"], ["ship_to", "岡山県岡山市北区理大町1-1"], ["consignee", "学校法人加計学園"], ["created_at", "2020-03-03 12:56:24.267003"], ["updated_at", "2020-03-03 12:56:24.267003"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:21
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[36mEndUser Load (0.2ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:22
+  [1m[36mAddress Create (0.6ms)[0m  [1m[32mINSERT INTO "addresses" ("end_user_id", "postal_code", "ship_to", "consignee", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["end_user_id", 3], ["postal_code", "5830992"], ["ship_to", "大阪府南河内郡太子町"], ["consignee", "小野妹子"], ["created_at", "2020-03-03 12:56:24.271989"], ["updated_at", "2020-03-03 12:56:24.271989"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:22
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[36mGenre Create (0.9ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "ケーキ"], ["created_at", "2020-03-03 12:56:24.280788"], ["updated_at", "2020-03-03 12:56:24.280788"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:25
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[36mGenre Create (0.7ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "焼き菓子"], ["created_at", "2020-03-03 12:56:24.284460"], ["updated_at", "2020-03-03 12:56:24.284460"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:26
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[36mGenre Create (0.7ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "チョコレート"], ["created_at", "2020-03-03 12:56:24.287380"], ["updated_at", "2020-03-03 12:56:24.287380"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:28
+  [1m[36mGenre Create (0.6ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "プリン"], ["created_at", "2020-03-03 12:56:24.290286"], ["updated_at", "2020-03-03 12:56:24.290286"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[36mGenre Create (0.7ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "アイスクリーム"], ["created_at", "2020-03-03 12:56:24.293476"], ["updated_at", "2020-03-03 12:56:24.293476"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:29
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[36mGenre Create (0.9ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "和菓子"], ["created_at", "2020-03-03 12:56:24.296447"], ["updated_at", "2020-03-03 12:56:24.296447"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:30
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:31
+  [1m[36mGenre Create (0.7ms)[0m  [1m[32mINSERT INTO "genres" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "その他"], ["created_at", "2020-03-03 12:56:24.299423"], ["updated_at", "2020-03-03 12:56:24.299423"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:32
+  [1m[36mGenre Create (0.7ms)[0m  [1m[32mINSERT INTO "genres" ("name", "is_displayed", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "表示されないジャンル"], ["is_displayed", 0], ["created_at", "2020-03-03 12:56:24.302489"], ["updated_at", "2020-03-03 12:56:24.302489"]]
+  ↳ db/seeds.rb:32
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:36
+  [1m[36mGenre Load (0.5ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:36
+  [1m[36mItem Create (0.6ms)[0m  [1m[32mINSERT INTO "items" ("genre_id", "name", "introduction", "listed_price", "image_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["genre_id", 1], ["name", "ショートケーキ"], ["introduction", "シンプルisベスト!当店人気No.1のケーキです!"], ["listed_price", 500], ["image_id", "6bc54a913653fb6ec02853ba23856466413793621eb528e1e4d94c12ead8"], ["created_at", "2020-03-03 12:56:24.326068"], ["updated_at", "2020-03-03 12:56:24.326068"]]
+  ↳ db/seeds.rb:36
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:36
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:37
+  [1m[36mItem Create (0.6ms)[0m  [1m[32mINSERT INTO "items" ("genre_id", "name", "introduction", "listed_price", "image_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["genre_id", 1], ["name", "チョコレートケーキ"], ["introduction", "バンホーテンのカカオ豆を使った濃厚チョコレートケーキ"], ["listed_price", 560], ["image_id", "3eb4a67e566afaad38843a494df80e89aac86204709825547ac31b252df6"], ["created_at", "2020-03-03 12:56:24.336329"], ["updated_at", "2020-03-03 12:56:24.336329"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:37
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:38
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:38
+  [1m[36mItem Create (0.5ms)[0m  [1m[32mINSERT INTO "items" ("genre_id", "name", "introduction", "listed_price", "image_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["genre_id", 1], ["name", "チーズケーキ"], ["introduction", "北海道産の最高級牛乳使用"], ["listed_price", 480], ["image_id", "6fcad6feffe305b5d369608caa15ba2a96241793c874e52133fb50e90289"], ["created_at", "2020-03-03 12:56:24.342649"], ["updated_at", "2020-03-03 12:56:24.342649"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:38
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:39
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:39
+  [1m[36mItem Create (0.5ms)[0m  [1m[32mINSERT INTO "items" ("genre_id", "name", "introduction", "listed_price", "image_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["genre_id", 1], ["name", "ミルクレープ"], ["introduction", "クレープ生地を15層に重ねたミルクレープです。"], ["listed_price", 480], ["image_id", "919ea72fe7b7e40875a0554c8a02e63f6959a0362d3548a7473c3a4b55cf"], ["created_at", "2020-03-03 12:56:24.348453"], ["updated_at", "2020-03-03 12:56:24.348453"]]
+  ↳ db/seeds.rb:39
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:40
+  [1m[36mItem Create (0.6ms)[0m  [1m[32mINSERT INTO "items" ("genre_id", "name", "introduction", "listed_price", "image_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["genre_id", 1], ["name", "モンブラン"], ["introduction", "秋季限定!ケーキの中にも栗がたっぷり入ったモンブラン!"], ["listed_price", 580], ["image_id", "1d76d7cfaa40dbdfa2493e0075a255cc51b976a290735dcd1e4fbc300ece"], ["created_at", "2020-03-03 12:56:24.354414"], ["updated_at", "2020-03-03 12:56:24.354414"]]
+  ↳ db/seeds.rb:40
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:41
+  [1m[36mItem Create (0.7ms)[0m  [1m[32mINSERT INTO "items" ("genre_id", "name", "introduction", "listed_price", "image_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["genre_id", 1], ["name", "アップルパイ"], ["introduction", "サクッ！！あま〜い❤️シナモンとの相性抜群!長野県産のりんごを贅沢に使って作りました"], ["listed_price", 580], ["image_id", "702424d1dd0b73aa7e4e81e41372b1d9e21851152d327a3963f1e05a78eb"], ["created_at", "2020-03-03 12:56:24.360942"], ["updated_at", "2020-03-03 12:56:24.360942"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:41
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[36mGenre Load (0.4ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:42
+  [1m[36mItem Create (1.3ms)[0m  [1m[32mINSERT INTO "items" ("genre_id", "name", "introduction", "listed_price", "image_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["genre_id", 2], ["name", "スコーン"], ["introduction", "スコーンとは、スコットランド料理の、バノックより重いパン。"], ["listed_price", 275], ["image_id", "91cba7821615b0c757db53bad79e2723258f28f2d54fd674942e901b7097"], ["created_at", "2020-03-03 12:56:24.372117"], ["updated_at", "2020-03-03 12:56:24.372117"]]
+  ↳ db/seeds.rb:42
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:42
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:43
+  [1m[36mGenre Load (0.8ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:43
+  [1m[36mItem Create (1.3ms)[0m  [1m[32mINSERT INTO "items" ("genre_id", "name", "introduction", "listed_price", "image_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["genre_id", 2], ["name", "フルーツパウンドケーキ"], ["introduction", "アプリコット、ラムレーズン、イチジク、オレンジを贅沢に使ったパウンドケーキ。"], ["listed_price", 1500], ["image_id", "4b314ee883a99b7d0cb97fba9337dde6aa84b13f4bcf4e05d3ab1da4c498"], ["created_at", "2020-03-03 12:56:24.385356"], ["updated_at", "2020-03-03 12:56:24.385356"]]
+  ↳ db/seeds.rb:43
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:43
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:44
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:44
+  [1m[36mItem Create (0.6ms)[0m  [1m[32mINSERT INTO "items" ("genre_id", "name", "introduction", "listed_price", "image_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["genre_id", 2], ["name", "クッキー"], ["introduction", "懐かしい味。素朴なクッキーの3枚セット"], ["listed_price", 200], ["image_id", "8e35806e0e102efa8d6cdc8a5f7ddbc02b97df8799f3f5fd8fcf70cdc229"], ["created_at", "2020-03-03 12:56:24.394027"], ["updated_at", "2020-03-03 12:56:24.394027"]]
+  ↳ db/seeds.rb:44
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:44
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:45
+  [1m[36mItem Create (0.8ms)[0m  [1m[32mINSERT INTO "items" ("genre_id", "name", "introduction", "listed_price", "image_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["genre_id", 3], ["name", "チョコレート"], ["introduction", "バンホーテンのカカオ豆を使ってますよ。"], ["listed_price", 100], ["image_id", "88e001207e0a076a7987e25f17f6c8dfc4dfd47ea718b67280eb712d0e88"], ["created_at", "2020-03-03 12:56:24.402206"], ["updated_at", "2020-03-03 12:56:24.402206"]]
+  ↳ db/seeds.rb:45
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:46
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:46
+  [1m[36mItem Create (0.6ms)[0m  [1m[32mINSERT INTO "items" ("genre_id", "name", "introduction", "listed_price", "image_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["genre_id", 4], ["name", "カスタードプリン"], ["introduction", "シンプルなプリンです。"], ["listed_price", 120], ["image_id", "216731b13b5f95c1065936a32e498e7c1c69fa60a64aa9cba3c341235efc"], ["created_at", "2020-03-03 12:56:24.408366"], ["updated_at", "2020-03-03 12:56:24.408366"]]
+  ↳ db/seeds.rb:46
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:46
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:47
+  [1m[36mGenre Load (0.3ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:47
+  [1m[36mItem Create (0.6ms)[0m  [1m[32mINSERT INTO "items" ("genre_id", "name", "introduction", "listed_price", "image_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["genre_id", 4], ["name", "ミルクプリン"], ["introduction", "北海道産牛乳を使用したクリームが絶品。"], ["listed_price", 180], ["image_id", "5264e39563dbef64c762c8f82aed986381bfbb9ccfa8da4a3f7bf9a2411e"], ["created_at", "2020-03-03 12:56:24.415602"], ["updated_at", "2020-03-03 12:56:24.415602"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:48
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:48
+  [1m[36mItem Create (0.6ms)[0m  [1m[32mINSERT INTO "items" ("genre_id", "name", "introduction", "listed_price", "image_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["genre_id", 5], ["name", "羊羹"], ["introduction", "北海道産小豆を使用してます。裏ごししてあるので舌触り滑らか。"], ["listed_price", 800], ["image_id", "679c339339f1b62743ff4556c6a98da9dd03e5eaf54cc8279092b7028a7c"], ["created_at", "2020-03-03 12:56:24.421789"], ["updated_at", "2020-03-03 12:56:24.421789"]]
+  ↳ db/seeds.rb:48
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:48
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:49
+  [1m[36mGenre Load (0.2ms)[0m  [1m[34mSELECT  "genres".* FROM "genres" WHERE "genres"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:49
+  [1m[36mItem Create (0.6ms)[0m  [1m[32mINSERT INTO "items" ("genre_id", "name", "introduction", "listed_price", "image_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["genre_id", 6], ["name", "アイスクリーム"], ["introduction", "Häagen-Dazsのアイスなので間違いなく美味しいです。"], ["listed_price", 398], ["image_id", "72de80beece33abdfdbb9a7144b0b686890ab67baca3791ebd5fff502e09"], ["created_at", "2020-03-03 12:56:24.428170"], ["updated_at", "2020-03-03 12:56:24.428170"]]
+  ↳ db/seeds.rb:49
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:49
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:54
+  [1m[36mEndUser Load (0.4ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:54
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:54
+  [1m[36mCartItem Create (0.8ms)[0m  [1m[32mINSERT INTO "cart_items" ("end_user_id", "item_id", "amount", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["end_user_id", 1], ["item_id", 5], ["amount", 2], ["created_at", "2020-03-03 12:56:24.439960"], ["updated_at", "2020-03-03 12:56:24.439960"]]
+  ↳ db/seeds.rb:54
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:54
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:55
+  [1m[36mEndUser Load (0.3ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:55
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:55
+  [1m[36mCartItem Create (0.6ms)[0m  [1m[32mINSERT INTO "cart_items" ("end_user_id", "item_id", "amount", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["end_user_id", 1], ["item_id", 1], ["amount", 3], ["created_at", "2020-03-03 12:56:24.445986"], ["updated_at", "2020-03-03 12:56:24.445986"]]
+  ↳ db/seeds.rb:55
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:55
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:56
+  [1m[36mEndUser Load (0.2ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:56
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:56
+  [1m[36mCartItem Create (1.2ms)[0m  [1m[32mINSERT INTO "cart_items" ("end_user_id", "item_id", "amount", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["end_user_id", 1], ["item_id", 2], ["amount", 5], ["created_at", "2020-03-03 12:56:24.451447"], ["updated_at", "2020-03-03 12:56:24.451447"]]
+  ↳ db/seeds.rb:56
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:56
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:57
+  [1m[36mEndUser Load (0.2ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:57
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:57
+  [1m[36mCartItem Create (0.5ms)[0m  [1m[32mINSERT INTO "cart_items" ("end_user_id", "item_id", "amount", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["end_user_id", 1], ["item_id", 4], ["amount", 7], ["created_at", "2020-03-03 12:56:24.456266"], ["updated_at", "2020-03-03 12:56:24.456266"]]
+  ↳ db/seeds.rb:57
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:57
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:58
+  [1m[36mEndUser Load (0.2ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:58
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:58
+  [1m[36mCartItem Create (0.6ms)[0m  [1m[32mINSERT INTO "cart_items" ("end_user_id", "item_id", "amount", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["end_user_id", 1], ["item_id", 9], ["amount", 11], ["created_at", "2020-03-03 12:56:24.460233"], ["updated_at", "2020-03-03 12:56:24.460233"]]
+  ↳ db/seeds.rb:58
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:58
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:59
+  [1m[36mEndUser Load (0.3ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:59
+  [1m[36mCartItem Create (1.1ms)[0m  [1m[32mINSERT INTO "cart_items" ("end_user_id", "item_id", "amount", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["end_user_id", 1], ["item_id", 7], ["amount", 13], ["created_at", "2020-03-03 12:56:24.464722"], ["updated_at", "2020-03-03 12:56:24.464722"]]
+  ↳ db/seeds.rb:59
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:59
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[36mEndUser Load (0.3ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:60
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:60
+  [1m[36mCartItem Create (0.9ms)[0m  [1m[32mINSERT INTO "cart_items" ("end_user_id", "item_id", "amount", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["end_user_id", 2], ["item_id", 10], ["amount", 17], ["created_at", "2020-03-03 12:56:24.470912"], ["updated_at", "2020-03-03 12:56:24.470912"]]
+  ↳ db/seeds.rb:60
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:60
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:61
+  [1m[36mEndUser Load (0.3ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:61
+  [1m[36mCartItem Create (1.2ms)[0m  [1m[32mINSERT INTO "cart_items" ("end_user_id", "item_id", "amount", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["end_user_id", 2], ["item_id", 6], ["amount", 19], ["created_at", "2020-03-03 12:56:24.476963"], ["updated_at", "2020-03-03 12:56:24.476963"]]
+  ↳ db/seeds.rb:61
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:62
+  [1m[36mEndUser Load (0.2ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:62
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:62
+  [1m[36mCartItem Create (0.7ms)[0m  [1m[32mINSERT INTO "cart_items" ("end_user_id", "item_id", "amount", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["end_user_id", 2], ["item_id", 11], ["amount", 23], ["created_at", "2020-03-03 12:56:24.483730"], ["updated_at", "2020-03-03 12:56:24.483730"]]
+  ↳ db/seeds.rb:62
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:62
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:63
+  [1m[36mEndUser Load (0.2ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:63
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:63
+  [1m[36mCartItem Create (0.5ms)[0m  [1m[32mINSERT INTO "cart_items" ("end_user_id", "item_id", "amount", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["end_user_id", 3], ["item_id", 12], ["amount", 31], ["created_at", "2020-03-03 12:56:24.488283"], ["updated_at", "2020-03-03 12:56:24.488283"]]
+  ↳ db/seeds.rb:63
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:63
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:64
+  [1m[36mEndUser Load (0.1ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:64
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:64
+  [1m[36mCartItem Create (0.6ms)[0m  [1m[32mINSERT INTO "cart_items" ("end_user_id", "item_id", "amount", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["end_user_id", 3], ["item_id", 3], ["amount", 37], ["created_at", "2020-03-03 12:56:24.492138"], ["updated_at", "2020-03-03 12:56:24.492138"]]
+  ↳ db/seeds.rb:64
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:64
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:65
+  [1m[36mEndUser Load (0.3ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:65
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:65
+  [1m[36mCartItem Create (1.2ms)[0m  [1m[32mINSERT INTO "cart_items" ("end_user_id", "item_id", "amount", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["end_user_id", 3], ["item_id", 13], ["amount", 3], ["created_at", "2020-03-03 12:56:24.496928"], ["updated_at", "2020-03-03 12:56:24.496928"]]
+  ↳ db/seeds.rb:65
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:65
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:69
+  [1m[36mEndUser Load (0.5ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:69
+  [1m[36mOrder Create (1.5ms)[0m  [1m[32mINSERT INTO "orders" ("end_user_id", "postal_code", "ship_to", "consignee", "payment", "postage", "total_price", "order_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["end_user_id", 1], ["postal_code", "1010041"], ["ship_to", "東京都千代田区神田須田町１−２２"], ["consignee", "株式会社ハル研究所"], ["payment", 0], ["postage", 800], ["total_price", 15585], ["order_status", 1], ["created_at", "2020-03-02 12:56:24.500138"], ["updated_at", "2020-03-03 12:56:24.510736"]]
+  ↳ db/seeds.rb:69
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:69
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:70
+  [1m[36mEndUser Load (0.2ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:70
+  [1m[36mOrder Create (0.7ms)[0m  [1m[32mINSERT INTO "orders" ("end_user_id", "postal_code", "ship_to", "consignee", "payment", "postage", "total_price", "order_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["end_user_id", 1], ["postal_code", "1070052"], ["ship_to", "東京都港区赤坂２丁目１２−２３ キャビンアリーナ赤坂 201"], ["consignee", "株式会社京都アニメーション 東京オフィス"], ["payment", 1], ["postage", 800], ["total_price", 40069], ["order_status", 1], ["created_at", "2020-03-03 12:56:24.516283"], ["updated_at", "2020-03-03 12:56:24.516283"]]
+  ↳ db/seeds.rb:70
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:70
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:71
+  [1m[36mEndUser Load (0.2ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:71
+  [1m[36mOrder Create (0.6ms)[0m  [1m[32mINSERT INTO "orders" ("end_user_id", "postal_code", "ship_to", "consignee", "payment", "postage", "total_price", "order_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["end_user_id", 2], ["postal_code", "1234567"], ["ship_to", "国会議事堂"], ["consignee", "安倍 晋三"], ["payment", 1], ["postage", 800], ["total_price", 348862], ["order_status", 1], ["created_at", "2020-03-03 12:56:24.520179"], ["updated_at", "2020-03-03 12:56:24.520179"]]
+  ↳ db/seeds.rb:71
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:71
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:72
+  [1m[36mEndUser Load (0.2ms)[0m  [1m[34mSELECT  "end_users".* FROM "end_users" WHERE "end_users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:72
+  [1m[36mOrder Create (0.6ms)[0m  [1m[32mINSERT INTO "orders" ("end_user_id", "postal_code", "ship_to", "consignee", "payment", "postage", "total_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["end_user_id", 3], ["postal_code", "5830992"], ["ship_to", "大阪府南河内郡太子町"], ["consignee", "小野妹子"], ["payment", 0], ["postage", 800], ["total_price", 40356], ["created_at", "2020-03-03 12:56:24.524228"], ["updated_at", "2020-03-03 12:56:24.524228"]]
+  ↳ db/seeds.rb:72
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:72
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:75
+  [1m[36mOrder Load (0.5ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:75
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:75
+  [1m[36mOrderDetail Create (1.0ms)[0m  [1m[32mINSERT INTO "order_details" ("order_id", "item_id", "amount", "purchased_price", "making_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["order_id", 1], ["item_id", 1], ["amount", 2], ["purchased_price", 1100], ["making_status", 3], ["created_at", "2020-03-02 12:56:24.500138"], ["updated_at", "2020-03-03 12:56:24.536834"]]
+  ↳ db/seeds.rb:75
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:75
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:76
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:76
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:76
+  [1m[36mOrderDetail Create (0.5ms)[0m  [1m[32mINSERT INTO "order_details" ("order_id", "item_id", "amount", "purchased_price", "making_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["order_id", 1], ["item_id", 2], ["amount", 3], ["purchased_price", 1650], ["making_status", 1], ["created_at", "2020-03-02 12:56:24.500138"], ["updated_at", "2020-03-03 12:56:24.541780"]]
+  ↳ db/seeds.rb:76
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:76
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:77
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:77
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:77
+  [1m[36mOrderDetail Create (0.5ms)[0m  [1m[32mINSERT INTO "order_details" ("order_id", "item_id", "amount", "purchased_price", "making_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["order_id", 1], ["item_id", 3], ["amount", 5], ["purchased_price", 3080], ["making_status", 3], ["created_at", "2020-03-02 12:56:24.500138"], ["updated_at", "2020-03-03 12:56:24.545686"]]
+  ↳ db/seeds.rb:77
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:77
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:78
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:78
+  [1m[36mOrderDetail Create (0.7ms)[0m  [1m[32mINSERT INTO "order_details" ("order_id", "item_id", "amount", "purchased_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["order_id", 1], ["item_id", 4], ["amount", 7], ["purchased_price", 3696], ["created_at", "2020-03-02 12:56:24.500138"], ["updated_at", "2020-03-03 12:56:24.549881"]]
+  ↳ db/seeds.rb:78
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:79
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:79
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:79
+  [1m[36mOrderDetail Create (0.6ms)[0m  [1m[32mINSERT INTO "order_details" ("order_id", "item_id", "amount", "purchased_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["order_id", 1], ["item_id", 5], ["amount", 11], ["purchased_price", 3322], ["created_at", "2020-03-02 12:56:24.500138"], ["updated_at", "2020-03-03 12:56:24.554394"]]
+  ↳ db/seeds.rb:79
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:79
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:80
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:80
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:80
+  [1m[36mOrderDetail Create (0.6ms)[0m  [1m[32mINSERT INTO "order_details" ("order_id", "item_id", "amount", "purchased_price", "making_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["order_id", 1], ["item_id", 6], ["amount", 13], ["purchased_price", 1937], ["making_status", 1], ["created_at", "2020-03-02 12:56:24.500138"], ["updated_at", "2020-03-03 12:56:24.558735"]]
+  ↳ db/seeds.rb:80
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:80
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:81
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:81
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ db/seeds.rb:81
+  [1m[36mOrderDetail Create (0.6ms)[0m  [1m[32mINSERT INTO "order_details" ("order_id", "item_id", "amount", "purchased_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["order_id", 2], ["item_id", 14], ["amount", 13], ["purchased_price", 5681], ["created_at", "2020-03-03 12:56:24.563219"], ["updated_at", "2020-03-03 12:56:24.563219"]]
+  ↳ db/seeds.rb:81
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:81
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:82
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:82
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:82
+  [1m[36mOrderDetail Create (0.8ms)[0m  [1m[32mINSERT INTO "order_details" ("order_id", "item_id", "amount", "purchased_price", "making_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["order_id", 2], ["item_id", 11], ["amount", 19], ["purchased_price", 2508], ["making_status", 2], ["created_at", "2020-03-03 12:56:24.573483"], ["updated_at", "2020-03-03 12:56:24.573483"]]
+  ↳ db/seeds.rb:82
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:82
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:83
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:83
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:83
+  [1m[36mOrderDetail Create (1.3ms)[0m  [1m[32mINSERT INTO "order_details" ("order_id", "item_id", "amount", "purchased_price", "making_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["order_id", 2], ["item_id", 8], ["amount", 120], ["purchased_price", 31080], ["making_status", 2], ["created_at", "2020-03-03 12:56:24.578688"], ["updated_at", "2020-03-03 12:56:24.578688"]]
+  ↳ db/seeds.rb:83
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:83
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:84
+  [1m[36mOrder Load (0.3ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:84
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:84
+  [1m[36mOrderDetail Create (0.6ms)[0m  [1m[32mINSERT INTO "order_details" ("order_id", "item_id", "amount", "purchased_price", "making_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["order_id", 3], ["item_id", 1], ["amount", 177], ["purchased_price", 97350], ["making_status", 2], ["created_at", "2020-03-03 12:56:24.585138"], ["updated_at", "2020-03-03 12:56:24.585138"]]
+  ↳ db/seeds.rb:84
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:84
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:85
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:85
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:85
+  [1m[36mOrderDetail Create (0.5ms)[0m  [1m[32mINSERT INTO "order_details" ("order_id", "item_id", "amount", "purchased_price", "making_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["order_id", 3], ["item_id", 2], ["amount", 196], ["purchased_price", 107800], ["making_status", 2], ["created_at", "2020-03-03 12:56:24.589521"], ["updated_at", "2020-03-03 12:56:24.589521"]]
+  ↳ db/seeds.rb:85
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:85
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:86
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:86
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:86
+  [1m[36mOrderDetail Create (0.6ms)[0m  [1m[32mINSERT INTO "order_details" ("order_id", "item_id", "amount", "purchased_price", "making_status", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["order_id", 3], ["item_id", 3], ["amount", 232], ["purchased_price", 142912], ["making_status", 2], ["created_at", "2020-03-03 12:56:24.593656"], ["updated_at", "2020-03-03 12:56:24.593656"]]
+  ↳ db/seeds.rb:86
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:86
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:87
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:87
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:87
+  [1m[36mOrderDetail Create (0.6ms)[0m  [1m[32mINSERT INTO "order_details" ("order_id", "item_id", "amount", "purchased_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["order_id", 4], ["item_id", 3], ["amount", 31], ["purchased_price", 19096], ["created_at", "2020-03-03 12:56:24.597823"], ["updated_at", "2020-03-03 12:56:24.597823"]]
+  ↳ db/seeds.rb:87
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:87
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:88
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:88
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:88
+  [1m[36mOrderDetail Create (0.6ms)[0m  [1m[32mINSERT INTO "order_details" ("order_id", "item_id", "amount", "purchased_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["order_id", 4], ["item_id", 2], ["amount", 37], ["purchased_price", 20350], ["created_at", "2020-03-03 12:56:24.601796"], ["updated_at", "2020-03-03 12:56:24.601796"]]
+  ↳ db/seeds.rb:88
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:88
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:89
+  [1m[36mOrder Load (0.2ms)[0m  [1m[34mSELECT  "orders".* FROM "orders" WHERE "orders"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:89
+  [1m[36mItem Load (0.0ms)[0m  [1m[34mSELECT  "items".* FROM "items" WHERE "items"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:89
+  [1m[36mOrderDetail Create (0.6ms)[0m  [1m[32mINSERT INTO "order_details" ("order_id", "item_id", "amount", "purchased_price", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["order_id", 4], ["item_id", 10], ["amount", 1], ["purchased_price", 110], ["created_at", "2020-03-03 12:56:24.605815"], ["updated_at", "2020-03-03 12:56:24.605815"]]
+  ↳ db/seeds.rb:89
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:89
