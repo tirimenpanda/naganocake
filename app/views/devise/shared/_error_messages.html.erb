@@ -1,4 +1,4 @@
-
+<% if resource.errors.any? then %>
   <div id="error_explanation">
     <h2 style='color: red; padding-top: 30px;'>登録失敗！！（エラー：<%= resource.errors.count %>件発生）
       <%#= I18n.t("errors.messages.not_saved",
@@ -23,3 +23,4 @@
       <% end %>
     </ul>
   </div>
+  <% end %>
