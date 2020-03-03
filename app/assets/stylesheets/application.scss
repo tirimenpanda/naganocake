@@ -36,6 +36,10 @@
    padding-right: 15px;
  }
 
+ .flash-message {
+   margin-bottom: 10px;
+ }
+
  select {
    height: 36px;
  }
@@ -181,6 +185,13 @@
  }
 
 
+ /*---about.html.erb---*/
+
+ .about {
+   text-align: center;
+ }
+
+
  /*---admin/end_users/show.html.erb---*/
 
  .valid-true {
@@ -196,4 +207,8 @@
   th{
    background-color:#c0c0c0;
   }
+  }
+
+  footer {
+  hight:100px;
   }

@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
     # 商品がカートに入っているか確認
     if current_end_user.cart_items.count == 0 then
       # ログに商品がないことを出力通知
-      logger.debug ( '（商品が）ないです' )
+      logger.debug ( '商品がありません' )
       # カートに商品が入っていない場合
       # 警告内容（カートの商品０の通知）の格納
       # flash[:caution] = 'カートに商品がありません。'

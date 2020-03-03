@@ -80,7 +80,21 @@
       </div>
     </header>
 
-   <%= yield %>
+    <body>
+      <div class="container flash-message">
+        <% if flash.any? then %>
+          <% flash.each do |key, value| %>
+            <%= value %>
+          <% end %>
+        <% end %><br />
+      </div>
+
+      <%= yield %>
+
+    </body>
+
+   <footer>
+   </footer>
 
   </body>
 </html>

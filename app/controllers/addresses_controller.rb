@@ -14,6 +14,7 @@ class AddressesController < ApplicationController
     address.end_user_id = current_end_user.id
     # 新規配送先情報保存
     address.save
+    flash[:notice] = "新しい配送先情報が正常に登録されました。"
     # Indexへ遷移
     redirect_to addresses_path
   end
@@ -28,6 +29,7 @@ class AddressesController < ApplicationController
     address = Address.find( params[:id] )
     # 対象の 配送先情報を更新
     address.update( address_params )
+    flash[:notice] = "配送先情報が正常に更新されました。"
     # Indexへ遷移
     redirect_to addresses_path
   end
@@ -37,6 +39,7 @@ class AddressesController < ApplicationController
     address = Address.find( params[:id] )
     # 対象の配送先情報を削除
     address.destroy
+    flash[:notice] = "配送先情報が正常に削除されました。"
     # Indexへ遷移
     redirect_to addresses_path
   end
