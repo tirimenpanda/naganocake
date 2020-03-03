@@ -1,9 +1,9 @@
+
 <div class="container">
   <div class="row" text-align="center">
-    <h4>新規登録</h4>
-
-    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-      <%= render "devise/shared/error_messages", resource: resource %>
+    <div class="col-xs-offset-1 col-xs-5">
+      <h2>新規登録</h2>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
       <div class="field">
         <%= f.label :last_name, 'ユーザーネーム（姓）' %><br>
@@ -59,8 +59,14 @@
       <div class="actions">
         <%= f.submit "新規登録", class: "btn btn-primary" %>
       </div>
-    <% end %>
+      <% end %>
+      <%= render "devise/shared/links" %>
+    </div>
 
-    <%= render "devise/shared/links" %>
+    <div class="col-xs-6">
+      <% if resource.errors.any? then %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <% end %>
+    </div>
   </div>
 </div>

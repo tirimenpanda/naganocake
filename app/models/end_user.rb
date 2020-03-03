@@ -6,5 +6,8 @@ class EndUser < ApplicationRecord
   has_many :addresses
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :authentication_keys => [ :email, :is_deleted ]
-
+  columns = %w? first_name last_name first_name_kana last_name_kana postal_code address phone_number email ?
+  columns.each do |column|
+    eval( %?validates :#{column}, presence: true? )
+  end
 end
