@@ -12,12 +12,12 @@ class Admin::ItemsController < ApplicationController
 			@item.save
 			# 新規商品投稿内容詳細画面へ
 			redirect_to admin_item_path( @item )
-			flash[:success] = "新商品の投稿に成功しました。"
+			flash[:success] = "新商品の登録に成功しました。"
 		rescue => e
-			logger.debug '新規商品の登録に失敗しました。（始）'
+			# logger.debug '新規商品の登録に失敗しました。（始）'
 			logger.debug e
-			logger.debug '新規商品の登録に失敗しました。（終）'
-			flash.now[:danger] = '新規商品の登録に失敗しました。'
+			# logger.debug '新規商品の登録に失敗しました。（終）'
+			# flash.now[:danger] = '新規商品の登録に失敗しました。'
 			render :new
 		end
 	end

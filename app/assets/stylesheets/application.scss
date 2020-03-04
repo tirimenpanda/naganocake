@@ -28,6 +28,11 @@
    text-decoration: none;
    color: #4682b4;
    font-weight: bold;
+   &:hover {
+     b {
+       color: white;
+     }
+   }
  }
 
  .container {
@@ -56,11 +61,6 @@
  }
 
  /* header */
-
- header {
-   color: white
- }
-
  .navbar {
    border: none;
    border-radius: 0;
@@ -92,6 +92,7 @@
    color: #FFF;
  }
 
+
 footer {
   height: 30px;
   width: 100%;
@@ -112,8 +113,16 @@ footer {
  }
 
  .glyphicon {
-   top: -1px;
+   line-height: 0.5em;
+   position: relative; // 藤野追記
+   b {
+     position: absolute;
+     color: #9d9d9d;
+     font-size: 14px;
+     text-shadow: black 1px 1px 0px, black -1px 1px 0px, black 1px -1px 0px, black -1px -1px 0px;
+   } // 藤野追記
  }
+
 
  .btn {
    margin: 10px;
@@ -160,6 +169,11 @@ footer {
  li {
    display: list-item;
    text-align: -webkit-match-parent;
+   &:last-child {
+     .glyphicon {
+line-height: 0.5em;
+     }
+   }
  }
 
  table {
@@ -205,13 +219,9 @@ footer {
    border: solid 2px red;
  }
 
-  .my-profile {
-  width:50%;
-  th{
-   background-color:#c0c0c0;
-  }
-  }
-
-  footer {
-    height:100px;
-  }
+ .my-profile {
+   width:50%;
+   th{
+     background-color:#c0c0c0;
+   }
+ }

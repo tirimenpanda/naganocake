@@ -35,13 +35,12 @@
       <li>
         <%= link_to "ログアウト", destroy_admin_user_session_path, method: :delete  %>
       </li>
-      <li>
-        <input type="serch" name="genre" placeholder="フリーワードを入力"></input>
-      </li>
       <!-- end_userの場合 -->
       <% elsif end_user_signed_in? %>
       <li>
-        ログインユーザ：<%= current_end_user.last_name%> <%= current_end_user.first_name%>
+        <%= link_to '#', style: 'color: white;' do %>
+          ログインユーザ：<webcamp style='color: lightgreen;'><%= "#{current_end_user.last_name} #{current_end_user.first_name}" %></webcamp> 様
+          <% end %>
       </li>
       <li>
         <%= link_to "Top", root_path %>
@@ -50,13 +49,16 @@
         <%= link_to "About", homes_about_path %>
       </li>
       <li>
-        <%= link_to "マイページ", end_user_registration_path %>
+        <%= link_to "My page", end_user_registration_path %>
       </li>
       <li>
-        <%= link_to "ログアウト", destroy_end_user_session_path, method: :delete  %>
+        <%= link_to "Log out", destroy_end_user_session_path, method: :delete  %>
       </li>
       <li>
-        <%= link_to "カート", cart_items_path, class: "glyphicon glyphicon-shopping-cart" %>
+        <% cart_item_count = current_end_user.cart_items.map{ |i| i.amount }.sum  %>
+        <%= link_to cart_items_path  do %>
+        <span class="glyphicon glyphicon-shopping-cart" style='font-size: 50px;'><b><%= cart_item_count  %></b></span>
+        <% end %>
       </li>
       <!-- どちらもlog inしていない場合 -->
       <% else %>
@@ -70,6 +72,12 @@
         <%= link_to "Log in", new_end_user_session_path %>
       </li>
       <% end %>
+      <li>
+        <%= form_for( Genre.new, url: items_path, method: :get ) do | f | %>
+        <%= f.text_field :name, style: 'border: none; color: gray; margin-left: 8px;', placeholder: "フリーワードを入力" %>
+        <%= f.submit '検索', class: 'btn btn-default', style: 'border: none; color: black;' %>
+        <% end %>
+      </li>
     </ul>
   </nav>
 </header>
@@ -78,12 +86,12 @@
   <div class="container flash-message">
     <% if flash.any? then %>
     <!-- deviceのflashメッセージが出ないようにするため↓↓ -->
-    <% if ( not flash[:notice].nil?) && (not flash[:notice].include?(%?translation?)) then %>
-      <% flash.each do |key, value| %>
-        <%= value %>
-      <% end %>
-      <% end %>
-    <% end %><br>
+    <% flash.each do |key, value| %>
+    <% if key != 'notice' then %>
+    <%= value %><br>
+    <% end %>
+    <% end %>
+    <% end %>
   </div>
 
   <%= yield %>
@@ -93,4 +101,12 @@
 
    <footer>
    </footer>
+   <script>
+     $(function(){
+       $('b').css({
+         'bottom': '5px',
+         'right': '<%= 22 - 5*cart_item_count.to_s.length %>px'
+       });
+     });
+   </script>
 </html>

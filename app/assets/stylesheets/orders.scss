@@ -29,6 +29,7 @@ p {
 	text-align: center;
 }
 
+
 /* order show */
 .clearfix {
 }
@@ -85,6 +86,7 @@ p {
 	width: 400px;
 }
 
-
-
+#order_payment_クレジットカード, #order_payment_銀行振込 {
+	height: auto;
+}
 

@@ -8,7 +8,7 @@ class CartItemsController < ApplicationController
     cart_item.end_user_id = current_end_user.id
     # カートへアイテム保存
     cart_item.save
-    flash[:notice] = "カート内に商品が追加されました。"
+    flash[:success] = "カート内に商品が追加されました。"
     # カート画面へ遷移
     redirect_to cart_items_path
   end
@@ -40,7 +40,7 @@ class CartItemsController < ApplicationController
       logger.debug('performed: destroy_all')
       #  destroy_all実行
       destroy_all
-      flash[:notice] = "カート内アイテムを全て削除しました。"
+      flash[:success] = "カート内アイテムを全て削除しました。"
     else
       # ログに 1個のカートアイテムを削除したことを出力
       logger.debug('performed: destroy')
@@ -48,7 +48,7 @@ class CartItemsController < ApplicationController
       cart_item = CartItem.find( params[:id] )
       # 対象のカートアイテムを削除
       cart_item.destroy
-      flash[:notice] = "カート内アイテムを1件削除しました。"
+      flash[:success] = "カート内アイテムを1件削除しました。"
     end
     # カート画面へ遷移
     redirect_to cart_items_path

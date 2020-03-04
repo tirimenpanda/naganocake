@@ -1,72 +1,86 @@
+
 <div class="container">
-  <h3><strong>注文情報確認</strong></h3>
+  <div class="row">
+    <div class="col-xs-offset-1 col-xs-10col-xs-offset-1">
+      <h3><strong>注文情報確認</strong></h3>
+    </div>
+  </div>
 
-  <table>
-    <tr>
-      <th>商品名</th>
-      <th>単価（税込）</th>
-      <th>数量</th>
-      <th>小計</th>
-    </tr>
-    <% @order_details.each do | order_detail | %>
-    <tr>
-      <td>
-        <!--商品イメージ-->
-        <%= attachment_image_tag order_detail.item, :image, size:'70x70', format: 'jpeg', fallback: 'no_image.jpg', size:'70x70' %>
-        <!--商品名-->
-        <%= order_detail.item.name %>
-      </td>
-      <td>
-        <!-- 単価（税込）-->
-        <%= number_separation( order_detail.purchased_price / order_detail.amount ) %>
-      </td>
-      <td>
-        <!-- 数量-->
-        <%= order_detail.amount %>
-      </td>
-      <td>
-        <!-- 小計-->
-        <%= number_separation( order_detail.purchased_price ) %>
-      </td>
-    </tr>
-    <% end %>
-  </table>
+  <div class="row">
+    <div class="col-xs-offset-1 col-xs-6">
+      <table>
+        <tr>
+          <th>商品名</th>
+          <th>単価（税込）</th>
+          <th>数量</th>
+          <th>小計</th>
+        </tr>
+        <% @order_details.each do | order_detail | %>
+        <tr>
+          <td>
+            <!--商品イメージ-->
+            <%= attachment_image_tag order_detail.item, :image, size:'70x70', format: 'jpeg', fallback: 'no_image.jpg', size:'70x70' %>
+            <!--商品名-->
+            <%= order_detail.item.name %>
+          </td>
+          <td>
+            <!-- 単価（税込）-->
+            <%= number_separation( order_detail.purchased_price / order_detail.amount ) %>
+          </td>
+          <td>
+            <!-- 数量-->
+            <%= order_detail.amount %>
+          </td>
+          <td>
+            <!-- 小計-->
+            <%= number_separation( order_detail.purchased_price ) %>
+          </td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
 
-  <%= form_for( @order, url: orders_path ) do | f | %>
-  <!-- 郵便番号-->
-  <%= f.hidden_field :postal_code, readonly:true %>
-  <!-- 配送先住所-->
-  <%= f.hidden_field :ship_to, readonly:true %>
-  <!-- 宛名-->
-  <%= f.hidden_field :consignee, readonly:true %>
-  <!-- 支払方法-->
-  <%= f.hidden_field :payment, readonly:true %>
-  <table>
-    <tr>
-      <td>配送料</td>
-      <%= f.hidden_field :postage, value:@default_postage, readonly:true %>
-      <td><%= @default_postage %></td>
-    </tr>
-    <tr>
-      <td>商品合計</td>
-      <td><%= number_separation( @total_price ) %></td>
-    </tr>
-    <tr>
-      <td><b>請求金額</b></td>
-      <% sum = @default_postage + @total_price %>
-      <%= f.hidden_field :total_price, value:(sum), readonly:true %>
-      <td><%= number_separation( sum ) %></td>
-    </tr>
-  </table>
+    <div class="col-xs-4 col-xs-offset-1">
+      <%= form_for( @order, url: orders_path ) do | f | %>
+      <!-- 郵便番号-->
+      <%= f.hidden_field :postal_code, readonly:true %>
+      <!-- 配送先住所-->
+      <%= f.hidden_field :ship_to, readonly:true %>
+      <!-- 宛名-->
+      <%= f.hidden_field :consignee, readonly:true %>
+      <!-- 支払方法-->
+      <%= f.hidden_field :payment, readonly:true %>
+      <table>
+        <tr>
+          <th>配送料</th>
+          <%= f.hidden_field :postage, value:@default_postage, readonly:true %>
+          <td><%= @default_postage %></td>
+        </tr>
+        <tr>
+          <th>商品合計</th>
+          <td><%= number_separation( @total_price ) %></td>
+        </tr>
+        <tr>
+          <th><b>請求金額</b></th>
+          <% sum = @default_postage + @total_price %>
+          <%= f.hidden_field :total_price, value:(sum), readonly:true %>
+          <td><%= number_separation( sum ) %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
 
-  <h2>支払方法</h2>
-  <%= @order.payment %>
+  <div class="row">
+    <div class="col-xs-offset-1 col-xs-11">
+      <p style='font-size: 18px !important; line-height: 2.0em;'>
+        <b>支払方法</b>　<%= @order.payment %><br>
+        <b>お届け先</b>　<%= join_address( @order.postal_code, @order.ship_to, @order.consignee ) %><br>
+      </p>
 
-  <h2>お届け先</h2>
-  <%= join_address( @order.postal_code, @order.ship_to, @order.consignee ) %>
-
-  <div style="display: block;">
-    <%= f.submit '購入を確定する', class: "btn btn-danger" %>
-    <% end %>
+      <div style="display: block;">
+        <%= f.submit '購入を確定する', class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

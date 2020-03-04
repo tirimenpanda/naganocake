@@ -7,8 +7,8 @@
       <table class="cart-items">
         <tr class="cart-items-heading">
           <th width="300">商品名</th>
-          <th width="120">単価（税込）</th>
-          <th width="170" >数量</th>
+          <th>単価（税込）</th>
+          <th width="200" >数量</th>
           <th width="120">小計</th>
           <th width="100"></th>
         </tr>
@@ -28,7 +28,7 @@
             <td class="array-center">
               <!-- 数量-->
               <%= form_for( cart_item, url: cart_item_path( cart_item ) ) do | c | %>
-              <%= c.number_field :amount, min:1, style:'width: 60px;'%>
+              <%= c.number_field :amount, min:1 , style:'width: 50%;'%>
               <%= c.submit '変更', class: "btn btn-primary" %>
               <% end %>
             </td>

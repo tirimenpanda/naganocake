@@ -1,10 +1,14 @@
 class ItemsController < ApplicationController
 	def index
+		# logger.debug 'ここみろ'
+		# logger.debug genre_params
+		# logger.debug genre_params[:id]
+		# logger.debug genre_params[:name]
 		# ジャンル表示OKのやつを全部取得
 		@genres = Genre.where( is_displayed: true)
-		# ジャンルIDが指定されているかで分岐処理
+		# paramsにデータが含まれているかで分岐処理
 		if !genre_params then
-			# ジャンルIDが指定されていない場合
+			# paramsデータなし => ジャンルIDが指定されていない場合
 			# ジャンル表示OKのやつのidを配列形式に変換
 			genres = @genres.map{ | g | g.id }
 			# ジャンル表示OKの商品を全部取得
@@ -12,16 +16,24 @@ class ItemsController < ApplicationController
 			# indexページタイトル情報
 			@info = '商品'
 		else
-			# ジャンル指定ありの場合
-			# 該当ジャンルオブジェクト取得
-			genre = Genre.find( genre_params[:id] )
-			# ジャンル表示は有効か否か？
-			items = ( genre.is_displayed ? genre.items : nil ) # 有効(true) なら、対象ジャンル商品情報取得
-			# indexページタイトル情報
-			@info = genre.name
+			# paramsデータありの場合
+			if genre_params[:id].nil? then
+				# 検索窓からの場合
+				genres = Genre.where( 'name LIKE ?', genre_params[:name]  )
+				items = Item.where( 'name LIKE ? or introduction LIKE ? or genre_id = ?', "%#{genre_params[:name]}%", "%#{genre_params[:name]}%", genres.map{ |x| x.id  } )
+				@info = "検索結果「#{genre_params[:name]}」に関する商品"
+			else
+				# ジャンルタグからの場合
+				# 該当ジャンルオブジェクト取得
+				genre = Genre.find( genre_params[:id] )
+				# ジャンル表示は有効か否か？
+				items = ( genre.is_displayed ? genre.items : nil ) # 有効(true) なら、対象ジャンル商品情報取得
+				# indexページタイトル情報
+				@info = genre.name
+			end
 		end
-			@pages = items.page(params[:page]).reverse_order
-			@counts = items.count
+		@pages = items.page(params[:page]).reverse_order
+		@counts = items.count
 	end
 
 	def show

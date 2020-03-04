@@ -33,20 +33,21 @@ Genre.create( name: '表示されないジャンル', is_displayed:  false )
 
 
 # Itemのサンプルデータ（全8件）
-Item.create( genre_id: 1, name:  %?ショートケーキ?, introduction: %?シンプルisベスト!当店人気No.1のケーキです!?, listed_price: 500, image: File.open( './app/assets/images/cake1.png', ?r ) )
+Item.create( genre_id: 1, name:  %?ショートケーキ?, introduction: %?シンプルisベスト!当店人気No.1のケーキです!?,                listed_price: 500, image: File.open( './app/assets/images/cake1.png', ?r ) )
 Item.create( genre_id: 1, name: %?チョコレートケーキ?, introduction: %?バンホーテンのカカオ豆を使った濃厚チョコレートケーキ?, listed_price: 560, image: File.open( './app/assets/images/cake2.png', ?r ) )
-Item.create( genre_id: 1, name: %?チーズケーキ?, introduction: %?北海道産の最高級牛乳使用?, listed_price: 480, image: File.open( './app/assets/images/cake3.png', ?r ) )
-Item.create( genre_id: 1, name: %?ミルクレープ?, introduction: %?クレープ生地を15層に重ねたミルクレープです。?, listed_price: 480, image: File.open( './app/assets/images/mille_crepe.png', ?r ) )
-Item.create( genre_id: 1, name: %?モンブラン?, introduction: %?秋季限定!ケーキの中にも栗がたっぷり入ったモンブラン!?, listed_price: 580, image: File.open( './app/assets/images/montblanc.png', ?r ) )
+Item.create( genre_id: 1, name: %?チーズケーキ?, introduction: %?北海道産の最高級牛乳使用?,                                                   listed_price: 480, image: File.open( './app/assets/images/cake3.png', ?r ) )
+Item.create( genre_id: 1, name: %?ミルクレープ?, introduction: %?クレープ生地を15層に重ねたミルクレープです。?,               listed_price: 480, image: File.open( './app/assets/images/mille_crepe.png', ?r ) )
+Item.create( genre_id: 1, name: %?モンブラン?, introduction: %?秋季限定!ケーキの中にも栗がたっぷり入ったモンブラン!?,      listed_price: 580, image: File.open( './app/assets/images/montblanc.png', ?r ) )
 Item.create( genre_id: 1, name: %?アップルパイ?, introduction: %?サクッ！！あま〜い❤️シナモンとの相性抜群!長野県産のりんごを贅沢に使って作りました?, listed_price: 580, image: File.open( './app/assets/images/applepie.png', ?r ) )
 Item.create( genre_id: 2, name: %?スコーン?, introduction: %?スコーンとは、スコットランド料理の、バノックより重いパン。?, listed_price: 275, image: File.open( './app/assets/images/scone.png', ?r ) )
 Item.create( genre_id: 2, name: %?フルーツパウンドケーキ?, introduction: %?アプリコット、ラムレーズン、イチジク、オレンジを贅沢に使ったパウンドケーキ。?, listed_price: 1500, image: File.open( './app/assets/images/pound_cake.png', ?r ) )
-Item.create( genre_id: 2, name: %?クッキー?, introduction: %?懐かしい味。素朴なクッキーの3枚セット?, listed_price: 200, image: File.open( './app/assets/images/cookie.png', ?r ) )
-Item.create( genre_id: 3, name: %?チョコレート?, introduction: %?バンホーテンのカカオ豆を使ってますよ。?, listed_price: 100, image: File.open( './app/assets/images/chocolate.png', ?r ) )
-Item.create( genre_id: 4, name: %?カスタードプリン?, introduction: %?シンプルなプリンです。?, listed_price: 120, image: File.open( './app/assets/images/purin.png', ?r ) )
-Item.create( genre_id: 4, name: %?ミルクプリン?, introduction: %?北海道産牛乳を使用したクリームが絶品。?, listed_price: 180, image: File.open( './app/assets/images/milk_purin.png', ?r ) )
+Item.create( genre_id: 2, name: %?クッキー?, introduction: %?懐かしい味。素朴なクッキーの3枚セット?,                                   listed_price: 200, image: File.open( './app/assets/images/cookie.png', ?r ) )
+Item.create( genre_id: 3, name: %?チョコレート?, introduction: %?バンホーテンのカカオ豆を使ってますよ。?,                          listed_price: 100, image: File.open( './app/assets/images/chocolate.png', ?r ) )
+Item.create( genre_id: 4, name: %?カスタードプリン?, introduction: %?シンプルなプリンです。?,                                                listed_price: 120, image: File.open( './app/assets/images/purin.png', ?r ) )
+Item.create( genre_id: 4, name: %?ミルクプリン?, introduction: %?北海道産牛乳を使用したクリームが絶品。?,                          listed_price: 180, image: File.open( './app/assets/images/milk_purin.png', ?r ) )
 Item.create( genre_id: 5, name: %?羊羹?, introduction: %?北海道産小豆を使用してます。裏ごししてあるので舌触り滑らか。?, listed_price: 800, image: File.open( './app/assets/images/youkan.png', ?r ) )
 Item.create( genre_id: 6, name: %?アイスクリーム?, introduction: %?Häagen-Dazsのアイスなので間違いなく美味しいです。?, listed_price: 398, image: File.open( './app/assets/images/icecream.png', ?r ) )
+Item.create( genre_id: 8, name: %?Kejserens nye klæder?, introduction: %?「自分の地位にふさわしくない者」や「愚か者」には見えない極上の材料をふんだんに使用したケーキです。?, listed_price: 1_000_000, image: File.open( './app/assets/images/osara.png', ?r ) )
 
 arr = (1..13).to_a.shuffle
 # arr = ( (1..13).to_a  - Item.find_by( genre_id: 8 )).shuffle
