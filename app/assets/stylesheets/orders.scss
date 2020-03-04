@@ -30,8 +30,15 @@ p {
 }
 
 /* order show */
+.clearfix {
+
+}
+
+.order-info {
+	float: left;
+}
+
 .pay-info {
-	display :inline;
 	float: right;
 }
 
@@ -41,6 +48,12 @@ p {
 
 .order-info td {
 	width: 400px;
+}
+
+
+.pay-info {
+	float: right;
+	padding-top: 25px;
 }
 
 .pay-heading {
@@ -68,7 +81,5 @@ p {
 	padding-top: 30px;
 }
 
-.row id {
-}
 
 

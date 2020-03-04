@@ -1,7 +1,8 @@
 <div class="container">
-  <h3><strong>登録情報編集</strong></h3>
-  <%= link_to '退会する', end_users_withdraw_path, class:"btn btn-danger col-xs-2"%>
-  <%= form_for( current_end_user, url: end_user_path ) do | f | %>
+    <h2><strong>登録情報編集</strong></h2>
+      <%= link_to '退会する', end_users_withdraw_path, class: "btn btn-danger" %>
+      <%= form_for( current_end_user, url: end_user_path ) do | f | %>
+
   <table>
     <tr>
       <th>氏名</th>
@@ -38,6 +39,6 @@
       <td><%= f.text_field :email, placeholder:'end_user@example.com' %></td>
     </tr>
   </table>
-  <%= f.submit '編集内容を保存する', class:"btn btn-primary col-xs-2" %>
+  <%= f.submit '編集内容を保存する', class: "btn btn-primary col-xs-2" %>
   <% end %>
 </div>
