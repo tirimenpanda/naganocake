@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <!--errors_message-->
+    <div class="col-xs-offset-2 col-xs-8 col-xs-offset-2">
+      <h2><%= unit.errors.count  %>件のエラーが発生しました。</h2>
+      <ul>
+        <% unit.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+      <!--error_message-->
+    </div>
+  </div>
+</div>

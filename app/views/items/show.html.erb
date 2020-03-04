@@ -1,1 +1,55 @@
-<p>商品詳細画面</p>
+<div class="container">
+  <!-- ジャンル検索 部分テンプレートで入れる -->
+  <div class="col-xs-11">
+    <br />
+    <div class="col-xs-5">
+      <% if @item.name != 'Kejserens nye klæder' then%>
+      <%= attachment_image_tag @item, :image, size: '300x300', format: 'jpeg', fallback: 'no_image.jpg' %>
+      <% else %>
+      <%= image_tag "naganocake.png", size: '300x300' %>
+      <% end %>
+    </div>
+    <div class="col-xs-4">
+      <h2><strong><%= @item.name %></strong></h2>
+      <br>
+      <p><%= @item.introduction %></p>
+      <br>
+
+      <ul>
+        <li>￥ <%= subtotal( @item.listed_price )%>(税込)</li>
+      </ul>
+      <br>
+
+      <div class="serect-amount">
+        <% if end_user_signed_in? then%>
+        <%= form_for( @cart_item ) do | f |%>
+        <%= f.hidden_field :item_id, value:@item.id, readonly:true %>
+        <%= f.hidden_field :end_user_id, value:current_end_user.id, readonly:true %>
+        <% if @cart_item.amount.nil? then  %>
+        <%= f.select :amount, create_selection_amount(), include_blank:'個数選択' %>
+        <% else %>
+        <%= f.select :amount, create_selection_amount( @cart_item.amount ) %>
+        <% end %>
+        <div style="display: inline;"><%= f.submit 'カートに入れる', class: "btn btn-primary" %></div>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // （商品詳細）ページ訪問時に既に商品がカートに入っていなければ、
+  // submit（カートに入れる）ボタンを使えないようにする。
+  if ( $('#cart_item_amount').val() == ''  ) { $(".btn-primary").attr('disabled', true); }
+  // 商品購入個数が変化した場合に発動する処理
+  $(function(){
+    // 商品購入個数が変化した場合に発動
+    $('#cart_item_amount').change(function(){
+      // 商品購入個数が1以上の場合 =>「ボタン押下可能」状態にする
+      if ( $('#cart_item_amount').val() != '' ) { $(".btn-primary").attr('disabled', false); }
+      // 商品購入個数が0の場合 =>「ボタン押下不可」状態にする
+      else { $(".btn-primary").attr('disabled', true); }
+    });
+  });
+</script>

@@ -13,125 +13,215 @@
  *= require_tree .
  *= require_self
  */
-
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
+
  * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: "irohamaru-Regular";
+ }
 
-a {
-  text-decoration: none;
-}
+ a {
+   text-decoration: none;
+   color: #4682b4;
+   font-weight: bold;
+   &:hover {
+     b {
+       color: white;
+     }
+   }
+ }
 
-.container {
-    margin: 0 auto;
-    padding-left: 15px;
-    padding-right: 15px;
-}
+ .container {
+   margin: 0 auto;
+   padding-left: 15px;
+   padding-right: 15px;
+ }
 
-/* header */
+ .flash-message {
+   margin-bottom: 10px;
+ }
 
-header {
-	color: white
-}
+ select {
+   height: 36px;
+ }
 
-.navbar {
-    border: none;
-    border-radius: 0;
-}
+ input {
+   height: 34px;
+   padding: 0 5px;
+ }
+ label {
+   height: 34px;
+   input {
+     height: auto;
+   }
+ }
 
-.navbar-nav {
-    background-color: #222;
-    border-color: #090909;
-}
+ /* header */
+ .navbar {
+   border: none;
+   border-radius: 0;
+ }
 
-.navbar-left, .navbar-right {
-    padding: 30px 0 0;
-}
+ .navbar-nav {
+   background-color: #222;
+   border-color: #090909;
+ }
 
-.header-menu {
-  color: #FFF;
-}
+ .navbar-left, .navbar-right {
+   padding: 30px 20px 0;
+ }
 
-.header-menu:visited {
-  color: #FFF;
-}
-
-/* body */
-
-body {
-    background-color: #FCF5C7;
-    color: #333;
-
-    font-family: verdana, arial, helvetica, sans-serif;
-    font-size: 13px;
-    line-height: 18px;
-}
-
-span {
-    font-size: 30px;
-}
+ .logo {
+   padding-top: 10px;
+ }
 
 .navbar-right>li {
-  	position: relative;
+  position: relative;
+  display: block;
 }
 
-.glyphicon {
-  top: -1px;
+ header {
+   color: #FFF;
+ }
+
+ header:visited {
+   color: #FFF;
+ }
+
+
+footer {
+  height: 30px;
+  width: 100%;
 }
 
-.btn {
-  margin: 10px;
+ /* body */
+
+ body {
+   background-color: #FCF5C7;
+   color: #333;
+   font-family: verdana, arial, helvetica, sans-serif;
+   font-size: 13px;
+   line-height: 18px;
+ }
+
+ span {
+   font-size: 30px;
+ }
+
+ .glyphicon {
+   line-height: 0.5em;
+   position: relative; // 藤野追記
+   b {
+     position: absolute;
+     color: #9d9d9d;
+     font-size: 14px;
+     text-shadow: black 1px 1px 0px, black -1px 1px 0px, black 1px -1px 0px, black -1px -1px 0px;
+   } // 藤野追記
+ }
+
+
+ .btn {
+   margin: 10px;
+ }
+
+ /*---items.html.erb---*/
+
+/*ページネーション自体のデザイン*/
+.pagination>li>a {
+  border: none;     /*枠線をなくす*/
+  color: #696969;   /*文字の色を変える*/
 }
 
-
-/*---withdraw.html.erb---*/
-.withdraw-text {
-  text-align: center;
+/* 表示しているページ番号のデザイン */
+.pagination>.active>a {
+  background: #93c9ff;     /*背景の色を変える*/
+  border-radius: 15px;     /*角を丸くする*/
 }
 
-strong {
-  margin-right: 10px;
-  font-size: 20px;
+/*ホバー時のデザイン*/
+.pagination>li>a:hover {
+  border-radius: 15px;    /*角を丸くする*/
 }
 
+ /*---withdraw.html.erb---*/
+ .withdraw-text {
+   text-align: center;
+ }
 
-/*---top.html.erb---*/
-ul {
-  list-style: none;
+ strong {
+   margin-right: 10px;
+   font-size: 20px;
+ }
+
+.btn-withdraw {
+  display: inline;
 }
 
-li {
-  display: list-item;
-  text-align: -webkit-match-parent;
-}
+ /*---top.html.erb---*/
+ ul {
+   list-style: none;
+ }
 
-table {
-  border-collapse: collapse;
-  width: 500px;
-}
+ li {
+   display: list-item;
+   text-align: -webkit-match-parent;
+   &:last-child {
+     .glyphicon {
+line-height: 0.5em;
+     }
+   }
+ }
 
-th,td {
-  border: solid 1px #ccc;
-  padding: 5px;
-}
+ table {
+   border-collapse: collapse;
+ }
 
-genres {
-  height: 1000px;
-}
+ .genre_search_btn {
+   text-align: right;
+ }
 
-/*---login.html.erb---*/
+/*---border---*/
+ th,td {
+   border: solid 1px #000;
+   padding: 5px;
+   height: 40px;
+ }
 
-.field {
-  margin-bottom: 10px;
-}
+ /*---login.html.erb---*/
 
-/*---thanks.html.erb---*/
+ .field {
+   margin-bottom: 10px;
+ }
 
-.thanks {
-  text-align: center;
-}
+ /*---thanks.html.erb---*/
+
+ .thanks {
+   text-align: center;
+ }
+
+ /*---about.html.erb---*/
+
+ .about {
+   text-align: center;
+ }
+
+ /*---admin/end_users/show.html.erb---*/
+
+ .valid-true {
+   border: solid 2px blue;
+ }
+
+ .valid-false {
+   border: solid 2px red;
+ }
+
+ .my-profile {
+   width:50%;
+   th{
+     background-color:#c0c0c0;
+   }
+ }

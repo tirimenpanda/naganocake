@@ -1,44 +1,112 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>ながのCAKE</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>ながのCAKE</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-    <header class="navbar navbar-inverse">
-      <div class="container">
-          <nav class="nav-logo navbar-left">
-            <span>LOGO（ながのCAKE）</span>
-          </nav>
-          <ul class="nav navbar-nav navbar-right">
-            <li>
-              <h6>トップ .</h6>
-            </li>
-            <li>
-              <h6>| はじめての方へ .</h6>
-            </li>
-            <li>
-              <h6>| マイページ .</h6>
-            </li>
-            <li>
-              <h6>| ログアウト .</h6>
-            </li>
-            <li>
-              <h6 class="glyphicon glyphicon-shopping-cart">カート</h6>
-            </li>
-          </ul>
-      </div>
-    </header>
+<header class="navbar navbar-inverse">
+  <nav class="navbar-left">
+    <%= link_to root_path do %>
+    <%= image_tag 'ながのCAKE.png' %>
+    <% end %>
+  </nav>
 
-    <%= yield %>
+  <nav>
+    <ul class="nav navbar-nav navbar-right">
+      <!-- admin_userの場合 -->
+      <% if admin_user_signed_in? %>
+      <li>
+        <%= link_to "商品一覧", admin_items_path %>
+      </li>
+      <li>
+        <%= link_to "会員一覧", admin_end_users_path %>
+      </li>
+      <li>
+        <%= link_to "注文履歴一覧", admin_orders_path %>
+      </li>
+      <li>
+        <%= link_to "ジャンル管理", admin_genres_path %>
+      </li>
+      <li>
+        <%= link_to "ログアウト", destroy_admin_user_session_path, method: :delete  %>
+      </li>
+      <!-- end_userの場合 -->
+      <% elsif end_user_signed_in? %>
+      <li>
+        <%= link_to '#', style: 'color: white;' do %>
+          ログインユーザ：<webcamp style='color: lightgreen;'><%= "#{current_end_user.last_name} #{current_end_user.first_name}" %></webcamp> 様
+          <% end %>
+      </li>
+      <li>
+        <%= link_to "Top", root_path %>
+      </li>
+      <li>
+        <%= link_to "About", homes_about_path %>
+      </li>
+      <li>
+        <%= link_to "My page", end_user_registration_path %>
+      </li>
+      <li>
+        <%= link_to "Log out", destroy_end_user_session_path, method: :delete  %>
+      </li>
+      <li>
+        <% cart_item_count = current_end_user.cart_items.map{ |i| i.amount }.sum  %>
+        <%= link_to cart_items_path  do %>
+        <span class="glyphicon glyphicon-shopping-cart" style='font-size: 50px;'><b><%= cart_item_count  %></b></span>
+        <% end %>
+      </li>
+      <!-- どちらもlog inしていない場合 -->
+      <% else %>
+      <li>
+        <%= link_to "About", homes_about_path %>
+      </li>
+      <li>
+        <%= link_to "Sign up", new_end_user_registration_path %>
+      </li>
+      <li>
+        <%= link_to "Log in", new_end_user_session_path %>
+      </li>
+      <% end %>
+      <li>
+        <%= form_for( Genre.new, url: items_path, method: :get ) do | f | %>
+        <%= f.text_field :name, style: 'border: none; color: gray; margin-left: 8px;', placeholder: "フリーワードを入力" %>
+        <%= f.submit '検索', class: 'btn btn-default', style: 'border: none; color: black;' %>
+        <% end %>
+      </li>
+    </ul>
+  </nav>
+</header>
 
-   <footer class="footer style-2">
+<body>
+  <div class="container flash-message">
+    <% if flash.any? then %>
+    <!-- deviceのflashメッセージが出ないようにするため↓↓ -->
+    <% flash.each do |key, value| %>
+    <% if key != 'notice' then %>
+    <%= value %><br>
+    <% end %>
+    <% end %>
+    <% end %>
+  </div>
+
+  <%= yield %>
+
+</body>
+
+
+   <footer>
    </footer>
-
-  </body>
+   <script>
+     $(function(){
+       $('b').css({
+         'bottom': '5px',
+         'right': '<%= 22 - 5*cart_item_count.to_s.length %>px'
+       });
+     });
+   </script>
 </html>

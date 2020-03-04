@@ -1,1 +1,37 @@
-<p>ジャンル一覧画面</p>
+<div class="container">
+	<h3><strong>ジャンル追加・一覧画面</strong></h3>
+
+	<%= form_for(@genre, url:admin_genres_path) do |f| %>
+		<p>ジャンル
+		<%= f.text_field :name %>
+		<label><%= f.radio_button :is_displayed, true %>有効</label>
+    	<label><%= f.radio_button :is_displayed, false %>無効</label>
+    	<%= f.submit "追加", class: "btn btn-primary" %></p>
+	<% end %>
+
+	<table class="genre_index">
+		<tr>
+			<th>ジャンル</th>
+			<th>状態</th>
+			<th>登録件数</th>
+			<th></th>
+		</tr>
+		<% @genres.each do |genre| %>
+		<% genre_num = genre.items.count %>
+ 			<tr>
+ 				<td><%= genre.name %></td>
+ 				<td><% if genre.is_displayed == true %>有効
+ 					<% else genre.is_displayed == false %>無効
+ 					<% end %>
+ 				</td>
+				<td style="text-align: right;"><%= genre_num.zero? ? "　未使用　" : "　#{genre_num}件　" %></td>
+				<td>
+					<%= link_to "編集する", edit_admin_genre_path(genre.id), class: "btn btn-primary" %>
+					<% if genre_num.zero? then %>
+					<%= link_to "削除する", admin_genre_path(genre.id),  method: :delete, class: " btn btn-danger" %>
+					<% end %>
+				</td>
+ 			</tr>
+		<% end %>
+	</table>
+</div>

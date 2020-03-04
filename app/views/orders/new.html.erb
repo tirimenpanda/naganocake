@@ -1,1 +1,69 @@
-<p>購入情報入力画面</p>
+
+<body>
+  <div class="container">
+    <h3>購入情報入力</h3>
+        <%= form_for( @order, url: orders_confirm_path, method: :get) do | f | %>
+           <h3><strong>支払方法</strong></h3>
+              <div class="test">
+                <!--ラジオボタン１ => クレジットカード-->
+                <%= f.radio_button :payment, 'クレジットカード', checked:true %>
+                <%= f.label :payment, 'クレジットカード' %>
+                <br>
+                <!--ラジオボタン２ => 銀行振込-->
+                <%= f.radio_button :payment, '銀行振込' %>
+                <%= f.label :payment, '銀行振込' %>
+              </div>
+
+
+        <h3><strong>お届け先</strong></h3>
+          <div class="test">
+            <!--ラジオボタン１ => 自分宛-->
+            <label><%= f.radio_button :postage, -1, checked:true %>ご自身の住所</label><br>
+            <p>
+              <%= postal_code_format( current_end_user.postal_code ) %>
+              <%= current_end_user.address %><br>
+              <%= current_end_user.last_name %>&nbsp;&nbsp;<%= current_end_user.first_name %>
+            </p>
+          </div>
+
+            <!--ラジオボタン２ => 登録済み配送先から選択-->
+          <div class="test">
+            <% if current_end_user.addresses.count == 0 then %>
+              <label><%= f.radio_button :postage, -2, disabled:true %>登録済住所から選択</label><br>
+              <% else %>
+              <label><%= f.radio_button :postage, -2 %>登録済住所から選択</label><br>
+              <% end %>
+          </div>
+          <p>
+            <%= f.select :total_price, create_selection( current_end_user.addresses ) %>
+          </p>
+
+          <div class="test">
+            <!--ラジオボタン３ => 新規登録-->
+            <label><%= f.radio_button :postage, -3 %>新しいお届け先</label>
+          </div>
+
+          <div class="new-address">
+            <div class="confirm-text">
+              <span class="comfirm-post">郵便番号</span>
+              <%= f.text_field :postal_code %>
+            </div>
+
+            <div class="confirm-text">
+              <span class="comfirm-post">住所</span>
+              <%= f.text_field :ship_to %>
+            </div>
+
+            <div class="confirm-text">
+              <span class="comfirm-post">宛名</span>
+              <%= f.text_field :consignee %>
+            </div>
+          </div>
+
+          <div class="confirm-btn">
+             <%= f.submit '確認画面へ進む', class: "btn btn-primary" %>
+          </div>
+
+        <% end %>
+  </div>
+</body>

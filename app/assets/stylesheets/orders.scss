@@ -1,3 +1,92 @@
 // Place all the styles related to the Orders controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.row {
+	text-align: left;
+}
+
+.test {
+	padding-left: 20px;
+	font-size: 18px;
+}
+
+p {
+	padding-left: 25px;
+}
+
+.confirm-text {
+	font-size: 18px;
+	padding-left: 30px;
+	padding-top: 10px;
+}
+
+.comfirm-post {
+	font-size: 15px;
+}
+
+.confirm-btn {
+	text-align: center;
+}
+
+
+/* order show */
+.clearfix {
+}
+
+.order-table th {
+	width: 150px;
+}
+
+.order-info {
+	float: left;
+}
+
+.order-info td {
+	width: 400px;
+}
+
+.space {
+	float: left;
+	width: 10px;
+	height: 10px;
+}
+
+.pay-info {
+	float: right;
+}
+
+.pay-info {
+	float: left;
+	padding-top: 30px;
+}
+
+.pay-info td {
+	width: 130px;
+}
+
+.pay-heading {
+	background-color: #C0C0C0;
+	width: 150px;
+}
+
+.order-details, .order-info {
+	padding-top: 30px;
+}
+
+.sabtotal {
+	width: 100px;
+}
+
+.total-amount {
+	width: 100px;
+}
+
+.item-name {
+	width: 400px;
+}
+
+#order_payment_クレジットカード, #order_payment_銀行振込 {
+	height: auto;
+}
+

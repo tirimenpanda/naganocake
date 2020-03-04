@@ -1,1 +1,78 @@
-<p>注文履歴詳細画面</p>
+<div class="container">
+  <!-- <div class="row id"> -->
+  <h3>注文履歴詳細</h3>
+    <main class="clearfix">
+       <div class="order-info">
+            <h4><b>注文情報</b></h4>
+              <table class="order-table">
+                <tr>
+                  <th>注文日</th>
+                  <td><%= date_format( @order.created_at ) %></td>
+                </tr>
+                <tr>
+                  <th>配送先</th>
+                  <td>
+                    <%= postal_code_format( @order.postal_code ) %><br>
+                    <%= @order.ship_to %><br>
+                    <%= @order.consignee %>
+                  </td>
+                </tr>
+                <tr>
+                  <th>支払方法</th>
+                  <td><%= @order.payment %></td>
+                </tr>
+                <tr>
+                  <th>ステータス</th>
+                  <td><%= @order.order_status %></td>
+                </tr>
+              </table>
+        </div>
+
+        <div class="space">
+
+        </div>
+
+        <div class="pay-info">
+          <h4><b>請求情報</b></h4>
+            <table>
+            <tr>
+              <td class="pay-heading">商品合計</td>
+              <td><%= number_separation( @order.total_price - @order.postage ) %></td>
+            </tr>
+            <tr>
+              <td class="pay-heading">配送料</td>
+              <td><%= number_separation( @order.postage ) %></td>
+            </tr>
+            <tr>
+              <td class="pay-heading"><b>ご請求額</b></td>
+              <td><%= number_separation( @order.total_price ) %></td>
+            </tr>
+            </table>
+        </div>
+    </main>
+
+      <div class="order-details">
+        <h4><b>注文内容</b></h4>
+          <table>
+            <tr>
+              <th class="item-name">商品</th>
+              <th>単価（税込）</th>
+              <th class="total-amount">個数</th>
+              <th class="sabtotal">小計</th>
+            </tr>
+            <% @order.order_details.each do | order_detail | %>
+            <tr>
+              <!--商品-->
+              <td class="item-name"><%= order_detail.item.name %></td>
+              <!--単価（税込）-->
+              <td><%= number_separation( order_detail.purchased_price / order_detail.amount ) %></td>
+              <!--個数-->
+              <td class="total-amount"><%= order_detail.amount %></td>
+              <!--小計-->
+              <td class="sabtotal"><%= number_separation( order_detail.purchased_price ) %></td>
+            </tr>
+            <% end %>
+          </table>
+
+      </div>
+  </div>

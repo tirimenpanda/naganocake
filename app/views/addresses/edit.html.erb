@@ -1,1 +1,20 @@
-<p>配送先編集</p>
+<div class="container">
+  <h3><strong>配送先編集</strong></h3>
+  <%= form_for( @address, url: address_path ) do | address | %>
+    <table>
+      <tr>
+        <th>郵便番号</th>
+        <td><%= address.text_field :postal_code %></td>
+      </tr>
+      <tr>
+        <th>住所</th>
+        <td><%= address.text_field :ship_to %></td>
+      </tr>
+      <tr>
+        <th>宛名</th>
+        <td><%= address.text_field :consignee %></td>
+      </tr>
+    </table>
+    <%= address.submit '編集を保存する', class:"btn btn-primary col-xs-2" %>
+  <% end %>
+</div>

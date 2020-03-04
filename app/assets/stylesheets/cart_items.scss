@@ -1,3 +1,29 @@
 // Place all the styles related to the CartItems controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+	font-family: verdana, arial, helvetica, sans-serif;
+   	font-size: 15px;
+}
+
+.container {
+	margin: 0 auto;
+}
+
+.total-price {
+	background-color: #C0C0C0;
+}
+
+.cart-items-heading {
+	background-color: #C0C0C0;
+}
+
+.array-center {
+	text-align: center;
+}
+
+.row {
+	margin-top: 30px;
+	text-align: center;
+}
