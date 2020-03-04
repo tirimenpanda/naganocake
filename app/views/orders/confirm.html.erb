@@ -23,15 +23,15 @@
             <!--商品名-->
             <%= order_detail.item.name %>
           </td>
-          <td>
+          <td class='pay-detail'>
             <!-- 単価（税込）-->
-            <%= number_separation( order_detail.purchased_price / order_detail.amount ) %>
+            <%= number_separation( order_detail.purchased_price / order_detail.amount ) %>&nbsp;&nbsp;
           </td>
           <td>
             <!-- 数量-->
             <%= order_detail.amount %>
           </td>
-          <td>
+          <td class='pay-detail'>
             <!-- 小計-->
             <%= number_separation( order_detail.purchased_price ) %>
           </td>
@@ -54,17 +54,17 @@
         <tr>
           <th>配送料</th>
           <%= f.hidden_field :postage, value:@default_postage, readonly:true %>
-          <td><%= @default_postage %></td>
+          <td class='pay-detail'><%= @default_postage %></td>
         </tr>
         <tr>
           <th>商品合計</th>
-          <td><%= number_separation( @total_price ) %></td>
+          <td class='pay-detail'><%= number_separation( @total_price ) %></td>
         </tr>
         <tr>
           <th><b>請求金額</b></th>
           <% sum = @default_postage + @total_price %>
           <%= f.hidden_field :total_price, value:(sum), readonly:true %>
-          <td><%= number_separation( sum ) %></td>
+          <td class='pay-detail'><%= number_separation( sum ) %></td>
         </tr>
       </table>
     </div>

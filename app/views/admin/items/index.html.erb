@@ -1,8 +1,10 @@
 <div class="container">
-  <h2>商品一覧画面</h2>
-  <%= link_to new_admin_item_path do %>
-  <%= image_tag 'adding_item.png' , class: "col-ws-12" %>
-  <% end %>
+  <h2>
+    商品一覧画面
+    <%= link_to new_admin_item_path do %>
+    <%= image_tag 'adding_item.png' , class: 'new-btn' %>
+    <% end %>
+  </h2>
   <table>
     <tr>
       <th>商品ID</th>
@@ -15,7 +17,7 @@
     <tr>
       <td><%= item.id %></td>
       <td><%= link_to item.name, admin_item_path( item ) %></td>
-      <td><%= item.listed_price %></td>
+      <td><%= number_separation( item.listed_price ) %></td>
       <td><%= item.genre.name %></td>
       <td><%= item.selling_status ? '販売中' : '販売停止中' %></td>
     </tr>

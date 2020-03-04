@@ -189,6 +189,7 @@ line-height: 0.5em;
    border: solid 1px #000;
    padding: 5px;
    height: 40px;
+   text-align: center;
  }
 
  /*---login.html.erb---*/
@@ -224,4 +225,8 @@ line-height: 0.5em;
    th{
      background-color:#c0c0c0;
    }
+ }
+
+ .pay-detail {
+ 	text-align: right;
  }

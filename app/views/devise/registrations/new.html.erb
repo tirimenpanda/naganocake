@@ -7,7 +7,7 @@
 
       <div class="field">
         <%= f.label :last_name, 'ユーザーネーム（姓）' %><br>
-        <%= f.text_field :last_name, autocomplete: "last_name", placeholder: "（例）佐藤" %>
+        <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", placeholder: "（例）佐藤" %>
       </div>
 
       <div class="field">
@@ -17,7 +17,7 @@
 
       <div class="field">
         <%= f.label :first_name, 'ユーザーネーム（名）' %><br>
-        <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", placeholder: "（例）太郎" %>
+        <%= f.text_field :first_name, autocomplete: "first_name", placeholder: "（例）太郎" %>
       </div>
 
       <div class="field">

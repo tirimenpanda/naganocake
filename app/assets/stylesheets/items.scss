@@ -5,3 +5,26 @@
 .item {
 	margin-bottom: 20px;
 }
+.genre-index{
+	input {
+		color: inherit;
+		display: inline-block;
+		background-color: #FCF5C7;
+		width: 130px;
+		border: none;
+		font-weight: normal;
+		text-align: center;
+		padding: 5px 0;
+		border-style: none;
+		outline: none;
+		&:hover {
+			background-color: lavender;
+		}
+	}
+}
+.new-btn {
+	margin-left: 30px;
+	&:hover {
+		background-color: whitesmoke;
+	}
+}

@@ -1,24 +1,24 @@
 <div class="container">
 	<% if not admin_user_signed_in? then %>
-	<div class="row">
-		<div class="col-xs-offset-10 col-xs-2 btn btn-primary" id='genresShowing'>
-			ジャンル検索
-		</div>
-	</div>
 
 	<div class="row">
-		<div id='genre-window1' class="col-xs-1">
-			<%= render 'items/template_genres', genres: @genres %>
+		<div  class="col-xs-1">
+			<div id='genresShowing'>
+				<button type="button" name="button" class='btn btn-primary'>ジャンル検索</button>
+			</div>
+			<div id="genre-window1">
+
+				<%= render 'items/template_genres', genres: @genres %>
+			</div>
 		</div>
-		<div id='genre-window2' class="col-xs-1"> </div>
 
 		<div class="col-xs-11">
 			<%= render 'items/template_items', pages: @pages, counts: @counts, info: '商品' %>
 		</div>
-	</div>
 	<% else %>
 	<%= render 'homes/orders_index_today' %>
 	<% end %>
+</div>
 </div>
 
 <script>
@@ -26,7 +26,6 @@
 		$('#genre-window1').hide();
 	});
 	$('#genresShowing').on('click',function() {
-		$('#genre-window2').hide();
 		$('#genre-window1').show();
 	});
 </script>

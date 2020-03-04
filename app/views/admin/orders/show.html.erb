@@ -60,15 +60,15 @@
           <table>
             <tr style="border:none;">
               <td style="border:none;">商品合計</td>
-              <td style="border:none;"><%= number_separation( @order.total_price - @order.postage ) %></td>
+              <td style="border:none; text-align: right;"><%= number_separation( @order.total_price - @order.postage ) %></td>
             </tr>
             <tr style="border:none;">
               <td style="border:none;">配送料</td>
-              <td style="border:none;"><%= number_separation( @order.postage ) %></td>
+              <td style="border:none; text-align: right;"><%= number_separation( @order.postage ) %></td>
             </tr>
             <tr style="border:none;">
               <td style="border:none;">ご請求額</td>
-              <td style="border:none;"><%= number_separation( @order.total_price ) %></td>
+              <td style="border:none; text-align: right;"><%= number_separation( @order.total_price ) %></td>
             </tr>
           </table>
         </div>

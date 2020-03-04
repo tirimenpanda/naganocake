@@ -20,10 +20,10 @@
               <!--商品名-->
               <%= cart_item.item.name %>
             </td>
-            <td>
+            <td class='pay-detail'>
               <!-- 単価（税込）-->
               <!--subtotal( 税抜き価格, 個数 ) => 小計（税込）を計算-->
-              <%= subtotal( cart_item.item.listed_price, 1 ) %>
+              <%= subtotal( cart_item.item.listed_price, 1 ) %> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </td>
             <td class="array-center">
               <!-- 数量-->
@@ -32,7 +32,7 @@
               <%= c.submit '変更', class: "btn btn-primary" %>
               <% end %>
             </td>
-            <td>
+            <td class='pay-detail'>
               <!-- 小計-->
               <!--subtotal( 税抜き価格, 個数 ) => 小計（税込）を計算-->
               <%= subtotal( cart_item.item.listed_price, cart_item.amount ) %>

@@ -1,7 +1,6 @@
 
 <% t = Time.zone.now.to_date %>
 <% orders = Order.where( ' created_at > ? ', t  ).where.not( ' created_at > ? ', ( t + 1.day ) ) %>
-<div class="row">
   <div class="col-xs-offset-2 col-xs-10 col-xs-offset-2">
 
 	<h2><%= "本日の注文件数 #{orders.count}件" %></h2>
@@ -21,5 +20,4 @@
 		</tr>
 		<% end %>
 	</table>
-</div>
 </div>
