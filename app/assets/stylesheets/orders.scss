@@ -31,29 +31,37 @@ p {
 
 /* order show */
 .clearfix {
-
-}
-
-.order-info {
-	float: left;
-}
-
-.pay-info {
-	float: right;
 }
 
 .order-table th {
 	width: 150px;
 }
 
+.order-info {
+	float: left;
+}
+
 .order-info td {
 	width: 400px;
 }
 
+.space {
+	float: left;
+	width: 10px;
+	height: 10px;
+}
 
 .pay-info {
 	float: right;
-	padding-top: 25px;
+}
+
+.pay-info {
+	float: left;
+	padding-top: 30px;
+}
+
+.pay-info td {
+	width: 130px;
 }
 
 .pay-heading {
@@ -61,12 +69,8 @@ p {
 	width: 150px;
 }
 
-.pay-info td {
-	width: 130px;
-}
-
-.item-name {
-	width: 400px;
+.order-details, .order-info {
+	padding-top: 30px;
 }
 
 .sabtotal {
@@ -77,9 +81,10 @@ p {
 	width: 100px;
 }
 
-.order-details, .order-info {
-	padding-top: 30px;
+.item-name {
+	width: 400px;
 }
+
 
 
 
