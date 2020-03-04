@@ -47,6 +47,7 @@ Item.create( genre_id: 4, name: %?カスタードプリン?, introduction: %?シ
 Item.create( genre_id: 4, name: %?ミルクプリン?, introduction: %?北海道産牛乳を使用したクリームが絶品。?,                          listed_price: 180, image: File.open( './app/assets/images/milk_purin.png', ?r ) )
 Item.create( genre_id: 5, name: %?羊羹?, introduction: %?北海道産小豆を使用してます。裏ごししてあるので舌触り滑らか。?, listed_price: 800, image: File.open( './app/assets/images/youkan.png', ?r ) )
 Item.create( genre_id: 6, name: %?アイスクリーム?, introduction: %?Häagen-Dazsのアイスなので間違いなく美味しいです。?, listed_price: 398, image: File.open( './app/assets/images/icecream.png', ?r ) )
+Item.create( genre_id: 8, name: %?Kejserens nye klæder?, introduction: %?「自分の地位にふさわしくない者」や「愚か者」には見えない極上の材料をふんだんに使用したケーキです。?, listed_price: 1_000_000, image: File.open( './app/assets/images/osara.png', ?r ) )
 
 arr = (1..13).to_a.shuffle
 # arr = ( (1..13).to_a  - Item.find_by( genre_id: 8 )).shuffle

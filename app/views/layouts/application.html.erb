@@ -20,12 +20,6 @@
   <nav>
     <ul class="nav navbar-nav navbar-right">
       <!-- admin_userの場合 -->
-      <li>
-        <%= form_for( Genre.new, url: items_path, method: :get ) do | f | %>
-		    <%= f.text_field :name, style: 'border: none; margin: 8px; color: gray;', placeholder: "フリーワードを入力" %>
-		    <%= f.submit '検索', class: 'btn btn-default', style: 'border: none; margin: 8px; color: gray;' %>
-		    <% end %>
-      </li>
       <% if admin_user_signed_in? %>
       <li>
         <%= link_to "商品一覧", admin_items_path %>
@@ -46,7 +40,7 @@
       <% elsif end_user_signed_in? %>
       <li>
         <%= link_to '#', style: 'color: white;' do %>
-          ログインユーザ：<%= "#{current_end_user.last_name} #{current_end_user.first_name}" %>
+          ログインユーザ：<webcamp style='color: lightgreen;'><%= "#{current_end_user.last_name} #{current_end_user.first_name}" %></webcamp> 様
           <% end %>
       </li>
       <li>
@@ -56,10 +50,10 @@
         <%= link_to "About", homes_about_path %>
       </li>
       <li>
-        <%= link_to "マイページ", end_user_registration_path %>
+        <%= link_to "My page", end_user_registration_path %>
       </li>
       <li>
-        <%= link_to "ログアウト", destroy_end_user_session_path, method: :delete  %>
+        <%= link_to "Log out", destroy_end_user_session_path, method: :delete  %>
       </li>
       <li>
         <% cart_item_count = current_end_user.cart_items.map{ |i| i.amount }.sum  %>
@@ -79,6 +73,12 @@
         <%= link_to "Log in", new_end_user_session_path %>
       </li>
       <% end %>
+      <li>
+        <%= form_for( Genre.new, url: items_path, method: :get ) do | f | %>
+        <%= f.text_field :name, style: 'border: none; color: gray; margin-left: 8px;', placeholder: "フリーワードを入力" %>
+        <%= f.submit '検索', class: 'btn btn-default', style: 'border: none; color: black;' %>
+        <% end %>
+      </li>
     </ul>
   </nav>
 </header>

@@ -8,7 +8,7 @@ class ItemsController < ApplicationController
 		@genres = Genre.where( is_displayed: true)
 		# paramsにデータが含まれているかで分岐処理
 		if !genre_params then
-			# データなし => ジャンルIDが指定されていない場合
+			# paramsデータなし => ジャンルIDが指定されていない場合
 			# ジャンル表示OKのやつのidを配列形式に変換
 			genres = @genres.map{ | g | g.id }
 			# ジャンル表示OKの商品を全部取得
@@ -16,7 +16,7 @@ class ItemsController < ApplicationController
 			# indexページタイトル情報
 			@info = '商品'
 		else
-			# データなし => ありの場合
+			# paramsデータありの場合
 			if genre_params[:id].nil? then
 				# 検索窓からの場合
 				genres = Genre.where( 'name LIKE ?', genre_params[:name]  )

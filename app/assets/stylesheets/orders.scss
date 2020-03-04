@@ -28,3 +28,7 @@ p {
 .confirm-btn {
 	text-align: center;
 }
+
+#order_payment_クレジットカード, #order_payment_銀行振込 {
+	height: auto;
+}
