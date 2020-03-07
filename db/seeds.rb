@@ -73,47 +73,48 @@ CartItem.create( end_user_id: 3, item_id: arr.pop, amount: 31 )
 CartItem.create( end_user_id: 3, item_id: arr.pop, amount: 37 )
 CartItem.create( end_user_id: 3, item_id: arr.pop, amount: 3 )
 
-t = Time.zone.now - 3.day
+t = Time.zone.local(2020, 3, 10, 15, 30, 45)
 # Orderのサンプルデータ
-Order.create( end_user_id: 1, postal_code: "1010041", ship_to: "東京都千代田区神田須田町１−２２", consignee: "株式会社ハル研究所", payment: "クレジットカード", postage: 800, total_price: 15585, order_status: "入金確認", created_at: t )
+Order.create( end_user_id: 1, postal_code: "1010041", ship_to: "東京都千代田区神田須田町１−２２", consignee: "株式会社ハル研究所", payment: "クレジットカード", postage: 800, total_price: 15585, order_status: "発送済み", created_at: t )
 OrderDetail.create( order_id: 1, item_id: 20, amount: 2, purchased_price: 1100, making_status: "製作完了", created_at: t )
-OrderDetail.create( order_id: 1, item_id: 12, amount: 3, purchased_price: 1650, making_status: "製作待ち", created_at: t )
+OrderDetail.create( order_id: 1, item_id: 12, amount: 3, purchased_price: 1650, making_status: "製作完了", created_at: t )
 OrderDetail.create( order_id: 1, item_id: 13, amount: 5, purchased_price: 3080, making_status: "製作完了", created_at: t )
-OrderDetail.create( order_id: 1, item_id: 14, amount: 7, purchased_price: 3696, making_status: "着手不可", created_at: t )
-OrderDetail.create( order_id: 1, item_id: 15, amount: 11, purchased_price: 3322, making_status: "着手不可", created_at: t )
-OrderDetail.create( order_id: 1, item_id: 16, amount: 13, purchased_price: 1937, making_status: "製作待ち", created_at: t )
+OrderDetail.create( order_id: 1, item_id: 14, amount: 7, purchased_price: 3696, making_status: "製作完了", created_at: t )
+OrderDetail.create( order_id: 1, item_id: 15, amount: 11, purchased_price: 3322, making_status: "製作完了", created_at: t )
+OrderDetail.create( order_id: 1, item_id: 16, amount: 13, purchased_price: 1937, making_status: "製作完了", created_at: t )
 
 
-t = Time.zone.now - 2.day
-Order.create( end_user_id: 1, postal_code: "1070052", ship_to: "東京都港区赤坂２丁目１２−２３ キャビンアリーナ赤坂 201", consignee: "株式会社京都アニメーション 東京オフィス", payment: "銀行振込", postage: 800, total_price: 40069, order_status: "入金確認", created_at: t  )
-OrderDetail.create( order_id: 2, item_id: 14, amount: 13, purchased_price: 5681, making_status: "着手不可", created_at: t  )
-OrderDetail.create( order_id: 2, item_id: 11, amount: 19, purchased_price: 2508, making_status: "製作中", created_at: t  )
-OrderDetail.create( order_id: 2, item_id: 18, amount: 120, purchased_price: 31080, making_status: "製作中", created_at: t  )
+t = Time.zone.local(2020, 3, 12, 10, 40, 5)
+Order.create( end_user_id: 1, postal_code: "1070052", ship_to: "東京都港区赤坂２丁目１２−２３ キャビンアリーナ赤坂 201", consignee: "株式会社京都アニメーション 東京オフィス", payment: "銀行振込", postage: 800, total_price: 40069, order_status: "発送準備中", created_at: t  )
+OrderDetail.create( order_id: 2, item_id: 14, amount: 13, purchased_price: 5681, making_status: "製作完了", created_at: t  )
+OrderDetail.create( order_id: 2, item_id: 11, amount: 19, purchased_price: 2508, making_status: "製作完了", created_at: t  )
+OrderDetail.create( order_id: 2, item_id: 18, amount: 120, purchased_price: 31080, making_status: "製作完了", created_at: t  )
 
 
-t = Time.zone.now - 1.day
+t = Time.zone.local(2020, 3, 14, 10, 10, 10)
 Order.create( end_user_id: 2, postal_code: "1234567", ship_to: "国会議事堂", consignee: "安倍 晋三", payment: "銀行振込", postage: 800, total_price: 348862, order_status: "入金確認", created_at: t  )
 OrderDetail.create( order_id: 3, item_id: 20, amount: 177, purchased_price: 97350, making_status: "製作中", created_at: t  )
 OrderDetail.create( order_id: 3, item_id: 12, amount: 196, purchased_price: 107800, making_status: "製作中", created_at: t  )
 OrderDetail.create( order_id: 3, item_id: 13, amount: 232, purchased_price: 142912, making_status: "製作中", created_at: t  )
 
 
-Order.create( end_user_id: 3, postal_code: "5830992", ship_to: "大阪府南河内郡太子町", consignee: "小野妹子", payment: "クレジットカード", postage: 800, total_price: 40356, order_status: "入金待ち" )
+Order.create( end_user_id: 3, postal_code: "5830992", ship_to: "大阪府南河内郡太子町", consignee: "小野妹子", payment: "クレジットカード", postage: 800, total_price: 40356, order_status: "入金確認" )
 OrderDetail.create( order_id: 4, item_id: 13, amount: 31, purchased_price: 19096, making_status: "着手不可" )
 OrderDetail.create( order_id: 4, item_id: 12, amount: 37, purchased_price: 20350, making_status: "着手不可" )
 OrderDetail.create( order_id: 4, item_id: 10, amount: 1, purchased_price: 110, making_status: "着手不可" )
 
 
-Order.create(end_user_id: 1, postal_code: "1234567", ship_to: "東京都", consignee: "藤野 貴明", payment: "クレジットカード", postage: 800, total_price: 245836, order_status: "入金待ち" )
-OrderDetail.create( order_id: 5, item_id: 14, amount: 2, purchased_price: 1276, making_status: "製作完了" )
-OrderDetail.create( order_id: 5, item_id: 7, amount: 3, purchased_price: 396, making_status: "製作完了" )
-OrderDetail.create( order_id: 5, item_id: 6, amount: 5, purchased_price: 4840, making_status: "製作完了" )
-OrderDetail.create( order_id: 5, item_id: 5, amount: 7, purchased_price: 231000, making_status: "製作待ち" )
-OrderDetail.create( order_id: 5, item_id: 20, amount: 11, purchased_price: 5808, making_status: "製作待ち" )
-OrderDetail.create( order_id: 5, item_id: 10, amount: 13, purchased_price: 1716, making_status: "製作中" )
+t = Time.zone.local(2020, 3, 14, 18, 45, 33)
+Order.create(end_user_id: 1, postal_code: "1234567", ship_to: "東京都", consignee: "藤野 貴明", payment: "クレジットカード", postage: 800, total_price: 245836, order_status: "入金確認", created_at: t )
+OrderDetail.create( order_id: 5, item_id: 14, amount: 2, purchased_price: 1276, making_status: "製作完了", created_at: t )
+OrderDetail.create( order_id: 5, item_id: 7, amount: 3, purchased_price: 396, making_status: "製作完了", created_at: t )
+OrderDetail.create( order_id: 5, item_id: 6, amount: 5, purchased_price: 4840, making_status: "製作完了", created_at: t )
+OrderDetail.create( order_id: 5, item_id: 5, amount: 7, purchased_price: 231000, making_status: "製作待ち", created_at: t )
+OrderDetail.create( order_id: 5, item_id: 20, amount: 11, purchased_price: 5808, making_status: "製作待ち", created_at: t )
+OrderDetail.create( order_id: 5, item_id: 10, amount: 13, purchased_price: 1716, making_status: "製作中", created_at: t )
 
 
 Order.create(end_user_id: 1, postal_code: "5557777", ship_to: "toukyo", consignee: "test", payment: "クレジットカード", postage: 800, total_price: 10106, order_status: "入金待ち" )
-OrderDetail.create( order_id: 6, item_id: 65, amount: 13, purchased_price: 6864, making_status: "製作待ち" )
-OrderDetail.create( order_id: 6, item_id: 60, amount: 1, purchased_price: 1650, making_status: "製作中" )
-OrderDetail.create( order_id: 6, item_id: 55, amount: 4, purchased_price: 792, making_status: "着手不可" )
+OrderDetail.create( order_id: 6, item_id: 6, amount: 13, purchased_price: 6864, making_status: "着手不可" )
+OrderDetail.create( order_id: 6, item_id: 10, amount: 1, purchased_price: 1650, making_status: "着手不可" )
+OrderDetail.create( order_id: 6, item_id: 19, amount: 4, purchased_price: 792, making_status: "着手不可" )
