@@ -17,10 +17,12 @@ class ItemsController < ApplicationController
 			@info = '商品'
 		else
 			# paramsデータありの場合
-			if genre_params[:id].nil? then
+			if not genre_params[:name].nil? then
 				# 検索窓からの場合
-				genres = Genre.where( 'name LIKE ?', genre_params[:name]  )
-				items = Item.where( 'name LIKE ? or introduction LIKE ? or genre_id = ?', "%#{genre_params[:name]}%", "%#{genre_params[:name]}%", genres.map{ |x| x.id  } )
+				# 検索ワードの書式整形
+				search_name = "%#{genre_params[:name]}%"
+				# 表示可能ジャンルから検索ワードにヒットする商品の抽出
+				items = Item.where( 'name LIKE ? or introduction LIKE ?', search_name, search_name).where( genre_id: @genres.map{|g|g.id})
 				@info = "検索結果「#{genre_params[:name]}」に関する商品"
 			else
 				# ジャンルタグからの場合
