@@ -34,6 +34,7 @@ Genre.create( name: '表示されないジャンル', is_displayed:  false )
 
 # Itemのサンプルデータ（全8件）
 Item.create( genre_id: 8, name: %?Kejserens nye klæder?, introduction: %?「自分の地位にふさわしくない者」や「愚か者」には見えない極上の材料をふんだんに使用したケーキです。?, listed_price: 1_000_000, image: File.open( './app/assets/images/osara.png', ?r ) )
+Item.create( genre_id: 1, name: %?バースデーケーキ?, introduction: %?当店自慢のこだわり抜いた北海道産生クリームを使用した、6号サイズのイチゴ生デコレーションケーキです。ケーキの原点であるショートケーキだからこそ、妥協はしてませんので、この自慢の一品をご賞味くださいませ。?, listed_price: 6_000, image: File.open( './app/assets/images/naganocake.png', ?r ) )
 Item.create( genre_id: 6, name: %?金太郎飴?, introduction: %?金太郎がデフォルメされた長さ30cmの金太郎飴です。（※切り売りは受け付けておりません）?, listed_price: 800, image: File.open( './app/assets/images/kintarou.png', ?r ) )
 Item.create( genre_id: 2, name: %?マカロン?, introduction: %?当店では新鮮なフルーツを使った３色のマカロンを用意しております。是非とも買ってください！！?, listed_price: 500, image: File.open( './app/assets/images/macaroon.png', ?r ) )
 Item.create( genre_id: 7, name: %?スパークリングワイン?, introduction: %?当店おすすめの、ケーキに合うスパークリングワインです。是非ともご一緒にお求めくださいませ。?, listed_price: 5800, image: File.open( './app/assets/images/sparkling_wine1.png', ?r ) )
