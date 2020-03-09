@@ -56,7 +56,7 @@ Item.create( genre_id: 1, name: %?チーズケーキ?, introduction: %?北海道
 Item.create( genre_id: 1, name: %?チョコレートケーキ?, introduction: %?バンホーテンのカカオ豆を使った濃厚チョコレートケーキ?, listed_price: 560, image: File.open( './app/assets/images/cake2.png', ?r ) )
 Item.create( genre_id: 1, name:  %?ショートケーキ?, introduction: %?シンプルisベスト!当店人気No.1のケーキです!?,                listed_price: 500, image: File.open( './app/assets/images/cake1.png', ?r ) )
 Item.create( genre_id: 8, name: %?Kejserens nye klæder?, introduction: %?「自分の地位にふさわしくない者」や「愚か者」には見えない極上の材料をふんだんに使用したケーキです。?, listed_price: 1_000_000, image: File.open( './app/assets/images/osara.png', ?r ) )
-Item.create( genre_id: 8, name: %?サンプル画像?, introduction: %?#{'サンプル文書'*10}?, listed_price: 333, image: File.open( './app/assets/images/sample01.png', ?r ) )
+Item.create( genre_id: 8, name: %?サンプル画像?, introduction: %?#{'サンプル文書'*10}?, listed_price: 333, image: File.open( './app/assets/images/sample01.png', ?r ), selling_status: false )
 
 arr = (5..22).to_a.shuffle
 # arr = ( (1..13).to_a  - Item.find_by( genre_id: 8 )).shuffle
